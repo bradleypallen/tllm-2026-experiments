@@ -1,6 +1,6 @@
 # Pinned dependency: bilateral-truth at the commit used for the 2026 run.
 # To reproduce the 2025 run, switch the SHA to 8545986a51ce1af5d3df9dfc373a8fad58914636.
-bilateral-truth @ git+https://github.com/bradleyallen/bilateral-truth.git@b71915fda6faf252cdb506294e0b9c5e04511d5e
+bilateral-truth @ git+https://github.com/bradleypallen/bilateral-truth.git@b71915fda6faf252cdb506294e0b9c5e04511d5e
 
 # Provider SDKs (bilateral-truth's optional extras).
 openai>=1.0.0

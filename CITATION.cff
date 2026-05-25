@@ -7,7 +7,7 @@ authors:
     affiliation: University of Amsterdam
     email: b.p.allen@uva.nl
 type: dataset
-repository-code: "https://github.com/bradleyallen/tllm-2026-experiments"
+repository-code: "https://github.com/bradleypallen/tllm-2026-experiments"
 license: MIT
 date-released: "2026-05-25"
 keywords:
@@ -19,7 +19,7 @@ keywords:
 references:
   - type: software
     title: "bilateral-truth"
-    repository-code: "https://github.com/bradleyallen/bilateral-truth"
+    repository-code: "https://github.com/bradleypallen/bilateral-truth"
     authors:
       - family-names: Allen
         given-names: Bradley

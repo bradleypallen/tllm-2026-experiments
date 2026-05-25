@@ -18,7 +18,7 @@ authors = [
 # The 2025 experiments used commit 8545986; reproducing them requires switching
 # to that SHA. See CHANGELOG.md.
 dependencies = [
-    "bilateral-truth @ git+https://github.com/bradleyallen/bilateral-truth.git@b71915fda6faf252cdb506294e0b9c5e04511d5e",
+    "bilateral-truth @ git+https://github.com/bradleypallen/bilateral-truth.git@b71915fda6faf252cdb506294e0b9c5e04511d5e",
     "openai>=1.0.0",
     "anthropic>=0.3.0",
     "requests>=2.25.0",

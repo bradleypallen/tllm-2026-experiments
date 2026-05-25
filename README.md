@@ -26,7 +26,7 @@ The two runs are not directly comparable on the "ternary" approach — see [`CHA
 ## Quick start
 
 ```bash
-git clone https://github.com/bradleyallen/tllm-2026-experiments.git
+git clone https://github.com/bradleypallen/tllm-2026-experiments.git
 cd tllm-2026-experiments
 ./setup_venv.sh
 source venv/bin/activate
@@ -43,7 +43,7 @@ Across the six models and four benchmarks, bilateral-classical (D = {⟨t,f⟩})
 
 ## Dependencies
 
-This repo pins [`bilateral-truth`](https://github.com/bradleyallen/bilateral-truth) to a specific commit per run, since the package's prompt strings and sampling defaults changed between runs (see [`CHANGELOG.md`](CHANGELOG.md)). The 2026 run pins commit `b71915f`; reproducing the 2025 run requires switching to commit `8545986`.
+This repo pins [`bilateral-truth`](https://github.com/bradleypallen/bilateral-truth) to a specific commit per run, since the package's prompt strings and sampling defaults changed between runs (see [`CHANGELOG.md`](CHANGELOG.md)). The 2026 run pins commit `b71915f`; reproducing the 2025 run requires switching to commit `8545986`.
 
 ## Citation
 

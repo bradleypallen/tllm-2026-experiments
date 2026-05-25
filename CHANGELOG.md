@@ -74,7 +74,7 @@ Bilateral barely moved. Ternary jumped 16 F1 points, putting it slightly *above*
 The evaluator scripts in [`evaluators/`](evaluators/) target the 2026 run. To reproduce the 2025 numbers you would need:
 
 1. The 2025-era evaluator scripts, which live in the `bilateral-truth` repo under `evaluations/` at commit `8545986`. They are intentionally **not** carried into this repo — only the 2025 result files in [`results/2025_09/`](results/2025_09/) are.
-2. The `bilateral-truth` package pinned to commit `8545986` (e.g. via `pip install "bilateral-truth @ git+https://github.com/bradleyallen/bilateral-truth.git@8545986a51ce1af5d3df9dfc373a8fad58914636"`).
+2. The `bilateral-truth` package pinned to commit `8545986` (e.g. via `pip install "bilateral-truth @ git+https://github.com/bradleypallen/bilateral-truth.git@8545986a51ce1af5d3df9dfc373a8fad58914636"`).
 3. The datasets in [`datasets/`](datasets/) (unchanged across runs — these are the same input data).
 
 The 2025 results are preserved primarily as a comparison point for the published paper's revised methodology, not as a target for ongoing reproduction.

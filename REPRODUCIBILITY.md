@@ -14,7 +14,7 @@ git lfs install
 Then:
 
 ```bash
-git clone https://github.com/bradleyallen/tllm-2026-experiments.git
+git clone https://github.com/bradleypallen/tllm-2026-experiments.git
 cd tllm-2026-experiments
 ./setup_venv.sh
 source venv/bin/activate
@@ -109,7 +109,7 @@ LLM stochasticity means F1 values will move by a few hundredths per cell; the st
 The 2025 evaluator scripts live in the `bilateral-truth` repo's `evaluations/` directory at commit `8545986`. They are intentionally not carried into this repo (see [`CHANGELOG.md`](CHANGELOG.md)). To reproduce them you would have to pin `bilateral-truth` to that older SHA and re-run the original scripts:
 
 ```bash
-git clone https://github.com/bradleyallen/bilateral-truth.git
+git clone https://github.com/bradleypallen/bilateral-truth.git
 cd bilateral-truth
 git checkout 8545986a51ce1af5d3df9dfc373a8fad58914636
 # Then run evaluations/generic_evaluator.py, evaluations/unilateral_evaluator.py, etc.

@@ -4,12 +4,23 @@ How to reproduce the empirical results in [`results/2026_03/`](results/2026_03/)
 
 ## Environment setup
 
+This repo ships `datasets/mmlupro_complete.json` (114 MB) via Git LFS. Install LFS once on your machine before cloning:
+
+```bash
+brew install git-lfs       # macOS — or use your distro's package manager
+git lfs install
+```
+
+Then:
+
 ```bash
 git clone https://github.com/bradleyallen/tllm-2026-experiments.git
 cd tllm-2026-experiments
 ./setup_venv.sh
 source venv/bin/activate
 ```
+
+If you have a clone made before LFS was set up, run `git lfs pull` from inside the clone to fetch the large files.
 
 `setup_venv.sh` creates a Python virtualenv and installs `bilateral-truth` pinned to commit `b71915f` (the 2026-run version) along with provider SDKs.
 

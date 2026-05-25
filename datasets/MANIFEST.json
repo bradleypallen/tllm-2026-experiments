@@ -1,0 +1,18 @@
+{
+  "factscore_complete.json": {
+    "sha256": "bb0ea81d2b9d067c5f548fe769057a47aff34c0489a962899070926430049129",
+    "size_bytes": 29243707
+  },
+  "mmlupro_complete.json": {
+    "sha256": "5b224a17dd105d83e1fd8cdc02c505f5e55cfb13818aef4bb1a5e9f13c52513c",
+    "size_bytes": 114585826
+  },
+  "simpleqa_complete.json": {
+    "sha256": "c5e4fa5428202a37283edccdade1883801e1fc5ad94a1f3d93bacd044598414f",
+    "size_bytes": 14010669
+  },
+  "truthfulqa_complete.json": {
+    "sha256": "d4fd192a268cb55afa06c03a962d57d88ed885ccb2e20b96786e33e89e5c8462",
+    "size_bytes": 869739
+  }
+}

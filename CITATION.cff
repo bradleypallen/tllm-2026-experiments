@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "tllm-2026-experiments: Dataset of record for bilateral modal logic factuality evaluation"
+message: "If you use this dataset, please cite the accompanying paper and this repository."
+authors:
+  - family-names: Allen
+    given-names: Bradley
+    affiliation: University of Amsterdam
+    email: b.p.allen@uva.nl
+type: dataset
+repository-code: "https://github.com/bradleyallen/tllm-2026-experiments"
+license: MIT
+date-released: "2026-05-25"
+keywords:
+  - bilateral logic
+  - factuality evaluation
+  - language models
+  - epistemic logic
+  - benchmark
+references:
+  - type: software
+    title: "bilateral-truth"
+    repository-code: "https://github.com/bradleyallen/bilateral-truth"
+    authors:
+      - family-names: Allen
+        given-names: Bradley

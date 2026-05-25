@@ -1,0 +1,130 @@
+{
+  "factscore_claude-opus-4-1-20250805_n3_proper_results.json": {
+    "sha256": "6367967a3d1ac2a97d318ff15077bf72026b777ced8cf054ae077036f7c6f14e",
+    "size_bytes": 218149
+  },
+  "factscore_deepseek_deepseek-chat_n3_proper_results.json": {
+    "sha256": "d1cd397a39358dba9eaf7ffd3dca121d09c3cd0ea2e0e213c86780cee9e9b8c7",
+    "size_bytes": 218343
+  },
+  "factscore_google_gemini-2.5-flash_n3_proper_results.json": {
+    "sha256": "053340c84fb417d6371f1fe481a799e73d6fd1fc70e7fc0d90e9a4b3918e4bca",
+    "size_bytes": 217605
+  },
+  "factscore_gpt-4.1-2025-04-14_n3_proper_results.json": {
+    "sha256": "6e3f2090e18c0843fdb49119442b4cf96529b7e41d14f5081f05d7e629d962d5",
+    "size_bytes": 217501
+  },
+  "factscore_gpt-4.1-mini-2025-04-14_n3_proper_results.json": {
+    "sha256": "329405d9a29ce000979795e690c17470643716b72889590f1bfd2f67e375b20f",
+    "size_bytes": 217539
+  },
+  "factscore_meta-llama_llama-4-maverick_n3_proper_results.json": {
+    "sha256": "1a9c33f2815f206e0783b2a9f02cc9b78c97ae4cb3815bfb49a9ef0978793831",
+    "size_bytes": 218015
+  },
+  "factscore_meta-llama_llama-4-scout_n3_proper_results.json": {
+    "sha256": "b83ab944b2c2c9bb4b7fa2366a33e6f7e04216703638f141f336368fde45193c",
+    "size_bytes": 218092
+  },
+  "factscore_qwen_qwen-2.5-72b-instruct_n3_proper_results.json": {
+    "sha256": "13f46d27475ca1f24d356157b394c8df3d93eaf434431005cf370ee64a0d6baa",
+    "size_bytes": 218247
+  },
+  "mmlu-pro_claude-opus-4-1-20250805_n3_proper_results.json": {
+    "sha256": "d335afc26374bdff801803896dbc88c0243e5f8e902282388d269b8f817a19ba",
+    "size_bytes": 343750
+  },
+  "mmlu-pro_deepseek_deepseek-chat_n3_proper_results.json": {
+    "sha256": "903fa5a4677a4594a6e3f1a5a8a7af395b7cb1b35e181a08af94d22bbf41cf13",
+    "size_bytes": 343456
+  },
+  "mmlu-pro_google_gemini-2.5-flash_n3_proper_results.json": {
+    "sha256": "e785c7eb9be33aa40a7e107f8a63a69e2486dc64118d917719c85d0db789bee4",
+    "size_bytes": 343110
+  },
+  "mmlu-pro_gpt-4.1-2025-04-14_n3_proper_results.json": {
+    "sha256": "36ffb771b26e1a3375cebf06ff1cc7f5502532e95f9859f4eb2ac7f2026748d4",
+    "size_bytes": 342998
+  },
+  "mmlu-pro_gpt-4.1-mini-2025-04-14_n3_proper_results.json": {
+    "sha256": "8c55865faaafd407dd93753e9124f7f63453e0e23a9a3c1f7fa54d0d06caddf9",
+    "size_bytes": 343119
+  },
+  "mmlu-pro_meta-llama_llama-4-maverick_n3_proper_results.json": {
+    "sha256": "1917079849fd584d750a59f058192cdbccb58be3c316c2ae59a67d1fcede86a7",
+    "size_bytes": 343808
+  },
+  "mmlu-pro_meta-llama_llama-4-scout_n3_proper_results.json": {
+    "sha256": "83572dd3b3e320628151e330112ed44e836d5f8e8a9ea617b4beef869ca0d8d9",
+    "size_bytes": 343700
+  },
+  "mmlu-pro_qwen_qwen-2.5-72b-instruct_n3_proper_results.json": {
+    "sha256": "687feac8016d07438fcef3f125a87fedd325deea81bd27fbfee8cf0771255a8a",
+    "size_bytes": 343370
+  },
+  "simpleqa_claude-opus-4-1-20250805_n3_proper_results.json": {
+    "sha256": "49415a02a476ed2784f8e61b9b88c61cb036bb1b7431dea26f9f7a14b9e5de45",
+    "size_bytes": 249179
+  },
+  "simpleqa_deepseek_deepseek-chat_n3_proper_results.json": {
+    "sha256": "87852815ff21b34f0512988977becb8de0816cb7f7927e625c070c820ae9a80c",
+    "size_bytes": 249152
+  },
+  "simpleqa_google_gemini-2.5-flash_n3_proper_results.json": {
+    "sha256": "8a0a1781ee0e04b950cc74f44714983e07a35c0919ece6c04318774d8f20a2d9",
+    "size_bytes": 248661
+  },
+  "simpleqa_gpt-4.1-2025-04-14_n3_proper_results.json": {
+    "sha256": "36f1c7d8f3229a308799d0fa201d9d684281e5be38c6e01730b26352cf83d45a",
+    "size_bytes": 248266
+  },
+  "simpleqa_gpt-4.1-mini-2025-04-14_n3_proper_results.json": {
+    "sha256": "96ad9d12868b67ae7b99489f6556c73a4fb28572bf366e33715b930437555da5",
+    "size_bytes": 248585
+  },
+  "simpleqa_meta-llama_llama-4-maverick_n3_proper_results.json": {
+    "sha256": "95074ffc374c7c031477935f27c539c14088c0efcebe9f62be8ba5c8175b6c6b",
+    "size_bytes": 248786
+  },
+  "simpleqa_meta-llama_llama-4-scout_n3_proper_results.json": {
+    "sha256": "defc2e5f10dfc8c933d8ff8816d1daff34a87e4ce255437dadf6f6870a3213bd",
+    "size_bytes": 248721
+  },
+  "simpleqa_qwen_qwen-2.5-72b-instruct_n3_proper_results.json": {
+    "sha256": "1ed31fd516de63d8ffc3b63a945f53217fb6b11db47bb09420ca40f17946a0c0",
+    "size_bytes": 248817
+  },
+  "truthfulqa_claude-opus-4-1-20250805_n3_proper_results.json": {
+    "sha256": "e6e37c82db9d5fd47b1fd72f06166656dc181ac9c81060d466e01b83fe304fb5",
+    "size_bytes": 218688
+  },
+  "truthfulqa_deepseek_deepseek-chat_n3_proper_results.json": {
+    "sha256": "27b7ccc69ee8e9e57dc412fe39100288cf7b50e84863f4669dabd28913da3af2",
+    "size_bytes": 219098
+  },
+  "truthfulqa_google_gemini-2.5-flash_n3_proper_results.json": {
+    "sha256": "91376e335163f3d6fcd94bf0ab60d82308424e854279271eeac356cbe48152a7",
+    "size_bytes": 218867
+  },
+  "truthfulqa_gpt-4.1-2025-04-14_n3_proper_results.json": {
+    "sha256": "e83348a3fbac216d23796cb53267090e683d9fc3d4e9da785e16e094123ff3ce",
+    "size_bytes": 218751
+  },
+  "truthfulqa_gpt-4.1-mini-2025-04-14_n3_proper_results.json": {
+    "sha256": "195c4db7b0baad1b4e3eee20a3364bbf5342c82931e3e9ef0c1ab1c96ecd9ada",
+    "size_bytes": 218880
+  },
+  "truthfulqa_meta-llama_llama-4-maverick_n3_proper_results.json": {
+    "sha256": "1d9e855dfb50a072627afe49c5b1e8b726c28e431baca7e0f1062714c24dce79",
+    "size_bytes": 219076
+  },
+  "truthfulqa_meta-llama_llama-4-scout_n3_proper_results.json": {
+    "sha256": "f6a430e032459655b39784be0e282c221fd33189cc5f43219cbd0ca6f68578e2",
+    "size_bytes": 219082
+  },
+  "truthfulqa_qwen_qwen-2.5-72b-instruct_n3_proper_results.json": {
+    "sha256": "720f44c114dbe154120dde7665738d4f23b186b93213a142853de6213e3b9e18",
+    "size_bytes": 219000
+  }
+}

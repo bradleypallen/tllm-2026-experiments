@@ -1,0 +1,34 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+
+venv/
+.venv/
+env/
+
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+.DS_Store
+.env
+.env.local
+
+# Checkpoints and logs from in-progress runs (not part of the dataset of record)
+checkpoints/
+logs/
+*.log
+*.tmp
+
+# Editor
+.vscode/
+.idea/
+*.swp

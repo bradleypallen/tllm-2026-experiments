@@ -1,0 +1,114 @@
+{
+  "factscore_complete_claude-3-5-haiku-20241022_unilateral_uncertain_results.json": {
+    "sha256": "f3e8dbdffdb9b06b682d22cb163446cb23870badf277ad0925902ca32877fd45",
+    "size_bytes": 249142
+  },
+  "factscore_complete_claude-opus-4-1-20250805_unilateral_uncertain_results.json": {
+    "sha256": "5116c851c02b14c43d0210165f860c72f97866f462a55cf256bc7e75f82ecd8e",
+    "size_bytes": 249141
+  },
+  "factscore_complete_google_gemini-2.5-flash_unilateral_uncertain_results.json": {
+    "sha256": "e6a9e95e5e45df14c8ec91dd428fa4482a16952ced9487a93f200a4818b3c862",
+    "size_bytes": 248462
+  },
+  "factscore_complete_gpt-4.1-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "0259408537c2c302d37ba3d14616bb4d0a99819f048c5012adcad11a70850856",
+    "size_bytes": 248376
+  },
+  "factscore_complete_gpt-4.1-mini-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "a955de9c399b5c2b85c1215bb64c68f2489bf80a3bf12b4a47e4b2aa5ef24f38",
+    "size_bytes": 248464
+  },
+  "factscore_complete_meta-llama_llama-4-maverick_unilateral_uncertain_results.json": {
+    "sha256": "b5c89761333b83f17d1db209b42b069fd34de12883143e7beaf8c63e4d3b7c26",
+    "size_bytes": 247680
+  },
+  "factscore_complete_meta-llama_llama-4-scout_unilateral_uncertain_results.json": {
+    "sha256": "8c54b70ed0da759a54998efcb65ad1c82e46ff14e08b5ae50c229b7badc0f1de",
+    "size_bytes": 248269
+  },
+  "mmlupro_complete_claude-3-5-haiku-20241022_unilateral_uncertain_results.json": {
+    "sha256": "edcfbf8bf233bc70cf0decda28763e2f5e4212c18bab195ac75f429837f27ffd",
+    "size_bytes": 411356
+  },
+  "mmlupro_complete_claude-opus-4-1-20250805_unilateral_uncertain_results.json": {
+    "sha256": "cdae35d637aff07fd27c7315e6c0cfb425ddae8de197f3ed9da70dde6c287391",
+    "size_bytes": 411299
+  },
+  "mmlupro_complete_google_gemini-2.5-flash_unilateral_uncertain_results.json": {
+    "sha256": "7c867bf653e112e9711ae909a82aa7ad63c848d9dc09dfb716f44010a7ad8f17",
+    "size_bytes": 411159
+  },
+  "mmlupro_complete_gpt-4.1-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "b83e49036402df7247fa010fb69439e2cd900509cb203f09ad397fe5129fe536",
+    "size_bytes": 410949
+  },
+  "mmlupro_complete_gpt-4.1-mini-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "3f7b86a2d4e5997679238d4ae867c725d5e564f170d528d107d29215e6162522",
+    "size_bytes": 411328
+  },
+  "mmlupro_complete_meta-llama_llama-4-maverick_unilateral_uncertain_results.json": {
+    "sha256": "d4147e72afa14fb8ffc8efec003cfca82ceeb80ed24472d162648116f44351ab",
+    "size_bytes": 410780
+  },
+  "mmlupro_complete_meta-llama_llama-4-scout_unilateral_uncertain_results.json": {
+    "sha256": "06cdf2bd85e82ccfa20db0ad4d3bcc16a6897aee508bad1270d9b64ec121c274",
+    "size_bytes": 411132
+  },
+  "simpleqa_complete_claude-3-5-haiku-20241022_unilateral_uncertain_results.json": {
+    "sha256": "c623c79e39efcf4fd4181995d775648e3f14e85bc436a2db805954602e40059c",
+    "size_bytes": 336496
+  },
+  "simpleqa_complete_claude-opus-4-1-20250805_unilateral_uncertain_results.json": {
+    "sha256": "be292902fe583dda81b5e0287588945578a3cb8b906e495aa7004b09b27c47aa",
+    "size_bytes": 336310
+  },
+  "simpleqa_complete_google_gemini-2.5-flash_unilateral_uncertain_results.json": {
+    "sha256": "a533e0494b5fcec3aa45d27af112cb064d5584cdd25c03adf11cd063acf81d06",
+    "size_bytes": 336351
+  },
+  "simpleqa_complete_gpt-4.1-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "233e7eadca8f3a623563159b3329f6131d6afa0a5091722acfd9d3a99ad0400c",
+    "size_bytes": 336249
+  },
+  "simpleqa_complete_gpt-4.1-mini-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "e3586f486146e1f69c0081e8b1503ed9ceab0dc75439e041d5cb109604d5930a",
+    "size_bytes": 336405
+  },
+  "simpleqa_complete_meta-llama_llama-4-maverick_unilateral_uncertain_results.json": {
+    "sha256": "3e2b14fa22e4d0e49f4310df8270397c47a3704ee471feb76af7098204217bef",
+    "size_bytes": 335619
+  },
+  "simpleqa_complete_meta-llama_llama-4-scout_unilateral_uncertain_results.json": {
+    "sha256": "88f478a8ddaf7e557be0cdeb3f8d8acad061509107fefac724c54a9a77e2cc14",
+    "size_bytes": 336483
+  },
+  "truthfulqa_complete_claude-3-5-haiku-20241022_unilateral_uncertain_results.json": {
+    "sha256": "4e884010119cd44d9999ed0a29b45c2f5a2e50aeb514205c4b99fe3f4c1fdba1",
+    "size_bytes": 263008
+  },
+  "truthfulqa_complete_claude-opus-4-1-20250805_unilateral_uncertain_results.json": {
+    "sha256": "a667b73e45b4169f8081cf6bf8d34f11309b9584985dc8d2d2ef4bea56887c67",
+    "size_bytes": 262887
+  },
+  "truthfulqa_complete_google_gemini-2.5-flash_unilateral_uncertain_results.json": {
+    "sha256": "9174cbe564ebc06e5dd7ecd55595cbcb2f57f35f469ee99a84926da132a7c900",
+    "size_bytes": 262757
+  },
+  "truthfulqa_complete_gpt-4.1-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "142ba31f7c69bdeff960ac342d9960ac5f042aa5ed3f26104382c6f579add861",
+    "size_bytes": 262413
+  },
+  "truthfulqa_complete_gpt-4.1-mini-2025-04-14_unilateral_uncertain_results.json": {
+    "sha256": "ac301969f6bf2faaef5cb3488ee1cda986b7962a6bf9e430ccbdef933a650777",
+    "size_bytes": 262724
+  },
+  "truthfulqa_complete_meta-llama_llama-4-maverick_unilateral_uncertain_results.json": {
+    "sha256": "31acb48faea7e6a19c25e4ea2f83a08b02134d9a1ac7d71780f54b42b69bc97c",
+    "size_bytes": 262758
+  },
+  "truthfulqa_complete_meta-llama_llama-4-scout_unilateral_uncertain_results.json": {
+    "sha256": "78b2a72e65adbae6e37853fc7804f00b75917fc5c2c0f760de18ecf874465072",
+    "size_bytes": 262700
+  }
+}

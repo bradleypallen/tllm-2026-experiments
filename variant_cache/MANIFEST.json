@@ -1,0 +1,18 @@
+{
+  "factscore_n3_variants.json": {
+    "sha256": "fbc89a8ffbb5bb2b014f913506016aca8406d74d02d94d8825a584cffbce7c90",
+    "size_bytes": 75084
+  },
+  "mmlu-pro_n3_variants.json": {
+    "sha256": "5ab5407c18311e0b8103fb1e4b7b86656881bfdd5f720f82c9ca92a7ce30ba5a",
+    "size_bytes": 329860
+  },
+  "simpleqa_n3_variants.json": {
+    "sha256": "60c30af0d1866b4e8eefe215d758992da4babff98e5d4ede80f9eb6472201b5e",
+    "size_bytes": 147931
+  },
+  "truthfulqa_n3_variants.json": {
+    "sha256": "82088d54b67de9f8c16c94407f8650c456e8ac1a6e783723013847c4eabe7aa6",
+    "size_bytes": 113824
+  }
+}

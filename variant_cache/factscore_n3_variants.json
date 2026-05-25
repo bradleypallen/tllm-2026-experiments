@@ -1,0 +1,1766 @@
+{
+  "metadata": {
+    "benchmark": "factscore",
+    "n_variants": 3,
+    "variation_model": "claude-opus-4-6",
+    "dataset_path": "standard_datasets/factscore_complete.json",
+    "total_assertions": 250,
+    "seed": 42,
+    "generation_started": "2026-03-19T16:47:03Z",
+    "generation_completed": "2026-03-19T19:03:57Z",
+    "total_generated": 250,
+    "total_skipped": 0
+  },
+  "variants": {
+    "factscore_ChatGPT_151_2_h18461": {
+      "source_question": "Question: Tell me a bio of James Taylor.",
+      "variants": [
+        "Provide a biographical summary of James Taylor.",
+        "I'd like to know about the biography of James Taylor \u2014 could you share that information?"
+      ]
+    },
+    "factscore_ChatGPT_23_6_m2": {
+      "source_question": "Question: Tell me a bio of Roxana D\u00edaz (athlete).",
+      "variants": [
+        "Provide a biographical summary of Roxana D\u00edaz, the athlete.",
+        "I'd like to know the biography of the athlete known as Roxana D\u00edaz."
+      ]
+    },
+    "factscore_InstructGPT_76_4_m2": {
+      "source_question": "Question: Tell me a bio of Julia Faye.",
+      "variants": [
+        "Provide a biographical summary of Julia Faye.",
+        "I'd like to know about the life and career of Julia Faye \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_PerplexityAI_118_5_h29658": {
+      "source_question": "Question: Tell me a bio of IU (singer).",
+      "variants": [
+        "Provide a biography of the singer known as IU.",
+        "I'd like to know the biographical details of IU, the singer."
+      ]
+    },
+    "factscore_PerplexityAI_87_8_h27313": {
+      "source_question": "Question: Tell me a bio of Antonio Diaz (Filipino politician).",
+      "variants": [
+        "Provide a biography of Antonio Diaz, the Filipino politician.",
+        "I'd like to know the biographical details of the Filipino politician known as Antonio Diaz."
+      ]
+    },
+    "factscore_PerplexityAI_80_11_h26750": {
+      "source_question": "Question: Tell me a bio of Elsa Pataky.",
+      "variants": [
+        "Provide a biography of Elsa Pataky.",
+        "I'd like to know the biographical details of Elsa Pataky \u2014 could you share them?"
+      ]
+    },
+    "factscore_ChatGPT_104_6_h15065": {
+      "source_question": "Question: Tell me a bio of Shashank Manohar.",
+      "variants": [
+        "Provide a biographical summary of Shashank Manohar.",
+        "Could you share some biographical information about Shashank Manohar?"
+      ]
+    },
+    "factscore_PerplexityAI_166_2_h32612": {
+      "source_question": "Question: Tell me a bio of John Estes.",
+      "variants": [
+        "Provide a biographical summary of John Estes.",
+        "I'd like to know the biography of John Estes \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_118_0_h15962": {
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know the biography of James B. Donovan \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_17_0_h21942": {
+      "source_question": "Question: Tell me a bio of Focus....",
+      "variants": [
+        "Provide a biographical summary of Focus....",
+        "Could you share some background information and a bio regarding Focus...."
+      ]
+    },
+    "factscore_PerplexityAI_33_2_h22909": {
+      "source_question": "Question: Tell me a bio of Chaim Malinowitz.",
+      "variants": [
+        "Provide a biographical summary of Chaim Malinowitz.",
+        "I'd like to know the biography of Chaim Malinowitz \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_43_5_h2199": {
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_81_6_h13357": {
+      "source_question": "Question: Tell me a bio of Rob Furlong.",
+      "variants": [
+        "Provide a biographical summary of Rob Furlong.",
+        "I'd like to know the biography of Rob Furlong \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_115_11_m3": {
+      "source_question": "Question: Tell me a bio of Alexandre Guilmant.",
+      "variants": [
+        "Provide a biographical summary of Alexandre Guilmant.",
+        "I'd like to learn about the life and background of Alexandre Guilmant \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_PerplexityAI_39_7_m4": {
+      "source_question": "Question: Tell me a bio of Scientist (musician).",
+      "variants": [
+        "Provide a biographical summary of the musician known as Scientist.",
+        "I'd like to know the biography of Scientist, the musician."
+      ]
+    },
+    "factscore_ChatGPT_78_1_h13167": {
+      "source_question": "Question: Tell me a bio of Craig Morton.",
+      "variants": [
+        "Provide a biographical summary of Craig Morton.",
+        "I'd like to know about Craig Morton \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_InstructGPT_162_7_h8518": {
+      "source_question": "Question: Tell me a bio of Adil Rami.",
+      "variants": [
+        "Provide a biographical summary of Adil Rami.",
+        "I'd like to know the biography of Adil Rami \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_7_2_h10077": {
+      "source_question": "Question: Tell me a bio of Joey D. Vieira.",
+      "variants": [
+        "Provide a biographical summary of Joey D. Vieira.",
+        "I'd like to know the biography of Joey D. Vieira \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_98_4_m1": {
+      "source_question": "Question: Tell me a bio of Waruhiu Itote.",
+      "variants": [
+        "Provide a biographical account of Waruhiu Itote.",
+        "I'd like to know the biography of Waruhiu Itote \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_75_1_m1": {
+      "source_question": "Question: Tell me a bio of Virginia Valli.",
+      "variants": [
+        "Provide a biographical summary of Virginia Valli.",
+        "I'd like to know about the life and career of Virginia Valli \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_PerplexityAI_9_1_h21462": {
+      "source_question": "Question: Tell me a bio of Bella Akhmadulina.",
+      "variants": [
+        "Provide a biographical summary of Bella Akhmadulina.",
+        "I'd like to know about the life and background of Bella Akhmadulina \u2014 please share her bio."
+      ]
+    },
+    "factscore_PerplexityAI_37_6_m6": {
+      "source_question": "Question: Tell me a bio of Sajid Nadiadwala.",
+      "variants": [
+        "Provide a biography of Sajid Nadiadwala.",
+        "Could you share biographical information about Sajid Nadiadwala?"
+      ]
+    },
+    "factscore_InstructGPT_132_6_h6832": {
+      "source_question": "Question: Tell me a bio of Gilberto Silva.",
+      "variants": [
+        "Provide a biographical summary of Gilberto Silva.",
+        "I'd like to know the biography of Gilberto Silva \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_75_0_h3732": {
+      "source_question": "Question: Tell me a bio of Virginia Valli.",
+      "variants": [
+        "Provide a biographical summary of Virginia Valli.",
+        "I'd like to know about the life and career of Virginia Valli \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_ChatGPT_62_4_m0": {
+      "source_question": "Question: Tell me a bio of Antonio Gasalla.",
+      "variants": [
+        "Provide a biography of Antonio Gasalla.",
+        "I'd like to know the biographical details of Antonio Gasalla."
+      ]
+    },
+    "factscore_PerplexityAI_54_7_h24372": {
+      "source_question": "Question: Tell me a bio of Kang Daniel.",
+      "variants": [
+        "Provide a biography of Kang Daniel.",
+        "I'd like to know the biographical details of Kang Daniel \u2014 could you share them?"
+      ]
+    },
+    "factscore_ChatGPT_38_3_h11138": {
+      "source_question": "Question: Tell me a bio of Jesse Foppert.",
+      "variants": [
+        "Provide a biographical summary of Jesse Foppert.",
+        "I'd like to know the biography of Jesse Foppert \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_34_0_h1703": {
+      "source_question": "Question: Tell me a bio of Besant Ravi.",
+      "variants": [
+        "Provide a biographical summary of Besant Ravi.",
+        "I'd like to know the biography of Besant Ravi \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_139_0_m1": {
+      "source_question": "Question: Tell me a bio of Lauren London.",
+      "variants": [
+        "Provide a biographical summary of Lauren London.",
+        "I'd like to know about Lauren London \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_ChatGPT_95_2_h14369": {
+      "source_question": "Question: Tell me a bio of Scientist (musician).",
+      "variants": [
+        "Provide a biographical summary of the musician known as Scientist.",
+        "I'd like to know the biography of Scientist, the musician."
+      ]
+    },
+    "factscore_PerplexityAI_75_3_h26245": {
+      "source_question": "Question: Tell me a bio of Mauro Icardi.",
+      "variants": [
+        "Provide a biographical summary of Mauro Icardi.",
+        "I'd like to know the biography of Mauro Icardi \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_31_3_h1599": {
+      "source_question": "Question: Tell me a bio of Lily Branscombe.",
+      "variants": [
+        "Could you provide a biographical summary of Lily Branscombe?",
+        "I'd like to know about the life and background of Lily Branscombe \u2014 please share her bio."
+      ]
+    },
+    "factscore_ChatGPT_97_7_h14588": {
+      "source_question": "Question: Tell me a bio of Waruhiu Itote.",
+      "variants": [
+        "Provide a biographical account of Waruhiu Itote.",
+        "I'd like to know the biography of Waruhiu Itote \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_17_4_h910": {
+      "source_question": "Question: Tell me a bio of Dominic King.",
+      "variants": [
+        "Provide a biographical summary of Dominic King.",
+        "I'd like to know the biography of Dominic King \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_60_1_m7": {
+      "source_question": "Question: Tell me a bio of Jonathan Tucker.",
+      "variants": [
+        "Provide a biographical summary of Jonathan Tucker.",
+        "I'd like to know about the biography of Jonathan Tucker \u2014 could you share that information?"
+      ]
+    },
+    "factscore_ChatGPT_122_3_h16314": {
+      "source_question": "Question: Tell me a bio of Shahnaz Pahlavi.",
+      "variants": [
+        "Provide a biographical account of Shahnaz Pahlavi.",
+        "I'd like to know the biography of Shahnaz Pahlavi \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_66_3_h3331": {
+      "source_question": "Question: Tell me a bio of Wahida Prism Khan.",
+      "variants": [
+        "Provide a biographical summary of Wahida Prism Khan.",
+        "Could you share the bio of Wahida Prism Khan?"
+      ]
+    },
+    "factscore_InstructGPT_130_2_h6688": {
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like to know the biographical details of Garrincha \u2014 could you share them?"
+      ]
+    },
+    "factscore_InstructGPT_179_0_m3": {
+      "source_question": "Question: Tell me a bio of IU (singer).",
+      "variants": [
+        "Provide a biography of the singer known as IU.",
+        "I'd like to know the biographical details of IU, the singer."
+      ]
+    },
+    "factscore_InstructGPT_95_4_h4726": {
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_181_2_h33693": {
+      "source_question": "Question: Tell me a bio of Beenie Man.",
+      "variants": [
+        "Provide a biographical summary of Beenie Man.",
+        "I'd like to know the biography of Beenie Man \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_159_3_m0": {
+      "source_question": "Question: Tell me a bio of Anna May Wong.",
+      "variants": [
+        "Provide a biographical summary of Anna May Wong.",
+        "I'd like to know the biography of Anna May Wong \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_171_4_h33030": {
+      "source_question": "Question: Tell me a bio of Owen Wright (surfer).",
+      "variants": [
+        "Provide a biographical summary of the surfer Owen Wright.",
+        "I'd like to know the biography of Owen Wright, the professional surfer."
+      ]
+    },
+    "factscore_PerplexityAI_129_5_m1": {
+      "source_question": "Question: Tell me a bio of Don Featherstone (artist).",
+      "variants": [
+        "Provide a biographical summary of Don Featherstone, the artist.",
+        "I'd like to know the biography of the artist known as Don Featherstone."
+      ]
+    },
+    "factscore_ChatGPT_7_6_h10120": {
+      "source_question": "Question: Tell me a bio of Joey D. Vieira.",
+      "variants": [
+        "Provide a biographical summary of Joey D. Vieira.",
+        "I'd like to know the bio of Joey D. Vieira \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_28_2_m0": {
+      "source_question": "Question: Tell me a bio of Thomas Houghton (rugby league).",
+      "variants": [
+        "Provide a biography of Thomas Houghton, the rugby league player.",
+        "Could you share biographical information about Thomas Houghton, who is associated with rugby league?"
+      ]
+    },
+    "factscore_ChatGPT_65_4_h12373": {
+      "source_question": "Question: Tell me a bio of Toyoko Tokiwa.",
+      "variants": [
+        "Provide a biographical summary of Toyoko Tokiwa.",
+        "I'd like to know the biography of Toyoko Tokiwa \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_29_0_h1479": {
+      "source_question": "Question: Tell me a bio of Katsunosuke Hori.",
+      "variants": [
+        "Provide a biographical summary of Katsunosuke Hori.",
+        "I'd like to know the biography of Katsunosuke Hori \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_126_9_h16637": {
+      "source_question": "Question: Tell me a bio of Annika S\u00f6renstam.",
+      "variants": [
+        "Question: Provide a biographical summary of Annika S\u00f6renstam.",
+        "Question: Could you share a biography of Annika S\u00f6renstam?"
+      ]
+    },
+    "factscore_ChatGPT_67_1_m4": {
+      "source_question": "Question: Tell me a bio of Matthew Tukaki.",
+      "variants": [
+        "Provide a biographical summary of Matthew Tukaki.",
+        "I'd like to know about the biography of Matthew Tukaki \u2014 could you share that information?"
+      ]
+    },
+    "factscore_InstructGPT_131_2_h6749": {
+      "source_question": "Question: Tell me a bio of Roberto Clemente.",
+      "variants": [
+        "Provide a biography of Roberto Clemente.",
+        "I'd like you to share a biographical summary of Roberto Clemente."
+      ]
+    },
+    "factscore_ChatGPT_3_4_m2": {
+      "source_question": "Question: Tell me a bio of Doug Sheehan.",
+      "variants": [
+        "Provide a biographical summary of Doug Sheehan.",
+        "I'd like to know the bio of Doug Sheehan \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_63_1_h3169": {
+      "source_question": "Question: Tell me a bio of Gonzalo Fonseca.",
+      "variants": [
+        "Provide a biographical summary of Gonzalo Fonseca.",
+        "I'd like to know about the life and background of Gonzalo Fonseca \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_InstructGPT_23_1_h1198": {
+      "source_question": "Question: Tell me a bio of Augusto Mart\u00ednez S\u00e1nchez.",
+      "variants": [
+        "Provide a biographical summary of Augusto Mart\u00ednez S\u00e1nchez.",
+        "I'd like to know the biography of Augusto Mart\u00ednez S\u00e1nchez \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_182_0_h9670": {
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_128_2_h6557": {
+      "source_question": "Question: Tell me a bio of Vaira V\u012b\u0137e-Freiberga.",
+      "variants": [
+        "Question: Provide a biographical summary of Vaira V\u012b\u0137e-Freiberga.",
+        "Question: Could you share a biography of Vaira V\u012b\u0137e-Freiberga with me?"
+      ]
+    },
+    "factscore_PerplexityAI_102_3_h28422": {
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_InstructGPT_152_3_m2": {
+      "source_question": "Question: Tell me a bio of Lauren London.",
+      "variants": [
+        "Provide a biographical summary of Lauren London.",
+        "I'd like to know about Lauren London \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_ChatGPT_45_6_h11436": {
+      "source_question": "Question: Tell me a bio of Alma Katsu.",
+      "variants": [
+        "Provide a biographical summary of Alma Katsu.",
+        "I'd like to know about the life and background of Alma Katsu \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_InstructGPT_21_3_h1112": {
+      "source_question": "Question: Tell me a bio of Roxana D\u00edaz (athlete).",
+      "variants": [
+        "Provide a biographical summary of the athlete known as Roxana D\u00edaz.",
+        "I'd like to know the biography of Roxana D\u00edaz, the athlete."
+      ]
+    },
+    "factscore_InstructGPT_110_5_h5557": {
+      "source_question": "Question: Tell me a bio of Kerser.",
+      "variants": [
+        "Provide a biography of Kerser.",
+        "Could you give me some biographical information about Kerser?"
+      ]
+    },
+    "factscore_PerplexityAI_70_9_h25853": {
+      "source_question": "Question: Tell me a bio of Michael Valpy.",
+      "variants": [
+        "Provide a biographical summary of Michael Valpy.",
+        "I'd like to know the biography of Michael Valpy \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_87_2_h4372": {
+      "source_question": "Question: Tell me a bio of Oliver Letwin.",
+      "variants": [
+        "Provide a biographical summary of Oliver Letwin.",
+        "I'd like to know the biography of Oliver Letwin \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_141_3_h17743": {
+      "source_question": "Question: Tell me a bio of David Wenham.",
+      "variants": [
+        "Provide a biographical summary of David Wenham.",
+        "I'd like to know the biography of David Wenham \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_7_0_h398": {
+      "source_question": "Question: Tell me a bio of Focus....",
+      "variants": [
+        "Provide a biography of Focus....",
+        "I'd like to know the biographical details of Focus...."
+      ]
+    },
+    "factscore_ChatGPT_39_3_m3": {
+      "source_question": "Question: Tell me a bio of Mike Trivisonno.",
+      "variants": [
+        "Provide a biographical summary of Mike Trivisonno.",
+        "I'd like to know the bio of Mike Trivisonno \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_52_2_h24156": {
+      "source_question": "Question: Tell me a bio of Rin Iwanaga.",
+      "variants": [
+        "Provide a biography of Rin Iwanaga.",
+        "Could you share biographical information about Rin Iwanaga?"
+      ]
+    },
+    "factscore_InstructGPT_51_1_h2558": {
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_PerplexityAI_121_2_h29867": {
+      "source_question": "Question: Tell me a bio of Fran Unsworth.",
+      "variants": [
+        "Provide a biographical summary of Fran Unsworth.",
+        "Could you share some biographical information about Fran Unsworth?"
+      ]
+    },
+    "factscore_ChatGPT_7_3_h10085": {
+      "source_question": "Question: Tell me a bio of Joey D. Vieira.",
+      "variants": [
+        "Provide a biographical summary of Joey D. Vieira.",
+        "I'd like to know the bio of Joey D. Vieira \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_165_4_m1": {
+      "source_question": "Question: Tell me a bio of Lina Medina.",
+      "variants": [
+        "Provide a biographical summary of Lina Medina.",
+        "I'd like you to share a bio about Lina Medina."
+      ]
+    },
+    "factscore_ChatGPT_138_3_h17484": {
+      "source_question": "Question: Tell me a bio of Sajid Nadiadwala.",
+      "variants": [
+        "Provide a biography of Sajid Nadiadwala.",
+        "Could you share biographical information about Sajid Nadiadwala?"
+      ]
+    },
+    "factscore_PerplexityAI_89_8_h27499": {
+      "source_question": "Question: Tell me a bio of Rakhi Sawant.",
+      "variants": [
+        "Request: Provide a biographical summary of Rakhi Sawant.",
+        "Could you share some biographical information about Rakhi Sawant?"
+      ]
+    },
+    "factscore_PerplexityAI_173_7_h33242": {
+      "source_question": "Question: Tell me a bio of Kyra Sedgwick.",
+      "variants": [
+        "Provide a biography of Kyra Sedgwick.",
+        "I'd like you to share a biographical summary of Kyra Sedgwick."
+      ]
+    },
+    "factscore_PerplexityAI_83_3_m6": {
+      "source_question": "Question: Tell me a bio of Eliza Dushku.",
+      "variants": [
+        "Provide a biographical summary of Eliza Dushku.",
+        "I'd like to know the biography of Eliza Dushku \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_ChatGPT_70_1_m3": {
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know the bio of Ben Lummis \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_108_5_h28946": {
+      "source_question": "Question: Tell me a bio of Emmett Skilton.",
+      "variants": [
+        "Provide a biographical summary of Emmett Skilton.",
+        "I'd like to know the biography of Emmett Skilton \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_15_0_h10317": {
+      "source_question": "Question: Tell me a bio of Jean Daull\u00e9.",
+      "variants": [
+        "Provide a biographical summary of Jean Daull\u00e9.",
+        "I'd like to know the biography of Jean Daull\u00e9 \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_73_1_m3": {
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_ChatGPT_70_3_m0": {
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know the biography of Ben Lummis \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_90_8_h14008": {
+      "source_question": "Question: Tell me a bio of Terence Blacker.",
+      "variants": [
+        "Provide a biographical account of Terence Blacker.",
+        "I'd like to know about the biography of Terence Blacker \u2014 could you share that information?"
+      ]
+    },
+    "factscore_InstructGPT_147_5_h7683": {
+      "source_question": "Question: Tell me a bio of James Taylor.",
+      "variants": [
+        "Provide a biographical summary of James Taylor.",
+        "I'd like to know about the biography of James Taylor \u2014 could you share that information?"
+      ]
+    },
+    "factscore_ChatGPT_129_6_h16809": {
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "variants": [
+        "Provide a biography of Glover Teixeira.",
+        "I'd like to know the biographical details of Glover Teixeira."
+      ]
+    },
+    "factscore_ChatGPT_173_7_h20084": {
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_171_3_h19901": {
+      "source_question": "Question: Tell me a bio of Lua Blanco.",
+      "variants": [
+        "Provide a biography of Lua Blanco.",
+        "I'd like to know the biographical details of Lua Blanco."
+      ]
+    },
+    "factscore_InstructGPT_57_1_h2838": {
+      "source_question": "Question: Tell me a bio of Idriss Ngari.",
+      "variants": [
+        "Provide a biographical summary of Idriss Ngari.",
+        "Could you share some biographical information about Idriss Ngari?"
+      ]
+    },
+    "factscore_ChatGPT_25_0_h10645": {
+      "source_question": "Question: Tell me a bio of Gerardo Fernandez Fe.",
+      "variants": [
+        "Provide a biographical summary of Gerardo Fernandez Fe.",
+        "I'd like to know the biography of Gerardo Fernandez Fe \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_32_2_h10869": {
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "I'd like to know the biography of Ra Jong-yil \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_103_0_h28440": {
+      "source_question": "Question: Tell me a bio of Teresa Palmer.",
+      "variants": [
+        "Provide a biographical summary of Teresa Palmer.",
+        "I'd like to know about the biography of Teresa Palmer \u2014 could you share that information?"
+      ]
+    },
+    "factscore_ChatGPT_120_5_m0": {
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_45_2_h2270": {
+      "source_question": "Question: Tell me a bio of Prince Rivers.",
+      "variants": [
+        "Provide a biographical account of Prince Rivers.",
+        "I'd like to know about the life and background of Prince Rivers \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_PerplexityAI_177_11_m0": {
+      "source_question": "Question: Tell me a bio of Dominic King.",
+      "variants": [
+        "Provide a biographical summary of Dominic King.",
+        "I'd like to know the biography of Dominic King \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_95_8_h14436": {
+      "source_question": "Question: Tell me a bio of Scientist (musician).",
+      "variants": [
+        "Provide a biographical overview of the musician known as Scientist.",
+        "I'd like to know the biography of Scientist, the musician."
+      ]
+    },
+    "factscore_ChatGPT_130_6_m2": {
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like you to share a biographical summary of Garrincha."
+      ]
+    },
+    "factscore_PerplexityAI_137_0_h31043": {
+      "source_question": "Question: Tell me a bio of Wendy (singer).",
+      "variants": [
+        "Provide a biography of the singer known as Wendy.",
+        "I'd like to know the biographical details of Wendy, the singer."
+      ]
+    },
+    "factscore_ChatGPT_70_4_h12708": {
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know about the life and background of Ben Lummis \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_ChatGPT_157_5_h18893": {
+      "source_question": "Question: Tell me a bio of Jack Leach.",
+      "variants": [
+        "Provide a biographical summary of Jack Leach.",
+        "I'd like to know the biography of Jack Leach \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_66_6_h25485": {
+      "source_question": "Question: Tell me a bio of Francesco Mimbelli.",
+      "variants": [
+        "Provide a biographical summary of Francesco Mimbelli.",
+        "I'd like to know the biography of Francesco Mimbelli \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_143_0_h17812": {
+      "source_question": "Question: Tell me a bio of Wendy (singer).",
+      "variants": [
+        "Provide a biography of the singer known as Wendy.",
+        "I'd like to know the biographical details of Wendy, the singer."
+      ]
+    },
+    "factscore_ChatGPT_100_7_h14812": {
+      "source_question": "Question: Tell me a bio of Florencia Bertotti.",
+      "variants": [
+        "Provide a biographical summary of Florencia Bertotti.",
+        "I'd like to know about the biography of Florencia Bertotti \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_6_1_m0": {
+      "source_question": "Question: Tell me a bio of Marianne McAndrew.",
+      "variants": [
+        "Provide a biographical summary of Marianne McAndrew.",
+        "I'd like to know the biography of Marianne McAndrew \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_149_7_h18324": {
+      "source_question": "Question: Tell me a bio of Nikki Sixx.",
+      "variants": [
+        "Provide a biography of Nikki Sixx.",
+        "I'd like to know the biographical details of Nikki Sixx \u2014 could you share them?"
+      ]
+    },
+    "factscore_ChatGPT_4_4_h9922": {
+      "source_question": "Question: Tell me a bio of Gerhard Fischer (inventor).",
+      "variants": [
+        "Provide a biographical summary of Gerhard Fischer, the inventor.",
+        "Could you share the biography of the inventor known as Gerhard Fischer?"
+      ]
+    },
+    "factscore_ChatGPT_110_5_h15432": {
+      "source_question": "Question: Tell me a bio of Chris Cheney.",
+      "variants": [
+        "Provide a biographical summary of Chris Cheney.",
+        "I'd like to know the biography of Chris Cheney \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_143_1_h7380": {
+      "source_question": "Question: Tell me a bio of Ram Gopal Varma.",
+      "variants": [
+        "Provide a biographical summary of Ram Gopal Varma.",
+        "Could you share some biographical information about Ram Gopal Varma?"
+      ]
+    },
+    "factscore_ChatGPT_65_2_h12356": {
+      "source_question": "Question: Tell me a bio of Toyoko Tokiwa.",
+      "variants": [
+        "Provide a biographical summary of Toyoko Tokiwa.",
+        "Could you share some biographical information about Toyoko Tokiwa?"
+      ]
+    },
+    "factscore_InstructGPT_24_0_h1244": {
+      "source_question": "Question: Tell me a bio of Hesham Nazih.",
+      "variants": [
+        "Provide a biographical summary of Hesham Nazih.",
+        "I'd like to know the biography of Hesham Nazih \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_83_2_m1": {
+      "source_question": "Question: Tell me a bio of Fran Unsworth.",
+      "variants": [
+        "Provide a biographical summary of Fran Unsworth.",
+        "I'd like to know the biography of Fran Unsworth \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_67_2_h3363": {
+      "source_question": "Question: Tell me a bio of Siti Rahmah Kassim.",
+      "variants": [
+        "Provide a biographical summary of Siti Rahmah Kassim.",
+        "I'd like to know the biography of Siti Rahmah Kassim \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_70_5_h25828": {
+      "source_question": "Question: Tell me a bio of Michael Valpy.",
+      "variants": [
+        "Provide a biographical summary of Michael Valpy.",
+        "I'd like to know the biography of Michael Valpy \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_35_6_h11063": {
+      "source_question": "Question: Tell me a bio of Keita Kadokura.",
+      "variants": [
+        "Provide a biographical summary of Keita Kadokura.",
+        "I'd like to know the bio of Keita Kadokura \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_99_2_h4986": {
+      "source_question": "Question: Tell me a bio of Jessica Barboza.",
+      "variants": [
+        "Provide a biographical summary of Jessica Barboza.",
+        "I'd like to know the bio of Jessica Barboza \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_166_2_m1": {
+      "source_question": "Question: Tell me a bio of Tiffany Haddish.",
+      "variants": [
+        "Could you provide a biographical summary of Tiffany Haddish?",
+        "I'd like to know about the biography of Tiffany Haddish \u2014 please share it with me."
+      ]
+    },
+    "factscore_ChatGPT_79_0_h13203": {
+      "source_question": "Question: Tell me a bio of Virginia Valli.",
+      "variants": [
+        "Provide a biographical summary of Virginia Valli.",
+        "I'd like to know about the life and career of Virginia Valli \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_PerplexityAI_169_2_m0": {
+      "source_question": "Question: Tell me a bio of Samantha Ruth Prabhu.",
+      "variants": [
+        "Provide a biographical summary of Samantha Ruth Prabhu.",
+        "I'd like to know the bio of Samantha Ruth Prabhu \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_175_5_h20271": {
+      "source_question": "Question: Tell me a bio of Anushka Sharma.",
+      "variants": [
+        "Provide a biography of Anushka Sharma.",
+        "I'd like to know the biographical details of Anushka Sharma \u2014 could you share them?"
+      ]
+    },
+    "factscore_InstructGPT_103_5_h5222": {
+      "source_question": "Question: Tell me a bio of Shashank Manohar.",
+      "variants": [
+        "Provide a biographical summary of Shashank Manohar.",
+        "Could you share some biographical information about Shashank Manohar?"
+      ]
+    },
+    "factscore_PerplexityAI_93_4_h27791": {
+      "source_question": "Question: Tell me a bio of Vaira V\u012b\u0137e-Freiberga.",
+      "variants": [
+        "Question: Provide a biographical summary of Vaira V\u012b\u0137e-Freiberga.",
+        "Question: Could you share a biography of Vaira V\u012b\u0137e-Freiberga?"
+      ]
+    },
+    "factscore_ChatGPT_101_2_h14852": {
+      "source_question": "Question: Tell me a bio of Jonathan Haagensen.",
+      "variants": [
+        "Provide a biographical summary of Jonathan Haagensen.",
+        "I'd like to know about the biography of Jonathan Haagensen."
+      ]
+    },
+    "factscore_ChatGPT_67_2_h12524": {
+      "source_question": "Question: Tell me a bio of Matthew Tukaki.",
+      "variants": [
+        "Provide a biographical summary of Matthew Tukaki.",
+        "Could you share some biographical information about Matthew Tukaki?"
+      ]
+    },
+    "factscore_InstructGPT_114_5_h5787": {
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_158_7_h32175": {
+      "source_question": "Question: Tell me a bio of Robert Smith, Baron Smith of Kelvin.",
+      "variants": [
+        "Provide a biography of Robert Smith, Baron Smith of Kelvin.",
+        "I'd like to know the biographical details of Robert Smith, who holds the title Baron Smith of Kelvin."
+      ]
+    },
+    "factscore_InstructGPT_102_5_m2": {
+      "source_question": "Question: Tell me a bio of Takeo Miki.",
+      "variants": [
+        "Provide a biographical summary of Takeo Miki.",
+        "I'd like to know about the biography of Takeo Miki \u2014 could you share that information?"
+      ]
+    },
+    "factscore_ChatGPT_167_5_h19570": {
+      "source_question": "Question: Tell me a bio of Mauro Icardi.",
+      "variants": [
+        "Provide a biographical summary of Mauro Icardi.",
+        "I'd like to know the bio of Mauro Icardi \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_36_2_h1852": {
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "I'd like to know the biography of Ra Jong-yil \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_130_5_m1": {
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "variants": [
+        "Provide a biographical summary of Garrincha.",
+        "I'd like to know the biography of Garrincha \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_95_7_h4753": {
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_29_2_h22602": {
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_112_4_h29249": {
+      "source_question": "Question: Tell me a bio of Waruhiu Itote.",
+      "variants": [
+        "Provide a biographical account of Waruhiu Itote.",
+        "I'd like to know the biography of Waruhiu Itote \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_119_3_m0": {
+      "source_question": "Question: Tell me a bio of George Cukor.",
+      "variants": [
+        "Provide a biographical summary of George Cukor.",
+        "I'd like to know about the life and career of George Cukor \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_ChatGPT_82_0_h13372": {
+      "source_question": "Question: Tell me a bio of Milton Diamond.",
+      "variants": [
+        "Provide a biographical summary of Milton Diamond.",
+        "I'd like to know about the life and background of Milton Diamond \u2014 can you share a bio?"
+      ]
+    },
+    "factscore_ChatGPT_105_3_h15123": {
+      "source_question": "Question: Tell me a bio of Emmett Skilton.",
+      "variants": [
+        "Provide a biographical summary of Emmett Skilton.",
+        "I'd like to know the biography of Emmett Skilton \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_130_3_h16859": {
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like to know the biographical details of Garrincha \u2014 could you share them?"
+      ]
+    },
+    "factscore_InstructGPT_23_3_h1210": {
+      "source_question": "Question: Tell me a bio of Augusto Mart\u00ednez S\u00e1nchez.",
+      "variants": [
+        "Provide a biographical summary of Augusto Mart\u00ednez S\u00e1nchez.",
+        "I'd like to know the biography of Augusto Mart\u00ednez S\u00e1nchez \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_90_7_m0": {
+      "source_question": "Question: Tell me a bio of Rennie Fritchie, Baroness Fritchie.",
+      "variants": [
+        "Provide a biographical summary of Rennie Fritchie, Baroness Fritchie.",
+        "I'd like to know about the life and background of Baroness Fritchie, Rennie Fritchie \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_InstructGPT_128_4_h6577": {
+      "source_question": "Question: Tell me a bio of Vaira V\u012b\u0137e-Freiberga.",
+      "variants": [
+        "Question: Provide a biographical summary of Vaira V\u012b\u0137e-Freiberga.",
+        "Question: Could you share a biography of Vaira V\u012b\u0137e-Freiberga?"
+      ]
+    },
+    "factscore_ChatGPT_150_0_m3": {
+      "source_question": "Question: Tell me a bio of Kyra Sedgwick.",
+      "variants": [
+        "Could you provide a biographical summary of Kyra Sedgwick?",
+        "I'd like to know the bio of Kyra Sedgwick \u2014 please share it with me."
+      ]
+    },
+    "factscore_InstructGPT_0_1_h12": {
+      "source_question": "Question: Tell me a bio of Doug Sheehan.",
+      "variants": [
+        "Provide a biographical summary of Doug Sheehan.",
+        "I'd like to know the biography of Doug Sheehan \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_72_7_h26031": {
+      "source_question": "Question: Tell me a bio of Travis Oliphant.",
+      "variants": [
+        "Provide a biographical summary of Travis Oliphant.",
+        "I'd like to know about the biography of Travis Oliphant \u2014 could you share that information?"
+      ]
+    },
+    "factscore_InstructGPT_1_2_h65": {
+      "source_question": "Question: Tell me a bio of Taral Hicks.",
+      "variants": [
+        "Provide a biographical summary of Taral Hicks.",
+        "I'd like to know the biography of Taral Hicks \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_48_0_h2414": {
+      "source_question": "Question: Tell me a bio of Rennie Fritchie, Baroness Fritchie.",
+      "variants": [
+        "Provide a biographical summary of Rennie Fritchie, Baroness Fritchie.",
+        "I'd like to know the biography of Baroness Fritchie, also known as Rennie Fritchie."
+      ]
+    },
+    "factscore_ChatGPT_107_0_m2": {
+      "source_question": "Question: Tell me a bio of Botak Chin.",
+      "variants": [
+        "Provide a biographical summary of Botak Chin.",
+        "I'd like to know the biography of the individual known as Botak Chin."
+      ]
+    },
+    "factscore_ChatGPT_23_5_m4": {
+      "source_question": "Question: Tell me a bio of Roxana D\u00edaz (athlete).",
+      "variants": [
+        "Provide a biographical summary of the athlete known as Roxana D\u00edaz.",
+        "I'd like to know the biography of Roxana D\u00edaz, the athlete."
+      ]
+    },
+    "factscore_InstructGPT_176_1_h9322": {
+      "source_question": "Question: Tell me a bio of Rakhi Sawant.",
+      "variants": [
+        "Question: Provide a biography of Rakhi Sawant.",
+        "Could you share a biographical summary of Rakhi Sawant?"
+      ]
+    },
+    "factscore_InstructGPT_104_4_h5289": {
+      "source_question": "Question: Tell me a bio of Botak Chin.",
+      "variants": [
+        "Provide a biographical account of Botak Chin.",
+        "I'd like to know the biography of Botak Chin \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_100_3_m9": {
+      "source_question": "Question: Tell me a bio of Harrison Ford.",
+      "variants": [
+        "Provide a biographical summary of Harrison Ford.",
+        "I'd like to know about the life and background of Harrison Ford \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_PerplexityAI_74_9_h26194": {
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like you to share a biographical summary of Garrincha."
+      ]
+    },
+    "factscore_ChatGPT_157_5_h18892": {
+      "source_question": "Question: Tell me a bio of Jack Leach.",
+      "variants": [
+        "Provide a biographical summary of Jack Leach.",
+        "I'd like to know the biography of Jack Leach \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_158_2_m2": {
+      "source_question": "Question: Tell me a bio of Robert Smith, Baron Smith of Kelvin.",
+      "variants": [
+        "Provide a biography of Robert Smith, Baron Smith of Kelvin.",
+        "I'd like to know the biographical details of Robert Smith, who holds the title Baron Smith of Kelvin."
+      ]
+    },
+    "factscore_InstructGPT_65_5_h3295": {
+      "source_question": "Question: Tell me a bio of Matthew Tukaki.",
+      "variants": [
+        "Provide a biographical summary of Matthew Tukaki.",
+        "I'd like to know about the biography of Matthew Tukaki \u2014 could you share that information?"
+      ]
+    },
+    "factscore_InstructGPT_43_0_h2159": {
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_84_2_m4": {
+      "source_question": "Question: Tell me a bio of Robert Smith, Baron Smith of Kelvin.",
+      "variants": [
+        "Provide a biography of Robert Smith, Baron Smith of Kelvin.",
+        "I'd like to know the biographical details of Robert Smith, who holds the title Baron Smith of Kelvin."
+      ]
+    },
+    "factscore_InstructGPT_4_1_h243": {
+      "source_question": "Question: Tell me a bio of Lanny Flaherty.",
+      "variants": [
+        "Provide a biographical summary of Lanny Flaherty.",
+        "I'd like to know the bio of Lanny Flaherty \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_155_4_h8188": {
+      "source_question": "Question: Tell me a bio of Eliza Dushku.",
+      "variants": [
+        "Provide a biographical summary of Eliza Dushku.",
+        "Could you share some biographical information about Eliza Dushku?"
+      ]
+    },
+    "factscore_ChatGPT_24_6_h10627": {
+      "source_question": "Question: Tell me a bio of Fernando (footballer, born 1984).",
+      "variants": [
+        "Provide a biography of the footballer Fernando, who was born in 1984.",
+        "Could you share biographical information about Fernando, the footballer born in the year 1984?"
+      ]
+    },
+    "factscore_PerplexityAI_56_2_h24527": {
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_60_7_m1": {
+      "source_question": "Question: Tell me a bio of Jonathan Tucker.",
+      "variants": [
+        "Provide a biographical summary of Jonathan Tucker.",
+        "I'd like to know about the biography of Jonathan Tucker \u2014 could you share that information?"
+      ]
+    },
+    "factscore_InstructGPT_51_0_h2547": {
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_PerplexityAI_22_3_h22202": {
+      "source_question": "Question: Tell me a bio of Gonzalo Fonseca.",
+      "variants": [
+        "Provide a biographical summary of Gonzalo Fonseca.",
+        "I'd like to know about the life and background of Gonzalo Fonseca \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_InstructGPT_145_2_h7561": {
+      "source_question": "Question: Tell me a bio of Cha Seung-won.",
+      "variants": [
+        "Provide a biographical summary of Cha Seung-won.",
+        "I'd like to know the biography of Cha Seung-won \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_119_7_h29780": {
+      "source_question": "Question: Tell me a bio of Mitzi Gaynor.",
+      "variants": [
+        "Provide a biographical summary of Mitzi Gaynor.",
+        "I'd like to know about the life and career of Mitzi Gaynor \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_ChatGPT_129_6_h16806": {
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "variants": [
+        "Provide a biographical summary of Glover Teixeira.",
+        "I'd like to know the bio of Glover Teixeira \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_40_6_h2067": {
+      "source_question": "Question: Tell me a bio of Jesse Foppert.",
+      "variants": [
+        "Provide a biographical summary of Jesse Foppert.",
+        "I'd like to know the biography of Jesse Foppert \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_103_6_h28533": {
+      "source_question": "Question: Tell me a bio of Teresa Palmer.",
+      "variants": [
+        "Provide a biographical summary of Teresa Palmer.",
+        "I'd like to know about the biography of Teresa Palmer \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_134_10_m2": {
+      "source_question": "Question: Tell me a bio of Daniel Carvalho.",
+      "variants": [
+        "Provide a biographical summary of Daniel Carvalho.",
+        "I'd like to know the biography of Daniel Carvalho \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_171_6_m6": {
+      "source_question": "Question: Tell me a bio of Owen Wright (surfer).",
+      "variants": [
+        "Provide a biography of Owen Wright, the surfer.",
+        "Could you give me a biographical summary of the surfer known as Owen Wright?"
+      ]
+    },
+    "factscore_PerplexityAI_63_0_h25160": {
+      "source_question": "Question: Tell me a bio of Tiffany Haddish.",
+      "variants": [
+        "Request: Provide a biographical summary of Tiffany Haddish.",
+        "Could you share a biography of Tiffany Haddish with me?"
+      ]
+    },
+    "factscore_PerplexityAI_75_0_m2": {
+      "source_question": "Question: Tell me a bio of Mauro Icardi.",
+      "variants": [
+        "Provide a biographical summary of Mauro Icardi.",
+        "I'd like to know the biography of Mauro Icardi \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_78_6_m3": {
+      "source_question": "Question: Tell me a bio of Jagan.",
+      "variants": [
+        "Provide a biographical summary of Jagan.",
+        "I'd like to know the biography of Jagan \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_132_3_h6804": {
+      "source_question": "Question: Tell me a bio of Gilberto Silva.",
+      "variants": [
+        "Provide a biographical summary of Gilberto Silva.",
+        "I'd like to know the biography of Gilberto Silva \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_10_6_h21554": {
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "variants": [
+        "Provide a biographical summary of Glover Teixeira.",
+        "I'd like to know the bio of Glover Teixeira \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_27_2_m3": {
+      "source_question": "Question: Tell me a bio of Cha Seung-won.",
+      "variants": [
+        "Provide a biographical summary of Cha Seung-won.",
+        "I'd like to know the biography of Cha Seung-won \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_130_2_h30558": {
+      "source_question": "Question: Tell me a bio of Oliver Letwin.",
+      "variants": [
+        "Provide a biographical summary of Oliver Letwin.",
+        "I'd like to know the biography of Oliver Letwin \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_94_3_m2": {
+      "source_question": "Question: Tell me a bio of Ramesses IV.",
+      "variants": [
+        "Provide a biographical summary of Ramesses IV.",
+        "I'd like to know about the life and background of Ramesses IV \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_ChatGPT_76_2_h13045": {
+      "source_question": "Question: Tell me a bio of Julia Faye.",
+      "variants": [
+        "Provide a biographical summary of Julia Faye.",
+        "I'd like to know about Julia Faye \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_InstructGPT_50_1_h2519": {
+      "source_question": "Question: Tell me a bio of Marie Alexandrine Becker.",
+      "variants": [
+        "Provide a biographical account of Marie Alexandrine Becker.",
+        "I'd like to know the biography of Marie Alexandrine Becker \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_ChatGPT_109_7_m0": {
+      "source_question": "Question: Tell me a bio of Takeo Miki.",
+      "variants": [
+        "Provide a biographical summary of Takeo Miki.",
+        "I'd like to know the biography of Takeo Miki \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_49_1_h11525": {
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_InstructGPT_30_2_m2": {
+      "source_question": "Question: Tell me a bio of Rin Iwanaga.",
+      "variants": [
+        "Provide a biographical summary of Rin Iwanaga.",
+        "I'd like to know the bio of Rin Iwanaga \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_121_6_m0": {
+      "source_question": "Question: Tell me a bio of Fran Unsworth.",
+      "variants": [
+        "Provide a biographical summary of Fran Unsworth.",
+        "I'd like to know the biography of Fran Unsworth \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_129_6_h16808": {
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "variants": [
+        "Provide a biography of Glover Teixeira.",
+        "Could you share a biographical overview of Glover Teixeira?"
+      ]
+    },
+    "factscore_ChatGPT_86_4_h13682": {
+      "source_question": "Question: Tell me a bio of Paul O'Neill (racing driver).",
+      "variants": [
+        "Provide a biographical summary of the racing driver Paul O'Neill.",
+        "I'd like to know the biography of Paul O'Neill, who is a racing driver."
+      ]
+    },
+    "factscore_PerplexityAI_33_3_m1": {
+      "source_question": "Question: Tell me a bio of Chaim Malinowitz.",
+      "variants": [
+        "Provide a biographical summary of Chaim Malinowitz.",
+        "I'd like to know the biography of Chaim Malinowitz \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_1_0_h9779": {
+      "source_question": "Question: Tell me a bio of Marianne McAndrew.",
+      "variants": [
+        "Provide a biography of Marianne McAndrew.",
+        "I'd like to know the biographical details of Marianne McAndrew."
+      ]
+    },
+    "factscore_InstructGPT_113_0_h5729": {
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know the biography of James B. Donovan \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_94_2_h27829": {
+      "source_question": "Question: Tell me a bio of Florencia Bertotti.",
+      "variants": [
+        "Provide a biographical summary of Florencia Bertotti.",
+        "I'd like to know the biography of Florencia Bertotti \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_3_0_m2": {
+      "source_question": "Question: Tell me a bio of Doug Sheehan.",
+      "variants": [
+        "Provide a biographical summary of Doug Sheehan.",
+        "I'd like to know the biography of Doug Sheehan \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_32_3_h10889": {
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "Could you share some biographical information about Ra Jong-yil?"
+      ]
+    },
+    "factscore_InstructGPT_61_2_m5": {
+      "source_question": "Question: Tell me a bio of Malcolm Hedding.",
+      "variants": [
+        "Provide a biographical summary of Malcolm Hedding.",
+        "I'd like to know about the life and background of Malcolm Hedding \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_InstructGPT_174_2_h9179": {
+      "source_question": "Question: Tell me a bio of Teresa Palmer.",
+      "variants": [
+        "Provide a biographical summary of Teresa Palmer.",
+        "I'd like to know the biography of Teresa Palmer \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_131_3_h30678": {
+      "source_question": "Question: Tell me a bio of Kang Ji-hwan.",
+      "variants": [
+        "Provide a biographical summary of Kang Ji-hwan.",
+        "I'd like to know the bio of Kang Ji-hwan \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_110_7_h5584": {
+      "source_question": "Question: Tell me a bio of Kerser.",
+      "variants": [
+        "Provide a biographical summary of Kerser.",
+        "I'd like to know about the biography of Kerser \u2014 could you share that information?"
+      ]
+    },
+    "factscore_PerplexityAI_160_0_m1": {
+      "source_question": "Question: Tell me a bio of Kourosh Zolani.",
+      "variants": [
+        "Provide a biographical summary of Kourosh Zolani.",
+        "Could you share some biographical information about Kourosh Zolani?"
+      ]
+    },
+    "factscore_ChatGPT_99_0_h14688": {
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_58_1_h2901": {
+      "source_question": "Question: Tell me a bio of Baltasar Corrada del R\u00edo.",
+      "variants": [
+        "Provide a biographical summary of Baltasar Corrada del R\u00edo.",
+        "I'd like to know about the life and background of Baltasar Corrada del R\u00edo \u2014 please share a bio."
+      ]
+    },
+    "factscore_ChatGPT_122_6_h16335": {
+      "source_question": "Question: Tell me a bio of Shahnaz Pahlavi.",
+      "variants": [
+        "Provide a biographical account of Shahnaz Pahlavi.",
+        "I'd like to know the biography of Shahnaz Pahlavi \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_96_0_h4784": {
+      "source_question": "Question: Tell me a bio of Henry Santos.",
+      "variants": [
+        "Provide a biographical summary of Henry Santos.",
+        "I'd like to know about Henry Santos \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_ChatGPT_130_0_h16828": {
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "variants": [
+        "Provide a biographical summary of Garrincha.",
+        "I'd like to know the biography of Garrincha \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_79_4_m0": {
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know about the life and background of James B. Donovan \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_PerplexityAI_73_4_m1": {
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_172_1_h9066": {
+      "source_question": "Question: Tell me a bio of Canelo \u00c1lvarez.",
+      "variants": [
+        "Question: Provide a biographical summary of Canelo \u00c1lvarez.",
+        "Question: Could you share a biography of Canelo \u00c1lvarez?"
+      ]
+    },
+    "factscore_PerplexityAI_115_6_m4": {
+      "source_question": "Question: Tell me a bio of Alexandre Guilmant.",
+      "variants": [
+        "Provide a biographical account of Alexandre Guilmant.",
+        "I'd like to know the biography of Alexandre Guilmant \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_102_2_h5134": {
+      "source_question": "Question: Tell me a bio of Takeo Miki.",
+      "variants": [
+        "Provide a biographical summary of Takeo Miki.",
+        "Could you share some biographical information about Takeo Miki?"
+      ]
+    },
+    "factscore_InstructGPT_171_0_m0": {
+      "source_question": "Question: Tell me a bio of Jidenna.",
+      "variants": [
+        "Provide a biography of Jidenna.",
+        "I'd like to know the biographical details of Jidenna \u2014 could you share them?"
+      ]
+    },
+    "factscore_PerplexityAI_3_3_h21053": {
+      "source_question": "Question: Tell me a bio of Frederick Howard Taylor.",
+      "variants": [
+        "Provide a biographical summary of Frederick Howard Taylor.",
+        "I'd like to know the biography of Frederick Howard Taylor \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_119_4_h16114": {
+      "source_question": "Question: Tell me a bio of George Cukor.",
+      "variants": [
+        "Provide a biography of George Cukor.",
+        "I'd like to know the biographical details of George Cukor."
+      ]
+    },
+    "factscore_PerplexityAI_172_8_h33129": {
+      "source_question": "Question: Tell me a bio of Ramesses IV.",
+      "variants": [
+        "Provide a biographical summary of Ramesses IV.",
+        "I'd like to know about the life and background of Ramesses IV \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_InstructGPT_91_1_m1": {
+      "source_question": "Question: Tell me a bio of Alberto Malesani.",
+      "variants": [
+        "Provide a biographical summary of Alberto Malesani.",
+        "I'd like to know the biography of Alberto Malesani \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_172_6_h33112": {
+      "source_question": "Question: Tell me a bio of Ramesses IV.",
+      "variants": [
+        "Provide a biographical account of Ramesses IV.",
+        "I'd like to know the biography of Ramesses IV \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_18_0_m2": {
+      "source_question": "Question: Tell me a bio of Mar\u00eda Elena Medina-Mora Icaza.",
+      "variants": [
+        "Provide a biographical summary of Mar\u00eda Elena Medina-Mora Icaza.",
+        "I'd like to know the biography of Mar\u00eda Elena Medina-Mora Icaza \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_148_2_h7712": {
+      "source_question": "Question: Tell me a bio of Bridget Moynahan.",
+      "variants": [
+        "Provide a biographical summary of Bridget Moynahan.",
+        "I'd like to know the bio of Bridget Moynahan \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_63_5_m3": {
+      "source_question": "Question: Tell me a bio of Gonzalo Fonseca.",
+      "variants": [
+        "Provide a biographical summary of Gonzalo Fonseca.",
+        "Could you share some biographical information about Gonzalo Fonseca?"
+      ]
+    },
+    "factscore_ChatGPT_125_3_h16513": {
+      "source_question": "Question: Tell me a bio of Heinrich Harrer.",
+      "variants": [
+        "Provide a biographical summary of Heinrich Harrer.",
+        "I'd like to know about the life and background of Heinrich Harrer \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_PerplexityAI_95_5_m1": {
+      "source_question": "Question: Tell me a bio of Miguel D\u00edaz (baseball).",
+      "variants": [
+        "Provide a biographical summary of Miguel D\u00edaz, the baseball player.",
+        "Could you share some biographical information about the baseball player known as Miguel D\u00edaz?"
+      ]
+    },
+    "factscore_InstructGPT_118_3_h6011": {
+      "source_question": "Question: Tell me a bio of George Cukor.",
+      "variants": [
+        "Provide a biographical summary of George Cukor.",
+        "I'd like to know about the life and career of George Cukor \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_InstructGPT_24_5_h1297": {
+      "source_question": "Question: Tell me a bio of Hesham Nazih.",
+      "variants": [
+        "Provide a biographical summary of Hesham Nazih.",
+        "I'd like to know about the biography of Hesham Nazih \u2014 could you share that information?"
+      ]
+    },
+    "factscore_PerplexityAI_42_1_h23493": {
+      "source_question": "Question: Tell me a bio of Jessica Barboza.",
+      "variants": [
+        "Provide a biographical summary of Jessica Barboza.",
+        "I'd like to know the bio of Jessica Barboza \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_103_3_m1": {
+      "source_question": "Question: Tell me a bio of Shashank Manohar.",
+      "variants": [
+        "Provide a biographical summary of Shashank Manohar.",
+        "Could you share some biographical information about Shashank Manohar?"
+      ]
+    },
+    "factscore_ChatGPT_39_3_m0": {
+      "source_question": "Question: Tell me a bio of Mike Trivisonno.",
+      "variants": [
+        "Provide a biographical summary of Mike Trivisonno.",
+        "I'd like to know the bio of Mike Trivisonno \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_43_5_h2202": {
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ]
+    },
+    "factscore_InstructGPT_68_2_h3424": {
+      "source_question": "Question: Tell me a bio of Toyoko Tokiwa.",
+      "variants": [
+        "Provide a biographical summary of Toyoko Tokiwa.",
+        "Could you share some biographical information about Toyoko Tokiwa?"
+      ]
+    },
+    "factscore_ChatGPT_120_3_h16176": {
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_121_0_m1": {
+      "source_question": "Question: Tell me a bio of Shahnaz Pahlavi.",
+      "variants": [
+        "Provide a biographical summary of Shahnaz Pahlavi.",
+        "I'd like to know the biography of Shahnaz Pahlavi \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_36_3_m3": {
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "Could you share some biographical information about Ra Jong-yil?"
+      ]
+    },
+    "factscore_ChatGPT_49_3_h11541": {
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "variants": [
+        "Provide a biographical account of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ]
+    },
+    "factscore_ChatGPT_173_6_h20072": {
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_118_2_h15976": {
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know the biography of James B. Donovan \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_175_8_h33389": {
+      "source_question": "Question: Tell me a bio of Eric Hacker.",
+      "variants": [
+        "Provide a biographical summary of Eric Hacker.",
+        "I'd like to know about Eric Hacker \u2014 could you share a bio of this individual?"
+      ]
+    },
+    "factscore_PerplexityAI_55_10_m2": {
+      "source_question": "Question: Tell me a bio of Richard Burkewood Welbourn.",
+      "variants": [
+        "Provide a biographical summary of Richard Burkewood Welbourn.",
+        "I'd like to know the biography of Richard Burkewood Welbourn \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_129_6_h6667": {
+      "source_question": "Question: Tell me a bio of Beenie Man.",
+      "variants": [
+        "Provide a biographical summary of Beenie Man.",
+        "I'd like to know the biography of Beenie Man \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_111_10_m3": {
+      "source_question": "Question: Tell me a bio of Owen Wright (surfer).",
+      "variants": [
+        "Provide a biographical overview of the surfer Owen Wright.",
+        "I'd like to know the biography of Owen Wright, the professional surfer."
+      ]
+    },
+    "factscore_ChatGPT_140_7_h17670": {
+      "source_question": "Question: Tell me a bio of Maneka Gandhi.",
+      "variants": [
+        "Provide a biographical summary of Maneka Gandhi.",
+        "I'd like to know the biography of Maneka Gandhi \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_117_7_h29607": {
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_48_6_m1": {
+      "source_question": "Question: Tell me a bio of Abdou Diallo.",
+      "variants": [
+        "Provide a biographical summary of Abdou Diallo.",
+        "I'd like to know the bio of Abdou Diallo \u2014 could you share it?"
+      ]
+    },
+    "factscore_ChatGPT_170_4_m1": {
+      "source_question": "Question: Tell me a bio of Ronaldo (Brazilian footballer).",
+      "variants": [
+        "Provide a biography of the Brazilian footballer known as Ronaldo.",
+        "I'd like to know the biographical details of Ronaldo, the footballer from Brazil."
+      ]
+    },
+    "factscore_InstructGPT_95_9_h4768": {
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_InstructGPT_7_1_h422": {
+      "source_question": "Question: Tell me a bio of Focus....",
+      "variants": [
+        "Provide a biographical summary of Focus....",
+        "It is requested that you share a bio regarding Focus...."
+      ]
+    },
+    "factscore_ChatGPT_70_2_m1": {
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know the biography of Ben Lummis \u2014 could you share it?"
+      ]
+    },
+    "factscore_PerplexityAI_95_1_h27933": {
+      "source_question": "Question: Tell me a bio of Miguel D\u00edaz (baseball).",
+      "variants": [
+        "Provide a biographical summary of Miguel D\u00edaz, the baseball player.",
+        "I'd like to know the biography of the baseball figure known as Miguel D\u00edaz."
+      ]
+    },
+    "factscore_PerplexityAI_119_0_m0": {
+      "source_question": "Question: Tell me a bio of Mitzi Gaynor.",
+      "variants": [
+        "Provide a biographical summary of Mitzi Gaynor.",
+        "I'd like to know about the life and background of Mitzi Gaynor \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_InstructGPT_88_3_h4419": {
+      "source_question": "Question: Tell me a bio of Terence Blacker.",
+      "variants": [
+        "Provide a biographical summary of Terence Blacker.",
+        "I'd like to know about the biography of Terence Blacker \u2014 could you share that information?"
+      ]
+    },
+    "factscore_InstructGPT_34_1_m10": {
+      "source_question": "Question: Tell me a bio of Besant Ravi.",
+      "variants": [
+        "Could you provide a biographical summary of Besant Ravi?",
+        "I'd like to know the biography of Besant Ravi \u2014 please share the relevant details."
+      ]
+    },
+    "factscore_InstructGPT_48_0_h2416": {
+      "source_question": "Question: Tell me a bio of Rennie Fritchie, Baroness Fritchie.",
+      "variants": [
+        "Provide a biographical summary of Rennie Fritchie, Baroness Fritchie.",
+        "I'd like to know about the life and background of Baroness Fritchie, also known as Rennie Fritchie."
+      ]
+    },
+    "factscore_ChatGPT_150_9_m2": {
+      "source_question": "Question: Tell me a bio of Kyra Sedgwick.",
+      "variants": [
+        "Provide a biographical summary of Kyra Sedgwick.",
+        "I'd like to know the bio of Kyra Sedgwick \u2014 could you share it with me?"
+      ]
+    },
+    "factscore_PerplexityAI_7_6_h21311": {
+      "source_question": "Question: Tell me a bio of Kalki Koechlin.",
+      "variants": [
+        "Provide a biography of Kalki Koechlin.",
+        "I'd like to know the biographical details of Kalki Koechlin \u2014 could you share them?"
+      ]
+    },
+    "factscore_ChatGPT_69_8_h12641": {
+      "source_question": "Question: Tell me a bio of Antonio Diaz (Filipino politician).",
+      "variants": [
+        "Provide a biographical summary of Antonio Diaz, the Filipino politician.",
+        "I'd like to know the biography of the Filipino politician known as Antonio Diaz."
+      ]
+    },
+    "factscore_InstructGPT_96_3_h4819": {
+      "source_question": "Question: Tell me a bio of Henry Santos.",
+      "variants": [
+        "Provide a biographical summary of Henry Santos.",
+        "I'd like to know about Henry Santos \u2014 could you share his bio?"
+      ]
+    },
+    "factscore_InstructGPT_112_0_m4": {
+      "source_question": "Question: Tell me a bio of Mitzi Gaynor.",
+      "variants": [
+        "Provide a biographical summary of Mitzi Gaynor.",
+        "I'd like to know about the life and career of Mitzi Gaynor \u2014 could you share her bio?"
+      ]
+    },
+    "factscore_ChatGPT_60_7_m3": {
+      "source_question": "Question: Tell me a bio of Manuel Salazar (footballer).",
+      "variants": [
+        "Provide a biographical summary of the footballer Manuel Salazar.",
+        "I'd like to know the bio of Manuel Salazar, who is a footballer."
+      ]
+    },
+    "factscore_InstructGPT_56_5_h2817": {
+      "source_question": "Question: Tell me a bio of Hibo Wardere.",
+      "variants": [
+        "Provide a biography of Hibo Wardere.",
+        "I'd like to know the biographical details of Hibo Wardere."
+      ]
+    }
+  }
+}

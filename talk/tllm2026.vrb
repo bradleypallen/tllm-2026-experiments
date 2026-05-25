@@ -1,0 +1,88 @@
+\frametitle{How $\zeta ^+$ and $\zeta ^-$ Are Computed}
+
+  \begin{columns}[T]
+
+    \column{0.48\textwidth}
+    \textbf{Verification query} $\zeta^+$ (forced-choice):
+    \smallskip
+
+    \setbeamercolor{block body}{bg=trueblue!6}
+    \begin{block}{}
+      \ttfamily\footnotesize
+      You are tasked with determining whether
+      the following assertion can be verified as
+      true based on available evidence and
+      knowledge.
+
+      \smallskip
+      Assertion: \textit{The answer to ``In
+      Severance, whom does Mark Scout replace
+      as department head?'' is Peter ``Petey''
+      Kilmer.}
+
+      \smallskip
+      Context: \textit{In Severance, whom does
+      Mark Scout replace as department head?}
+
+      \smallskip
+      You must respond with exactly one of:
+      \textbf{VERIFIED}
+      \textbf{CANNOT VERIFY}
+
+      \smallskip
+      Response:
+    \end{block}
+    \smallskip
+    \footnotesize
+    \begin{tabular}{ll}
+      \textbf{VERIFIED} & $\to\; u = t$ \\
+      \textbf{CANNOT VERIFY} & $\to\; u = f$ \\
+      \textit{parse failure} & $\to\; u = e$
+    \end{tabular}
+
+    \column{0.48\textwidth}
+    \textbf{Refutation query} $\zeta^-$ (forced-choice):
+    \smallskip
+
+    \setbeamercolor{block body}{bg=falsered!6}
+    \begin{block}{}
+      \ttfamily\footnotesize
+      You are tasked with determining whether
+      the following assertion can be refuted
+      (shown to be false) based on available
+      evidence and knowledge.
+
+      \smallskip
+      Assertion: \textit{The answer to ``In
+      Severance, whom does Mark Scout replace
+      as department head?'' is Peter ``Petey''
+      Kilmer.}
+
+      \smallskip
+      Context: \textit{In Severance, whom does
+      Mark Scout replace as department head?}
+
+      \smallskip
+      You must respond with exactly one of:
+      \textbf{REFUTED}
+      \textbf{CANNOT REFUTE}
+
+      \smallskip
+      Response:
+    \end{block}
+    \smallskip
+    \footnotesize
+    \begin{tabular}{ll}
+      \textbf{REFUTED} & $\to\; v = t$ \\
+      \textbf{CANNOT REFUTE} & $\to\; v = f$ \\
+      \textit{parse failure} & $\to\; v = e$
+    \end{tabular}
+
+  \end{columns}
+
+  \smallskip
+  \footnotesize
+  Issued $n=3$ times each; majority vote $\Rightarrow \semp=\tv{u}{v}$.
+  Parse failure ($e$) = model could not commit.
+  Components are \textbf{entirely independent}: the model never sees both questions.
+

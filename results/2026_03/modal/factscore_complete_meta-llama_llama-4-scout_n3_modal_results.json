@@ -1,0 +1,5539 @@
+{
+  "eval_model": "meta-llama/llama-4-scout",
+  "variation_model": "claude-opus-4-6",
+  "dataset": "factscore",
+  "n_variants": 3,
+  "epistemic_policy": "classical",
+  "total_samples": 250,
+  "src_bilateral_distribution": {
+    "<f,t>": 5,
+    "<f,f>": 123,
+    "<f,e>": 6,
+    "<t,f>": 100,
+    "<e,f>": 11,
+    "<e,t>": 1,
+    "<t,t>": 3,
+    "<e,e>": 1
+  },
+  "modal_bilateral_distribution": {
+    "<f,t>": 24,
+    "<f,f>": 92,
+    "<f,e>": 37,
+    "<t,f>": 72,
+    "<e,t>": 5,
+    "<t,t>": 4,
+    "<e,f>": 8,
+    "<t,e>": 4,
+    "<e,e>": 4
+  },
+  "detailed_results": [
+    {
+      "index": 0,
+      "assertion_id": "factscore_ChatGPT_151_2_h18461",
+      "assertion": "Taylor released the album in 1968.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of James Taylor.",
+      "src_bilateral": "<f,t>",
+      "src_projected": "f",
+      "src_agreement": false,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of James Taylor.",
+        "I'd like to know about the biography of James Taylor \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 1,
+      "assertion_id": "factscore_ChatGPT_23_6_m2",
+      "assertion": "D\u00edaz has represented Venezuela at the Olympic Games.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Roxana D\u00edaz (athlete).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Roxana D\u00edaz, the athlete.",
+        "I'd like to know the biography of the athlete known as Roxana D\u00edaz."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 2,
+      "assertion_id": "factscore_InstructGPT_76_4_m2",
+      "assertion": "Julia is an active philanthropist.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Julia Faye.",
+      "src_bilateral": "<f,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Julia Faye.",
+        "I'd like to know about the life and career of Julia Faye \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 3,
+      "assertion_id": "factscore_PerplexityAI_118_5_h29658",
+      "assertion": "Her debut album was \"Growing Up\".",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of IU (singer).",
+      "src_bilateral": "<f,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of the singer known as IU.",
+        "I'd like to know the biographical details of IU, the singer."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 4,
+      "assertion_id": "factscore_PerplexityAI_87_8_h27313",
+      "assertion": "His political clout was attributed to a scholarship program.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Antonio Diaz (Filipino politician).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Antonio Diaz, the Filipino politician.",
+        "I'd like to know the biographical details of the Filipino politician known as Antonio Diaz."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 5,
+      "assertion_id": "factscore_PerplexityAI_80_11_h26750",
+      "assertion": "Elsa Pataky is an accomplished model.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Elsa Pataky.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of Elsa Pataky.",
+        "I'd like to know the biographical details of Elsa Pataky \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 6,
+      "assertion_id": "factscore_ChatGPT_104_6_h15065",
+      "assertion": "The key role was in introducing changes.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Shashank Manohar.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Shashank Manohar.",
+        "Could you share some biographical information about Shashank Manohar?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 7,
+      "assertion_id": "factscore_PerplexityAI_166_2_h32612",
+      "assertion": "Bob Dylan was an artist.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of John Estes.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of John Estes.",
+        "I'd like to know the biography of John Estes \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 8,
+      "assertion_id": "factscore_ChatGPT_118_0_h15962",
+      "assertion": "James B. Donovan was born on February 29, 1916.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know the biography of James B. Donovan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 9,
+      "assertion_id": "factscore_PerplexityAI_17_0_h21942",
+      "assertion": "Hans Cleuver is the drummer.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Focus....",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Focus....",
+        "Could you share some background information and a bio regarding Focus...."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 10,
+      "assertion_id": "factscore_PerplexityAI_33_2_h22909",
+      "assertion": "The Talmud is a central text of Rabbinic Judaism.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Chaim Malinowitz.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Chaim Malinowitz.",
+        "I'd like to know the biography of Chaim Malinowitz \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 11,
+      "assertion_id": "factscore_InstructGPT_43_5_h2199",
+      "assertion": "He is the recipient of numerous awards.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 12,
+      "assertion_id": "factscore_ChatGPT_81_6_h13357",
+      "assertion": "Furlong worked as a hunting guide.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rob Furlong.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Rob Furlong.",
+        "I'd like to know the biography of Rob Furlong \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 13,
+      "assertion_id": "factscore_PerplexityAI_115_11_m3",
+      "assertion": "His instructional books are still used by organists.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Alexandre Guilmant.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Alexandre Guilmant.",
+        "I'd like to learn about the life and background of Alexandre Guilmant \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 14,
+      "assertion_id": "factscore_PerplexityAI_39_7_m4",
+      "assertion": "Their songs inspired him to make music.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Scientist (musician).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of the musician known as Scientist.",
+        "I'd like to know the biography of Scientist, the musician."
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 15,
+      "assertion_id": "factscore_ChatGPT_78_1_h13167",
+      "assertion": "Flint is in Michigan.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Craig Morton.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Craig Morton.",
+        "I'd like to know about Craig Morton \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 16,
+      "assertion_id": "factscore_InstructGPT_162_7_h8518",
+      "assertion": "He represented France at the 2014 World Cup.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Adil Rami.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<e,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Adil Rami.",
+        "I'd like to know the biography of Adil Rami \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,t>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 17,
+      "assertion_id": "factscore_ChatGPT_7_2_h10077",
+      "assertion": "\"The Magnificent Seven\" is a film.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Joey D. Vieira.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Joey D. Vieira.",
+        "I'd like to know the biography of Joey D. Vieira \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 18,
+      "assertion_id": "factscore_InstructGPT_98_4_m1",
+      "assertion": "He led the group to several victories.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Waruhiu Itote.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Waruhiu Itote.",
+        "I'd like to know the biography of Waruhiu Itote \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 19,
+      "assertion_id": "factscore_InstructGPT_75_1_m1",
+      "assertion": "She was born in Illinois.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Virginia Valli.",
+      "src_bilateral": "<f,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Virginia Valli.",
+        "I'd like to know about the life and career of Virginia Valli \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 20,
+      "assertion_id": "factscore_PerplexityAI_9_1_h21462",
+      "assertion": "She was married to Yuri Nagibin.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Bella Akhmadulina.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Bella Akhmadulina.",
+        "I'd like to know about the life and background of Bella Akhmadulina \u2014 please share her bio."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 21,
+      "assertion_id": "factscore_PerplexityAI_37_6_m6",
+      "assertion": "Baaghi (2016) is a successful movie.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Sajid Nadiadwala.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Sajid Nadiadwala.",
+        "Could you share biographical information about Sajid Nadiadwala?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 22,
+      "assertion_id": "factscore_InstructGPT_132_6_h6832",
+      "assertion": "He returned to Atl\u00e9tico Mineiro in 2011.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gilberto Silva.",
+      "src_bilateral": "<e,t>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<e,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Gilberto Silva.",
+        "I'd like to know the biography of Gilberto Silva \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<e,e>"
+      ]
+    },
+    {
+      "index": 23,
+      "assertion_id": "factscore_InstructGPT_75_0_h3732",
+      "assertion": "Virginia Valli was born on May 5, 1895.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Virginia Valli.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Virginia Valli.",
+        "I'd like to know about the life and career of Virginia Valli \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 24,
+      "assertion_id": "factscore_ChatGPT_62_4_m0",
+      "assertion": "Gasalla is best known for his work.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Antonio Gasalla.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Antonio Gasalla.",
+        "I'd like to know the biographical details of Antonio Gasalla."
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 25,
+      "assertion_id": "factscore_PerplexityAI_54_7_h24372",
+      "assertion": "In February 2022, he collaborated with Bio Heal BOH.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kang Daniel.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Kang Daniel.",
+        "I'd like to know the biographical details of Kang Daniel \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 26,
+      "assertion_id": "factscore_ChatGPT_38_3_h11138",
+      "assertion": "Foppert retired in 2008.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jesse Foppert.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jesse Foppert.",
+        "I'd like to know the biography of Jesse Foppert \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 27,
+      "assertion_id": "factscore_InstructGPT_34_0_h1703",
+      "assertion": "Besant Ravi is renowned.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Besant Ravi.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Besant Ravi.",
+        "I'd like to know the biography of Besant Ravi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 28,
+      "assertion_id": "factscore_PerplexityAI_139_0_m1",
+      "assertion": "Lauren Nicole London was born on December 5, 1984.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Lauren London.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Lauren London.",
+        "I'd like to know about Lauren London \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 29,
+      "assertion_id": "factscore_ChatGPT_95_2_h14369",
+      "assertion": "It was King Tubby's studio.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Scientist (musician).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of the musician known as Scientist.",
+        "I'd like to know the biography of Scientist, the musician."
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 30,
+      "assertion_id": "factscore_PerplexityAI_75_3_h26245",
+      "assertion": "He moved to Inter Milan.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mauro Icardi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Mauro Icardi.",
+        "I'd like to know the biography of Mauro Icardi \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 31,
+      "assertion_id": "factscore_InstructGPT_31_3_h1599",
+      "assertion": "Lily graduated from the Queensland College of Art.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Lily Branscombe.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Could you provide a biographical summary of Lily Branscombe?",
+        "I'd like to know about the life and background of Lily Branscombe \u2014 please share her bio."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 32,
+      "assertion_id": "factscore_ChatGPT_97_7_h14588",
+      "assertion": "Itote is remembered as a hero.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Waruhiu Itote.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Waruhiu Itote.",
+        "I'd like to know the biography of Waruhiu Itote \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 33,
+      "assertion_id": "factscore_InstructGPT_17_4_h910",
+      "assertion": "He is a regular contributor to BBC Radio 5 Live's Football Focus.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Dominic King.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Dominic King.",
+        "I'd like to know the biography of Dominic King \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<t,t>"
+      ]
+    },
+    {
+      "index": 34,
+      "assertion_id": "factscore_PerplexityAI_60_1_m7",
+      "assertion": "Kingdom aired from 2014-2017.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jonathan Tucker.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Jonathan Tucker.",
+        "I'd like to know about the biography of Jonathan Tucker \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 35,
+      "assertion_id": "factscore_ChatGPT_122_3_h16314",
+      "assertion": "Ardeshir Zahedi served as Iran's ambassador to the United States.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Shahnaz Pahlavi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical account of Shahnaz Pahlavi.",
+        "I'd like to know the biography of Shahnaz Pahlavi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 36,
+      "assertion_id": "factscore_InstructGPT_66_3_h3331",
+      "assertion": "She has been featured in numerous international publications.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Wahida Prism Khan.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Wahida Prism Khan.",
+        "Could you share the bio of Wahida Prism Khan?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 37,
+      "assertion_id": "factscore_InstructGPT_130_2_h6688",
+      "assertion": "He is remembered for his tragic personal life.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like to know the biographical details of Garrincha \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 38,
+      "assertion_id": "factscore_InstructGPT_179_0_m3",
+      "assertion": "IU is a musician.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of IU (singer).",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of the singer known as IU.",
+        "I'd like to know the biographical details of IU, the singer."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 39,
+      "assertion_id": "factscore_InstructGPT_95_4_h4726",
+      "assertion": "He served as an analyst.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 40,
+      "assertion_id": "factscore_PerplexityAI_181_2_h33693",
+      "assertion": "Admiral Bailey was a then-dominant Dancehall figure.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Beenie Man.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Beenie Man.",
+        "I'd like to know the biography of Beenie Man \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 41,
+      "assertion_id": "factscore_PerplexityAI_159_3_m0",
+      "assertion": "Young Anna was fascinated by the emerging film industry.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Anna May Wong.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Anna May Wong.",
+        "I'd like to know the biography of Anna May Wong \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 42,
+      "assertion_id": "factscore_PerplexityAI_171_4_h33030",
+      "assertion": "Owen Wright is sponsored by FCS.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Owen Wright (surfer).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of the surfer Owen Wright.",
+        "I'd like to know the biography of Owen Wright, the professional surfer."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 43,
+      "assertion_id": "factscore_PerplexityAI_129_5_m1",
+      "assertion": "Featherstone won many awards.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Don Featherstone (artist).",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Don Featherstone, the artist.",
+        "I'd like to know the biography of the artist known as Don Featherstone."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 44,
+      "assertion_id": "factscore_ChatGPT_7_6_h10120",
+      "assertion": "Vieira is now retired.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Joey D. Vieira.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Joey D. Vieira.",
+        "I'd like to know the bio of Joey D. Vieira \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 45,
+      "assertion_id": "factscore_InstructGPT_28_2_m0",
+      "assertion": "He is a fullback.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Thomas Houghton (rugby league).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Thomas Houghton, the rugby league player.",
+        "Could you share biographical information about Thomas Houghton, who is associated with rugby league?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 46,
+      "assertion_id": "factscore_ChatGPT_65_4_h12373",
+      "assertion": "Tokiwa became popular in Japan.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toyoko Tokiwa.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Toyoko Tokiwa.",
+        "I'd like to know the biography of Toyoko Tokiwa \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 47,
+      "assertion_id": "factscore_InstructGPT_29_0_h1479",
+      "assertion": "Katsunosuke Hori was known for his roles in silent films.  - The silent films were made in the early 20th century.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Katsunosuke Hori.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Katsunosuke Hori.",
+        "I'd like to know the biography of Katsunosuke Hori \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 48,
+      "assertion_id": "factscore_ChatGPT_126_9_h16637",
+      "assertion": "She has been inducted into the Scandinavian Golf Hall of Fame.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Annika S\u00f6renstam.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Question: Provide a biographical summary of Annika S\u00f6renstam.",
+        "Question: Could you share a biography of Annika S\u00f6renstam?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 49,
+      "assertion_id": "factscore_ChatGPT_67_1_m4",
+      "assertion": "EntreHub focuses on entrepreneurship.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Matthew Tukaki.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Matthew Tukaki.",
+        "I'd like to know about the biography of Matthew Tukaki \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 50,
+      "assertion_id": "factscore_InstructGPT_131_2_h6749",
+      "assertion": "he died delivering aid in Nicaragua.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Roberto Clemente.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Roberto Clemente.",
+        "I'd like you to share a biographical summary of Roberto Clemente."
+      ],
+      "variant_bilaterals": [
+        "<t,t>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 51,
+      "assertion_id": "factscore_ChatGPT_3_4_m2",
+      "assertion": "Sheehan has two children.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Doug Sheehan.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Doug Sheehan.",
+        "I'd like to know the bio of Doug Sheehan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 52,
+      "assertion_id": "factscore_InstructGPT_63_1_h3169",
+      "assertion": "He moved to Brazil.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gonzalo Fonseca.",
+      "src_bilateral": "<f,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Gonzalo Fonseca.",
+        "I'd like to know about the life and background of Gonzalo Fonseca \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 53,
+      "assertion_id": "factscore_InstructGPT_23_1_h1198",
+      "assertion": "He played for Deportivo La Coru\u00f1a.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Augusto Mart\u00ednez S\u00e1nchez.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Augusto Mart\u00ednez S\u00e1nchez.",
+        "I'd like to know the biography of Augusto Mart\u00ednez S\u00e1nchez \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 54,
+      "assertion_id": "factscore_InstructGPT_182_0_h9670",
+      "assertion": "Toru Muranishi was an entrepreneur.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 55,
+      "assertion_id": "factscore_InstructGPT_128_2_h6557",
+      "assertion": "Vaira was born into a middle-class family.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Vaira V\u012b\u0137e-Freiberga.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Question: Provide a biographical summary of Vaira V\u012b\u0137e-Freiberga.",
+        "Question: Could you share a biography of Vaira V\u012b\u0137e-Freiberga with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 56,
+      "assertion_id": "factscore_PerplexityAI_102_3_h28422",
+      "assertion": "He was a revolutionary anarchist.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 57,
+      "assertion_id": "factscore_InstructGPT_152_3_m2",
+      "assertion": "She is known for her roles in the 2009 film I Love You, Beth Cooper.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Lauren London.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Lauren London.",
+        "I'd like to know about Lauren London \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,t>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 58,
+      "assertion_id": "factscore_ChatGPT_45_6_h11436",
+      "assertion": "Katsu currently lives in Virginia.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Alma Katsu.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Alma Katsu.",
+        "I'd like to know about the life and background of Alma Katsu \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 59,
+      "assertion_id": "factscore_InstructGPT_21_3_h1112",
+      "assertion": "She won gold in the 400 metres.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Roxana D\u00edaz (athlete).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of the athlete known as Roxana D\u00edaz.",
+        "I'd like to know the biography of Roxana D\u00edaz, the athlete."
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 60,
+      "assertion_id": "factscore_InstructGPT_110_5_h5557",
+      "assertion": "He has released The Nebulizer 2.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kerser.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Kerser.",
+        "Could you give me some biographical information about Kerser?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 61,
+      "assertion_id": "factscore_PerplexityAI_70_9_h25853",
+      "assertion": "Sarah Elisabeth Coyne is enrolled in the Wharton School of the University of Pennsylvania.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Michael Valpy.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Michael Valpy.",
+        "I'd like to know the biography of Michael Valpy \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 62,
+      "assertion_id": "factscore_InstructGPT_87_2_h4372",
+      "assertion": "He became the Shadow Home Secretary in 2005.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Oliver Letwin.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Oliver Letwin.",
+        "I'd like to know the biography of Oliver Letwin \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 63,
+      "assertion_id": "factscore_ChatGPT_141_3_h17743",
+      "assertion": "The Boys is a movie.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of David Wenham.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of David Wenham.",
+        "I'd like to know the biography of David Wenham \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 64,
+      "assertion_id": "factscore_InstructGPT_7_0_h398",
+      "assertion": "Focus is an English band.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Focus....",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of Focus....",
+        "I'd like to know the biographical details of Focus...."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 65,
+      "assertion_id": "factscore_ChatGPT_39_3_m3",
+      "assertion": "The \"Mike Trivisonno Show\" covers topics such as politics, sports, and current events.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mike Trivisonno.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Mike Trivisonno.",
+        "I'd like to know the bio of Mike Trivisonno \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 66,
+      "assertion_id": "factscore_PerplexityAI_52_2_h24156",
+      "assertion": "Rin Iwanaga has a right-handed playing style.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rin Iwanaga.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Rin Iwanaga.",
+        "Could you share biographical information about Rin Iwanaga?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 67,
+      "assertion_id": "factscore_InstructGPT_51_1_h2558",
+      "assertion": "He has written hundreds of songs.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 68,
+      "assertion_id": "factscore_PerplexityAI_121_2_h29867",
+      "assertion": "She has held various positions at the BBC.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Fran Unsworth.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Fran Unsworth.",
+        "Could you share some biographical information about Fran Unsworth?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 69,
+      "assertion_id": "factscore_ChatGPT_7_3_h10085",
+      "assertion": "He appeared as an actor.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Joey D. Vieira.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Joey D. Vieira.",
+        "I'd like to know the bio of Joey D. Vieira \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 70,
+      "assertion_id": "factscore_ChatGPT_165_4_m1",
+      "assertion": "Lina gave birth to a baby boy in May 1939.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Lina Medina.",
+      "src_bilateral": "<t,t>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<t,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Lina Medina.",
+        "I'd like you to share a bio about Lina Medina."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 71,
+      "assertion_id": "factscore_ChatGPT_138_3_h17484",
+      "assertion": "He worked as an assistant director.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Sajid Nadiadwala.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Sajid Nadiadwala.",
+        "Could you share biographical information about Sajid Nadiadwala?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 72,
+      "assertion_id": "factscore_PerplexityAI_89_8_h27499",
+      "assertion": "Deepak Kalal is an Indian.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rakhi Sawant.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Request: Provide a biographical summary of Rakhi Sawant.",
+        "Could you share some biographical information about Rakhi Sawant?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 73,
+      "assertion_id": "factscore_PerplexityAI_173_7_h33242",
+      "assertion": "Kevin Bacon is an actor.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kyra Sedgwick.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Kyra Sedgwick.",
+        "I'd like you to share a biographical summary of Kyra Sedgwick."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 74,
+      "assertion_id": "factscore_PerplexityAI_83_3_m6",
+      "assertion": "Bring It On was released in 2000.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Eliza Dushku.",
+      "src_bilateral": "<t,t>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<t,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Eliza Dushku.",
+        "I'd like to know the biography of Eliza Dushku \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,t>"
+      ]
+    },
+    {
+      "index": 75,
+      "assertion_id": "factscore_ChatGPT_70_1_m3",
+      "assertion": "Lummis auditioned for a show.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know the bio of Ben Lummis \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 76,
+      "assertion_id": "factscore_PerplexityAI_108_5_h28946",
+      "assertion": "American Playboy: The Hugh Hefner Story was released in 2017.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Emmett Skilton.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Emmett Skilton.",
+        "I'd like to know the biography of Emmett Skilton \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 77,
+      "assertion_id": "factscore_ChatGPT_15_0_h10317",
+      "assertion": "Jean Daull\u00e9 was known for his portraits.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jean Daull\u00e9.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jean Daull\u00e9.",
+        "I'd like to know the biography of Jean Daull\u00e9 \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 78,
+      "assertion_id": "factscore_PerplexityAI_73_1_m3",
+      "assertion": "He played football as a wide receiver.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 79,
+      "assertion_id": "factscore_ChatGPT_70_3_m0",
+      "assertion": "He received a record deal with Sony BMG.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know the biography of Ben Lummis \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 80,
+      "assertion_id": "factscore_ChatGPT_90_8_h14008",
+      "assertion": "Blacker has played in several bands.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Terence Blacker.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Terence Blacker.",
+        "I'd like to know about the biography of Terence Blacker \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 81,
+      "assertion_id": "factscore_InstructGPT_147_5_h7683",
+      "assertion": "Taylor was inducted in 2000.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of James Taylor.",
+      "src_bilateral": "<f,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of James Taylor.",
+        "I'd like to know about the biography of James Taylor \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 82,
+      "assertion_id": "factscore_ChatGPT_129_6_h16809",
+      "assertion": "Jan Blachowicz is the current champion.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Glover Teixeira.",
+        "I'd like to know the biographical details of Glover Teixeira."
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 83,
+      "assertion_id": "factscore_ChatGPT_173_7_h20084",
+      "assertion": "The Netflix series was released in 2019.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 84,
+      "assertion_id": "factscore_ChatGPT_171_3_h19901",
+      "assertion": "Lua Blanco was a member of a musical group.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Lua Blanco.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Lua Blanco.",
+        "I'd like to know the biographical details of Lua Blanco."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 85,
+      "assertion_id": "factscore_InstructGPT_57_1_h2838",
+      "assertion": "He has been performing music since he was a child.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Idriss Ngari.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Idriss Ngari.",
+        "Could you share some biographical information about Idriss Ngari?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 86,
+      "assertion_id": "factscore_ChatGPT_25_0_h10645",
+      "assertion": "Gerardo Fernandez Fe is an entrepreneur.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gerardo Fernandez Fe.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Gerardo Fernandez Fe.",
+        "I'd like to know the biography of Gerardo Fernandez Fe \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 87,
+      "assertion_id": "factscore_ChatGPT_32_2_h10869",
+      "assertion": "The Korean embassy is in Washington D.C.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "I'd like to know the biography of Ra Jong-yil \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 88,
+      "assertion_id": "factscore_PerplexityAI_103_0_h28440",
+      "assertion": "Teresa Mary Palmer was born in Adelaide.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Teresa Palmer.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Teresa Palmer.",
+        "I'd like to know about the biography of Teresa Palmer \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 89,
+      "assertion_id": "factscore_ChatGPT_120_5_m0",
+      "assertion": "He played for the Steelers.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 90,
+      "assertion_id": "factscore_InstructGPT_45_2_h2270",
+      "assertion": "Prince Rivers released The Prince in 2017.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Prince Rivers.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Prince Rivers.",
+        "I'd like to know about the life and background of Prince Rivers \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 91,
+      "assertion_id": "factscore_PerplexityAI_177_11_m0",
+      "assertion": "Saint Dominic de Guzm\u00e1n was a Castilian.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Dominic King.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Dominic King.",
+        "I'd like to know the biography of Dominic King \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 92,
+      "assertion_id": "factscore_ChatGPT_95_8_h14436",
+      "assertion": "Scientist's music was sampled by Massive Attack.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Scientist (musician).",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical overview of the musician known as Scientist.",
+        "I'd like to know the biography of Scientist, the musician."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 93,
+      "assertion_id": "factscore_ChatGPT_130_6_m2",
+      "assertion": "His style of play often involved dribbling past defenders with ease.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like you to share a biographical summary of Garrincha."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 94,
+      "assertion_id": "factscore_PerplexityAI_137_0_h31043",
+      "assertion": "Wendy is a voice actress.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Wendy (singer).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of the singer known as Wendy.",
+        "I'd like to know the biographical details of Wendy, the singer."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 95,
+      "assertion_id": "factscore_ChatGPT_70_4_h12708",
+      "assertion": "Leisure was an album.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know about the life and background of Ben Lummis \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 96,
+      "assertion_id": "factscore_ChatGPT_157_5_h18893",
+      "assertion": "Leach scored in the second innings.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jack Leach.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jack Leach.",
+        "I'd like to know the biography of Jack Leach \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 97,
+      "assertion_id": "factscore_PerplexityAI_66_6_h25485",
+      "assertion": "He commanded the squadron during World War II.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Francesco Mimbelli.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Francesco Mimbelli.",
+        "I'd like to know the biography of Francesco Mimbelli \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<e,e>"
+      ]
+    },
+    {
+      "index": 98,
+      "assertion_id": "factscore_ChatGPT_143_0_h17812",
+      "assertion": "Wendy Shon is a songwriter.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Wendy (singer).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of the singer known as Wendy.",
+        "I'd like to know the biographical details of Wendy, the singer."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 99,
+      "assertion_id": "factscore_ChatGPT_100_7_h14812",
+      "assertion": "Bertotti is known for her humanitarian work.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Florencia Bertotti.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Florencia Bertotti.",
+        "I'd like to know about the biography of Florencia Bertotti \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 100,
+      "assertion_id": "factscore_InstructGPT_6_1_m0",
+      "assertion": "She was born in Omaha, Nebraska.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Marianne McAndrew.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Marianne McAndrew.",
+        "I'd like to know the biography of Marianne McAndrew \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,t>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 101,
+      "assertion_id": "factscore_ChatGPT_149_7_h18324",
+      "assertion": "His published books feature his photography.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Nikki Sixx.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Nikki Sixx.",
+        "I'd like to know the biographical details of Nikki Sixx \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 102,
+      "assertion_id": "factscore_ChatGPT_4_4_h9922",
+      "assertion": "Fischer worked on metal detectors.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gerhard Fischer (inventor).",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Gerhard Fischer, the inventor.",
+        "Could you share the biography of the inventor known as Gerhard Fischer?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 103,
+      "assertion_id": "factscore_ChatGPT_110_5_h15432",
+      "assertion": "He has worked with Billy Joel.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Chris Cheney.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<e,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Chris Cheney.",
+        "I'd like to know the biography of Chris Cheney \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 104,
+      "assertion_id": "factscore_InstructGPT_143_1_h7380",
+      "assertion": "He has directed films across multiple genres.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ram Gopal Varma.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ram Gopal Varma.",
+        "Could you share some biographical information about Ram Gopal Varma?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 105,
+      "assertion_id": "factscore_ChatGPT_65_2_h12356",
+      "assertion": "She worked for various newspapers.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toyoko Tokiwa.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Toyoko Tokiwa.",
+        "Could you share some biographical information about Toyoko Tokiwa?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 106,
+      "assertion_id": "factscore_InstructGPT_24_0_h1244",
+      "assertion": "Hesham Nazih is an investor.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Hesham Nazih.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Hesham Nazih.",
+        "I'd like to know the biography of Hesham Nazih \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 107,
+      "assertion_id": "factscore_InstructGPT_83_2_m1",
+      "assertion": "She has held a variety of roles at the BBC.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Fran Unsworth.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Fran Unsworth.",
+        "I'd like to know the biography of Fran Unsworth \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 108,
+      "assertion_id": "factscore_InstructGPT_67_2_h3363",
+      "assertion": "She is the chief executive of the Malaysian Writers' Association.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Siti Rahmah Kassim.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Siti Rahmah Kassim.",
+        "I'd like to know the biography of Siti Rahmah Kassim \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 109,
+      "assertion_id": "factscore_PerplexityAI_70_5_h25828",
+      "assertion": "His great-grandfather was the first European doctor of Vancouver.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Michael Valpy.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Michael Valpy.",
+        "I'd like to know the biography of Michael Valpy \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 110,
+      "assertion_id": "factscore_ChatGPT_35_6_h11063",
+      "assertion": "Kadokura has worked as a director.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Keita Kadokura.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Keita Kadokura.",
+        "I'd like to know the bio of Keita Kadokura \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 111,
+      "assertion_id": "factscore_InstructGPT_99_2_h4986",
+      "assertion": "She has appeared in Malha\u00e7\u00e3o.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jessica Barboza.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<e,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jessica Barboza.",
+        "I'd like to know the bio of Jessica Barboza \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,t>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 112,
+      "assertion_id": "factscore_InstructGPT_166_2_m1",
+      "assertion": "Girls Trip is a film.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Tiffany Haddish.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Could you provide a biographical summary of Tiffany Haddish?",
+        "I'd like to know about the biography of Tiffany Haddish \u2014 please share it with me."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 113,
+      "assertion_id": "factscore_ChatGPT_79_0_h13203",
+      "assertion": "Virginia Valli passed away in Palm Springs.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Virginia Valli.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Virginia Valli.",
+        "I'd like to know about the life and career of Virginia Valli \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 114,
+      "assertion_id": "factscore_PerplexityAI_169_2_m0",
+      "assertion": "Her father is Telugu.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Samantha Ruth Prabhu.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Samantha Ruth Prabhu.",
+        "I'd like to know the bio of Samantha Ruth Prabhu \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 115,
+      "assertion_id": "factscore_ChatGPT_175_5_h20271",
+      "assertion": "She received a Filmfare Award for Best Actress.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Anushka Sharma.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of Anushka Sharma.",
+        "I'd like to know the biographical details of Anushka Sharma \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 116,
+      "assertion_id": "factscore_InstructGPT_103_5_h5222",
+      "assertion": "He was elected as the President of the BCCI.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Shashank Manohar.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Shashank Manohar.",
+        "Could you share some biographical information about Shashank Manohar?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 117,
+      "assertion_id": "factscore_PerplexityAI_93_4_h27791",
+      "assertion": "She has published numerous articles.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Vaira V\u012b\u0137e-Freiberga.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Question: Provide a biographical summary of Vaira V\u012b\u0137e-Freiberga.",
+        "Question: Could you share a biography of Vaira V\u012b\u0137e-Freiberga?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 118,
+      "assertion_id": "factscore_ChatGPT_101_2_h14852",
+      "assertion": "He appeared in The Man of the Year.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jonathan Haagensen.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jonathan Haagensen.",
+        "I'd like to know about the biography of Jonathan Haagensen."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 119,
+      "assertion_id": "factscore_ChatGPT_67_2_h12524",
+      "assertion": "Tukaki is the co-founder of the Maori Council of Australia.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Matthew Tukaki.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Matthew Tukaki.",
+        "Could you share some biographical information about Matthew Tukaki?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 120,
+      "assertion_id": "factscore_InstructGPT_114_5_h5787",
+      "assertion": "He is the founder of the D1 Nation Foundation.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 121,
+      "assertion_id": "factscore_PerplexityAI_158_7_h32175",
+      "assertion": "He was elected a Fellow.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Robert Smith, Baron Smith of Kelvin.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Robert Smith, Baron Smith of Kelvin.",
+        "I'd like to know the biographical details of Robert Smith, who holds the title Baron Smith of Kelvin."
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 122,
+      "assertion_id": "factscore_InstructGPT_102_5_m2",
+      "assertion": "He served in various cabinet positions.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Takeo Miki.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Takeo Miki.",
+        "I'd like to know about the biography of Takeo Miki \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,e>"
+      ]
+    },
+    {
+      "index": 123,
+      "assertion_id": "factscore_ChatGPT_167_5_h19570",
+      "assertion": "He has represented the team since 2013.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mauro Icardi.",
+      "src_bilateral": "<e,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<e,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mauro Icardi.",
+        "I'd like to know the bio of Mauro Icardi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<t,t>"
+      ]
+    },
+    {
+      "index": 124,
+      "assertion_id": "factscore_InstructGPT_36_2_h1852",
+      "assertion": "He occupied a number of posts.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "I'd like to know the biography of Ra Jong-yil \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 125,
+      "assertion_id": "factscore_ChatGPT_130_5_m1",
+      "assertion": "He formed a partnership.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Garrincha.",
+        "I'd like to know the biography of Garrincha \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 126,
+      "assertion_id": "factscore_InstructGPT_95_7_h4753",
+      "assertion": "Lousteau pushed for a new exchange rate system.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 127,
+      "assertion_id": "factscore_PerplexityAI_29_2_h22602",
+      "assertion": "He graduated from Colegio Nacional de Buenos Aires.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 128,
+      "assertion_id": "factscore_PerplexityAI_112_4_h29249",
+      "assertion": "Jomo Kenyatta is an anti-colonial activist.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Waruhiu Itote.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Waruhiu Itote.",
+        "I'd like to know the biography of Waruhiu Itote \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 129,
+      "assertion_id": "factscore_ChatGPT_119_3_m0",
+      "assertion": "One of his notable films is The Philadelphia Story.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of George Cukor.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of George Cukor.",
+        "I'd like to know about the life and career of George Cukor \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 130,
+      "assertion_id": "factscore_ChatGPT_82_0_h13372",
+      "assertion": "Milton Diamond is a professor of anatomy.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Milton Diamond.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Milton Diamond.",
+        "I'd like to know about the life and background of Milton Diamond \u2014 can you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 131,
+      "assertion_id": "factscore_ChatGPT_105_3_h15123",
+      "assertion": "He has appeared in Legend of the Seeker.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Emmett Skilton.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Emmett Skilton.",
+        "I'd like to know the biography of Emmett Skilton \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 132,
+      "assertion_id": "factscore_ChatGPT_130_3_h16859",
+      "assertion": "Botafogo is based in Rio de Janeiro.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like to know the biographical details of Garrincha \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 133,
+      "assertion_id": "factscore_InstructGPT_23_3_h1210",
+      "assertion": "Mart\u00ednez S\u00e1nchez began his professional career with Real Madrid.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Augusto Mart\u00ednez S\u00e1nchez.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Augusto Mart\u00ednez S\u00e1nchez.",
+        "I'd like to know the biography of Augusto Mart\u00ednez S\u00e1nchez \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 134,
+      "assertion_id": "factscore_PerplexityAI_90_7_m0",
+      "assertion": "Baroness Fritchie has been recognized.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rennie Fritchie, Baroness Fritchie.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Rennie Fritchie, Baroness Fritchie.",
+        "I'd like to know about the life and background of Baroness Fritchie, Rennie Fritchie \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 135,
+      "assertion_id": "factscore_InstructGPT_128_4_h6577",
+      "assertion": "She was a professor at the University of Latvia.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Vaira V\u012b\u0137e-Freiberga.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Question: Provide a biographical summary of Vaira V\u012b\u0137e-Freiberga.",
+        "Question: Could you share a biography of Vaira V\u012b\u0137e-Freiberga?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 136,
+      "assertion_id": "factscore_ChatGPT_150_0_m3",
+      "assertion": "Kyra Sedgwick was born in New York City.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kyra Sedgwick.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Could you provide a biographical summary of Kyra Sedgwick?",
+        "I'd like to know the bio of Kyra Sedgwick \u2014 please share it with me."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 137,
+      "assertion_id": "factscore_InstructGPT_0_1_h12",
+      "assertion": "He has appeared in The Big Easy.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Doug Sheehan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Doug Sheehan.",
+        "I'd like to know the biography of Doug Sheehan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 138,
+      "assertion_id": "factscore_PerplexityAI_72_7_h26031",
+      "assertion": "He has created other libraries.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Travis Oliphant.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Travis Oliphant.",
+        "I'd like to know about the biography of Travis Oliphant \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 139,
+      "assertion_id": "factscore_InstructGPT_1_2_h65",
+      "assertion": "\"Sentimental\" was on the soundtrack of a film.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Taral Hicks.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Taral Hicks.",
+        "I'd like to know the biography of Taral Hicks \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 140,
+      "assertion_id": "factscore_InstructGPT_48_0_h2414",
+      "assertion": "Rennie Fritchie is a Labour politician.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rennie Fritchie, Baroness Fritchie.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Rennie Fritchie, Baroness Fritchie.",
+        "I'd like to know the biography of Baroness Fritchie, also known as Rennie Fritchie."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 141,
+      "assertion_id": "factscore_ChatGPT_107_0_m2",
+      "assertion": "Botak Chin led the Communist Party of Malaya (CPM).",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Botak Chin.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Botak Chin.",
+        "I'd like to know the biography of the individual known as Botak Chin."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 142,
+      "assertion_id": "factscore_ChatGPT_23_5_m4",
+      "assertion": "She won a gold medal.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Roxana D\u00edaz (athlete).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of the athlete known as Roxana D\u00edaz.",
+        "I'd like to know the biography of Roxana D\u00edaz, the athlete."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 143,
+      "assertion_id": "factscore_InstructGPT_176_1_h9322",
+      "assertion": "She is one of the most prominent names in the Indian entertainment industry.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rakhi Sawant.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Question: Provide a biography of Rakhi Sawant.",
+        "Could you share a biographical summary of Rakhi Sawant?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 144,
+      "assertion_id": "factscore_InstructGPT_104_4_h5289",
+      "assertion": "He died in 1989.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Botak Chin.",
+      "src_bilateral": "<f,e>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Botak Chin.",
+        "I'd like to know the biography of Botak Chin \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 145,
+      "assertion_id": "factscore_PerplexityAI_100_3_m9",
+      "assertion": "Ford portrayed the iconic character Han Solo in the epic space opera film The Force Awakens.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Harrison Ford.",
+      "src_bilateral": "<f,t>",
+      "src_projected": "f",
+      "src_agreement": false,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Harrison Ford.",
+        "I'd like to know about the life and background of Harrison Ford \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 146,
+      "assertion_id": "factscore_PerplexityAI_74_9_h26194",
+      "assertion": "He could not write.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "src_bilateral": "<f,t>",
+      "src_projected": "f",
+      "src_agreement": true,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Garrincha.",
+        "I'd like you to share a biographical summary of Garrincha."
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<e,e>"
+      ]
+    },
+    {
+      "index": 147,
+      "assertion_id": "factscore_ChatGPT_157_5_h18892",
+      "assertion": "Leach scored as a nightwatchman.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jack Leach.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jack Leach.",
+        "I'd like to know the biography of Jack Leach \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 148,
+      "assertion_id": "factscore_PerplexityAI_158_2_m2",
+      "assertion": "He was knighted.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Robert Smith, Baron Smith of Kelvin.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Robert Smith, Baron Smith of Kelvin.",
+        "I'd like to know the biographical details of Robert Smith, who holds the title Baron Smith of Kelvin."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 149,
+      "assertion_id": "factscore_InstructGPT_65_5_h3295",
+      "assertion": "He is an active member of the Maori Party.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Matthew Tukaki.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Matthew Tukaki.",
+        "I'd like to know about the biography of Matthew Tukaki \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 150,
+      "assertion_id": "factscore_InstructGPT_43_0_h2159",
+      "assertion": "Carlos Alfonso is a sculptor.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 151,
+      "assertion_id": "factscore_InstructGPT_84_2_m4",
+      "assertion": "He was appointed to the House of Lords as a crossbench peer in 1997.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Robert Smith, Baron Smith of Kelvin.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Robert Smith, Baron Smith of Kelvin.",
+        "I'd like to know the biographical details of Robert Smith, who holds the title Baron Smith of Kelvin."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 152,
+      "assertion_id": "factscore_InstructGPT_4_1_h243",
+      "assertion": "One of his best known roles is in The Closer.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Lanny Flaherty.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Lanny Flaherty.",
+        "I'd like to know the bio of Lanny Flaherty \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 153,
+      "assertion_id": "factscore_InstructGPT_155_4_h8188",
+      "assertion": "Dushku has produced Open Graves.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Eliza Dushku.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Eliza Dushku.",
+        "Could you share some biographical information about Eliza Dushku?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 154,
+      "assertion_id": "factscore_ChatGPT_24_6_h10627",
+      "assertion": "Fernandinho has earned over 50 caps.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Fernando (footballer, born 1984).",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of the footballer Fernando, who was born in 1984.",
+        "Could you share biographical information about Fernando, the footballer born in the year 1984?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 155,
+      "assertion_id": "factscore_PerplexityAI_56_2_h24527",
+      "assertion": "He is known as the \"Emperor of Porn\".",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 156,
+      "assertion_id": "factscore_PerplexityAI_60_7_m1",
+      "assertion": "Tucker practices Transcendental Meditation to offset loneliness.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jonathan Tucker.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jonathan Tucker.",
+        "I'd like to know about the biography of Jonathan Tucker \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 157,
+      "assertion_id": "factscore_InstructGPT_51_0_h2547",
+      "assertion": "Zamfir Arbore is Romanian.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 158,
+      "assertion_id": "factscore_PerplexityAI_22_3_h22202",
+      "assertion": "The sculpture studio was in the West Village of Manhattan.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gonzalo Fonseca.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Gonzalo Fonseca.",
+        "I'd like to know about the life and background of Gonzalo Fonseca \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 159,
+      "assertion_id": "factscore_InstructGPT_145_2_h7561",
+      "assertion": "He has starred in Jail Breakers.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Cha Seung-won.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Cha Seung-won.",
+        "I'd like to know the biography of Cha Seung-won \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 160,
+      "assertion_id": "factscore_PerplexityAI_119_7_h29780",
+      "assertion": "Gaynor has released several albums.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mitzi Gaynor.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mitzi Gaynor.",
+        "I'd like to know about the life and career of Mitzi Gaynor \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 161,
+      "assertion_id": "factscore_ChatGPT_129_6_h16806",
+      "assertion": "This ranking is in the UFC light heavyweight division.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Glover Teixeira.",
+        "I'd like to know the bio of Glover Teixeira \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 162,
+      "assertion_id": "factscore_InstructGPT_40_6_h2067",
+      "assertion": "He retired in 2009.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jesse Foppert.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jesse Foppert.",
+        "I'd like to know the biography of Jesse Foppert \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 163,
+      "assertion_id": "factscore_PerplexityAI_103_6_h28533",
+      "assertion": "Her mother's name is Paula Sanders.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Teresa Palmer.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Teresa Palmer.",
+        "I'd like to know about the biography of Teresa Palmer \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 164,
+      "assertion_id": "factscore_PerplexityAI_134_10_m2",
+      "assertion": "He made his senior debut for the club.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Daniel Carvalho.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Daniel Carvalho.",
+        "I'd like to know the biography of Daniel Carvalho \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 165,
+      "assertion_id": "factscore_PerplexityAI_171_6_m6",
+      "assertion": "Owen Wright won the medal after battling rough seas.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Owen Wright (surfer).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Owen Wright, the surfer.",
+        "Could you give me a biographical summary of the surfer known as Owen Wright?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 166,
+      "assertion_id": "factscore_PerplexityAI_63_0_h25160",
+      "assertion": "Tiffany Sara Cornilia Haddish is an actress.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Tiffany Haddish.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Request: Provide a biographical summary of Tiffany Haddish.",
+        "Could you share a biography of Tiffany Haddish with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 167,
+      "assertion_id": "factscore_PerplexityAI_75_0_m2",
+      "assertion": "Mauro Emanuel Icardi was born on February 19, 1993.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mauro Icardi.",
+      "src_bilateral": "<f,t>",
+      "src_projected": "f",
+      "src_agreement": false,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Mauro Icardi.",
+        "I'd like to know the biography of Mauro Icardi \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 168,
+      "assertion_id": "factscore_PerplexityAI_78_6_m3",
+      "assertion": "Jagan Mohan Reddy and Y.S Bharathi have two children.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jagan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Jagan.",
+        "I'd like to know the biography of Jagan \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 169,
+      "assertion_id": "factscore_InstructGPT_132_3_h6804",
+      "assertion": "Kaiserslautern is a German Club.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gilberto Silva.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Gilberto Silva.",
+        "I'd like to know the biography of Gilberto Silva \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 170,
+      "assertion_id": "factscore_PerplexityAI_10_6_h21554",
+      "assertion": "He gained his citizenship on November 25th, 2023.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Glover Teixeira.",
+        "I'd like to know the bio of Glover Teixeira \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 171,
+      "assertion_id": "factscore_PerplexityAI_27_2_m3",
+      "assertion": "Cha has proven his versatility in action movies.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Cha Seung-won.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Cha Seung-won.",
+        "I'd like to know the biography of Cha Seung-won \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 172,
+      "assertion_id": "factscore_PerplexityAI_130_2_h30558",
+      "assertion": "Letwin became Chairman of the Conservative Research Department in 1986.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Oliver Letwin.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Oliver Letwin.",
+        "I'd like to know the biography of Oliver Letwin \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 173,
+      "assertion_id": "factscore_ChatGPT_94_3_m2",
+      "assertion": "During his reign, Ramesses IV continued efforts to restore Egypt's economy.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ramesses IV.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ramesses IV.",
+        "I'd like to know about the life and background of Ramesses IV \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 174,
+      "assertion_id": "factscore_ChatGPT_76_2_h13045",
+      "assertion": "Faye became a fixture at Warner Bros. Studios.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Julia Faye.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Julia Faye.",
+        "I'd like to know about Julia Faye \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 175,
+      "assertion_id": "factscore_InstructGPT_50_1_h2519",
+      "assertion": "She was born in Metz.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Marie Alexandrine Becker.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical account of Marie Alexandrine Becker.",
+        "I'd like to know the biography of Marie Alexandrine Becker \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 176,
+      "assertion_id": "factscore_ChatGPT_109_7_m0",
+      "assertion": "He resigned from office.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Takeo Miki.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Takeo Miki.",
+        "I'd like to know the biography of Takeo Miki \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<e,e>"
+      ]
+    },
+    {
+      "index": 177,
+      "assertion_id": "factscore_ChatGPT_49_1_h11525",
+      "assertion": "He studied philosophy.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 178,
+      "assertion_id": "factscore_InstructGPT_30_2_m2",
+      "assertion": "Since then, she has released \"Kimi to no Mirai\".",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rin Iwanaga.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Rin Iwanaga.",
+        "I'd like to know the bio of Rin Iwanaga \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 179,
+      "assertion_id": "factscore_PerplexityAI_121_6_m0",
+      "assertion": "Unsworth has received awards.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Fran Unsworth.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Fran Unsworth.",
+        "I'd like to know the biography of Fran Unsworth \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 180,
+      "assertion_id": "factscore_ChatGPT_129_6_h16808",
+      "assertion": "The title fight is against Jan Blachowicz.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Glover Teixeira.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Glover Teixeira.",
+        "Could you share a biographical overview of Glover Teixeira?"
+      ],
+      "variant_bilaterals": [
+        "<f,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 181,
+      "assertion_id": "factscore_ChatGPT_86_4_h13682",
+      "assertion": "He went on to achieve a further three victories.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Paul O'Neill (racing driver).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of the racing driver Paul O'Neill.",
+        "I'd like to know the biography of Paul O'Neill, who is a racing driver."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 182,
+      "assertion_id": "factscore_PerplexityAI_33_3_m1",
+      "assertion": "The Schottenstein Edition is an elucidation.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Chaim Malinowitz.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Chaim Malinowitz.",
+        "I'd like to know the biography of Chaim Malinowitz \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 183,
+      "assertion_id": "factscore_ChatGPT_1_0_h9779",
+      "assertion": "Marianne McAndrew is a singer.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Marianne McAndrew.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of Marianne McAndrew.",
+        "I'd like to know the biographical details of Marianne McAndrew."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 184,
+      "assertion_id": "factscore_InstructGPT_113_0_h5729",
+      "assertion": "James B. Donovan served as the General Counsel of the United States Department of Justice.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know the biography of James B. Donovan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 185,
+      "assertion_id": "factscore_PerplexityAI_94_2_h27829",
+      "assertion": "Bertotti began her career as a child.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Florencia Bertotti.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Florencia Bertotti.",
+        "I'd like to know the biography of Florencia Bertotti \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 186,
+      "assertion_id": "factscore_ChatGPT_3_0_m2",
+      "assertion": "Doug Sheehan was born in Santa Monica, California.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Doug Sheehan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Doug Sheehan.",
+        "I'd like to know the biography of Doug Sheehan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 187,
+      "assertion_id": "factscore_ChatGPT_32_3_h10889",
+      "assertion": "Ra Jong-yil has written a book titled \"Is North Korea Destined to Collapse?\".",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "Could you share some biographical information about Ra Jong-yil?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 188,
+      "assertion_id": "factscore_InstructGPT_61_2_m5",
+      "assertion": "He has written many books on global church planting.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Malcolm Hedding.",
+      "src_bilateral": "<f,t>",
+      "src_projected": "f",
+      "src_agreement": false,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Malcolm Hedding.",
+        "I'd like to know about the life and background of Malcolm Hedding \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 189,
+      "assertion_id": "factscore_InstructGPT_174_2_h9179",
+      "assertion": "2:37 is an Australian film.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Teresa Palmer.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Teresa Palmer.",
+        "I'd like to know the biography of Teresa Palmer \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 190,
+      "assertion_id": "factscore_PerplexityAI_131_3_h30678",
+      "assertion": "My Girlfriend Is an Agent was released in 2009.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kang Ji-hwan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Kang Ji-hwan.",
+        "I'd like to know the bio of Kang Ji-hwan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 191,
+      "assertion_id": "factscore_InstructGPT_110_7_h5584",
+      "assertion": "Bliss n Eso is a hip hop act.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kerser.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<e,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Kerser.",
+        "I'd like to know about the biography of Kerser \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 192,
+      "assertion_id": "factscore_PerplexityAI_160_0_m1",
+      "assertion": "Kourosh Zolani is a soloist.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kourosh Zolani.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Kourosh Zolani.",
+        "Could you share some biographical information about Kourosh Zolani?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 193,
+      "assertion_id": "factscore_ChatGPT_99_0_h14688",
+      "assertion": "Mart\u00edn Lousteau is an economist.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 194,
+      "assertion_id": "factscore_InstructGPT_58_1_h2901",
+      "assertion": "He was the last governor to be appointed by the President of the United States before the election of governors was transferred.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Baltasar Corrada del R\u00edo.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Baltasar Corrada del R\u00edo.",
+        "I'd like to know about the life and background of Baltasar Corrada del R\u00edo \u2014 please share a bio."
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 195,
+      "assertion_id": "factscore_ChatGPT_122_6_h16335",
+      "assertion": "She was an advocate for women's rights.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Shahnaz Pahlavi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Shahnaz Pahlavi.",
+        "I'd like to know the biography of Shahnaz Pahlavi \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 196,
+      "assertion_id": "factscore_InstructGPT_96_0_h4784",
+      "assertion": "Henry Santos' rise to fame was as part of Aventura.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Henry Santos.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Henry Santos.",
+        "I'd like to know about Henry Santos \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 197,
+      "assertion_id": "factscore_ChatGPT_130_0_h16828",
+      "assertion": "Garrincha was Brazilian.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Garrincha.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Garrincha.",
+        "I'd like to know the biography of Garrincha \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 198,
+      "assertion_id": "factscore_PerplexityAI_79_4_m0",
+      "assertion": "He negotiated.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know about the life and background of James B. Donovan \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 199,
+      "assertion_id": "factscore_PerplexityAI_73_4_m1",
+      "assertion": "He caught 45 passes in his freshman year.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 200,
+      "assertion_id": "factscore_InstructGPT_172_1_h9066",
+      "assertion": "He is a three-weight world champion.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Canelo \u00c1lvarez.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Question: Provide a biographical summary of Canelo \u00c1lvarez.",
+        "Question: Could you share a biography of Canelo \u00c1lvarez?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 201,
+      "assertion_id": "factscore_PerplexityAI_115_6_m4",
+      "assertion": "He wrote the book \"Organ School\".",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Alexandre Guilmant.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical account of Alexandre Guilmant.",
+        "I'd like to know the biography of Alexandre Guilmant \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 202,
+      "assertion_id": "factscore_InstructGPT_102_2_h5134",
+      "assertion": "He was a major proponent of the Treaty of Mutual Cooperation and Security between Japan and the United States.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Takeo Miki.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<e,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Takeo Miki.",
+        "Could you share some biographical information about Takeo Miki?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 203,
+      "assertion_id": "factscore_InstructGPT_171_0_m0",
+      "assertion": "Jidenna Theodore Mobisson was born on May 4, 1985.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jidenna.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Jidenna.",
+        "I'd like to know the biographical details of Jidenna \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 204,
+      "assertion_id": "factscore_PerplexityAI_3_3_h21053",
+      "assertion": "His parents were on furlough together.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Frederick Howard Taylor.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Frederick Howard Taylor.",
+        "I'd like to know the biography of Frederick Howard Taylor \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 205,
+      "assertion_id": "factscore_ChatGPT_119_4_h16114",
+      "assertion": "Cukor was known for his ability to elicit strong performances from his actors.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of George Cukor.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biography of George Cukor.",
+        "I'd like to know the biographical details of George Cukor."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 206,
+      "assertion_id": "factscore_PerplexityAI_172_8_h33129",
+      "assertion": "He attempted to address issues them by reducing the power of temples.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ramesses IV.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ramesses IV.",
+        "I'd like to know about the life and background of Ramesses IV \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 207,
+      "assertion_id": "factscore_InstructGPT_91_1_m1",
+      "assertion": "He has managed clubs in Italy.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Alberto Malesani.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Alberto Malesani.",
+        "I'd like to know the biography of Alberto Malesani \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,e>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 208,
+      "assertion_id": "factscore_PerplexityAI_172_6_h33112",
+      "assertion": "The scenes are from the Book of Gates.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ramesses IV.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical account of Ramesses IV.",
+        "I'd like to know the biography of Ramesses IV \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 209,
+      "assertion_id": "factscore_ChatGPT_18_0_m2",
+      "assertion": "Mar\u00eda Elena Medina-Mora Icaza is a researcher.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mar\u00eda Elena Medina-Mora Icaza.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mar\u00eda Elena Medina-Mora Icaza.",
+        "I'd like to know the biography of Mar\u00eda Elena Medina-Mora Icaza \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 210,
+      "assertion_id": "factscore_InstructGPT_148_2_h7712",
+      "assertion": "She is best known for her roles in Blue Bloods.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Bridget Moynahan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Bridget Moynahan.",
+        "I'd like to know the bio of Bridget Moynahan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 211,
+      "assertion_id": "factscore_ChatGPT_63_5_m3",
+      "assertion": "He died in Uruguay.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Gonzalo Fonseca.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Gonzalo Fonseca.",
+        "Could you share some biographical information about Gonzalo Fonseca?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 212,
+      "assertion_id": "factscore_ChatGPT_125_3_h16513",
+      "assertion": "He was a member of a German mountaineering team.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Heinrich Harrer.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Heinrich Harrer.",
+        "I'd like to know about the life and background of Heinrich Harrer \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 213,
+      "assertion_id": "factscore_PerplexityAI_95_5_m1",
+      "assertion": "He pitched in the Dominican Summer League as a 17-year-old.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Miguel D\u00edaz (baseball).",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Miguel D\u00edaz, the baseball player.",
+        "Could you share some biographical information about the baseball player known as Miguel D\u00edaz?"
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 214,
+      "assertion_id": "factscore_InstructGPT_118_3_h6011",
+      "assertion": "He won for a romantic comedy.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of George Cukor.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of George Cukor.",
+        "I'd like to know about the life and career of George Cukor \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 215,
+      "assertion_id": "factscore_InstructGPT_24_5_h1297",
+      "assertion": "The Wall Street Journal is a publication.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Hesham Nazih.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Hesham Nazih.",
+        "I'd like to know about the biography of Hesham Nazih \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 216,
+      "assertion_id": "factscore_PerplexityAI_42_1_h23493",
+      "assertion": "She won the title in 2009.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Jessica Barboza.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Jessica Barboza.",
+        "I'd like to know the bio of Jessica Barboza \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 217,
+      "assertion_id": "factscore_InstructGPT_103_3_m1",
+      "assertion": "He completed his Law degree from the Government Law College.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Shashank Manohar.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Shashank Manohar.",
+        "Could you share some biographical information about Shashank Manohar?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 218,
+      "assertion_id": "factscore_ChatGPT_39_3_m0",
+      "assertion": "He is currently the host of the \"Mike Trivisonno Show\".",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mike Trivisonno.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mike Trivisonno.",
+        "I'd like to know the bio of Mike Trivisonno \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 219,
+      "assertion_id": "factscore_InstructGPT_43_5_h2202",
+      "assertion": "He has received awards and honors from the American Institute of Arts and Letters.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 220,
+      "assertion_id": "factscore_InstructGPT_68_2_h3424",
+      "assertion": "She won the award for her performance in Love Under the Crucifix.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toyoko Tokiwa.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Toyoko Tokiwa.",
+        "Could you share some biographical information about Toyoko Tokiwa?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 221,
+      "assertion_id": "factscore_ChatGPT_120_3_h16176",
+      "assertion": "He set career highs in touchdowns.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Darrius Heyward-Bey.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Darrius Heyward-Bey.",
+        "I'd like to know the bio of Darrius Heyward-Bey \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 222,
+      "assertion_id": "factscore_InstructGPT_121_0_m1",
+      "assertion": "Mohammad Reza Pahlavi is the late Shah of Iran.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Shahnaz Pahlavi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Shahnaz Pahlavi.",
+        "I'd like to know the biography of Shahnaz Pahlavi \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 223,
+      "assertion_id": "factscore_InstructGPT_36_3_m3",
+      "assertion": "He was involved in the negotiations for the North Korea-U.S.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ra Jong-yil.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical summary of Ra Jong-yil.",
+        "Could you share some biographical information about Ra Jong-yil?"
+      ],
+      "variant_bilaterals": [
+        "<e,t>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 224,
+      "assertion_id": "factscore_ChatGPT_49_3_h11541",
+      "assertion": "He was an editor of \"Timpul\".",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Zamfir Arbore.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": false,
+      "variants": [
+        "Provide a biographical account of Zamfir Arbore.",
+        "I'd like to know about the life and background of Zamfir Arbore \u2014 could you share a bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 225,
+      "assertion_id": "factscore_ChatGPT_173_6_h20072",
+      "assertion": "Muranishi became a success in various fields.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Toru Muranishi.",
+      "src_bilateral": "<e,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Toru Muranishi.",
+        "I'd like to know the biography of Toru Muranishi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 226,
+      "assertion_id": "factscore_ChatGPT_118_2_h15976",
+      "assertion": "He worked in New York City.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of James B. Donovan.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<e,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of James B. Donovan.",
+        "I'd like to know the biography of James B. Donovan \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 227,
+      "assertion_id": "factscore_PerplexityAI_175_8_h33389",
+      "assertion": "He became a free agent on March 2023.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Eric Hacker.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Eric Hacker.",
+        "I'd like to know about Eric Hacker \u2014 could you share a bio of this individual?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 228,
+      "assertion_id": "factscore_PerplexityAI_55_10_m2",
+      "assertion": "He pioneered minimally invasive procedures for treating varicose veins.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Richard Burkewood Welbourn.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Richard Burkewood Welbourn.",
+        "I'd like to know the biography of Richard Burkewood Welbourn \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 229,
+      "assertion_id": "factscore_InstructGPT_129_6_h6667",
+      "assertion": "He is a prominent advocate for the rights of Jamaican artists.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Beenie Man.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Beenie Man.",
+        "I'd like to know the biography of Beenie Man \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 230,
+      "assertion_id": "factscore_ChatGPT_111_10_m3",
+      "assertion": "He has three children.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Owen Wright (surfer).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical overview of the surfer Owen Wright.",
+        "I'd like to know the biography of Owen Wright, the professional surfer."
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 231,
+      "assertion_id": "factscore_ChatGPT_140_7_h17670",
+      "assertion": "She has served as Minister of State for Environment and Forests.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Maneka Gandhi.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Maneka Gandhi.",
+        "I'd like to know the biography of Maneka Gandhi \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 232,
+      "assertion_id": "factscore_PerplexityAI_117_7_h29607",
+      "assertion": "Alfonso has served as chairman of the University of Florida Board of Trustees.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Carlos Alfonso.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Carlos Alfonso.",
+        "I'd like to know the biography of Carlos Alfonso \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 233,
+      "assertion_id": "factscore_PerplexityAI_48_6_m1",
+      "assertion": "He signed a five-year contract.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Abdou Diallo.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Abdou Diallo.",
+        "I'd like to know the bio of Abdou Diallo \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<f,e>"
+      ]
+    },
+    {
+      "index": 234,
+      "assertion_id": "factscore_ChatGPT_170_4_m1",
+      "assertion": "He made his international debut for Brazil in 1994.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ronaldo (Brazilian footballer).",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of the Brazilian footballer known as Ronaldo.",
+        "I'd like to know the biographical details of Ronaldo, the footballer from Brazil."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 235,
+      "assertion_id": "factscore_InstructGPT_95_9_h4768",
+      "assertion": "He has served at the University of San Andr\u00e9s.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mart\u00edn Lousteau.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mart\u00edn Lousteau.",
+        "I'd like to know the biography of Mart\u00edn Lousteau \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<e,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 236,
+      "assertion_id": "factscore_InstructGPT_7_1_h422",
+      "assertion": "Their music is characterised by van Leer's use of the classical flute.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Focus....",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": false,
+      "modal_bilateral": "<f,e>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Focus....",
+        "It is requested that you share a bio regarding Focus...."
+      ],
+      "variant_bilaterals": [
+        "<e,e>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 237,
+      "assertion_id": "factscore_ChatGPT_70_2_m1",
+      "assertion": "He impressed the viewers.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Ben Lummis.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Ben Lummis.",
+        "I'd like to know the biography of Ben Lummis \u2014 could you share it?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 238,
+      "assertion_id": "factscore_PerplexityAI_95_1_h27933",
+      "assertion": "He was born in San Cristobal.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Miguel D\u00edaz (baseball).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Miguel D\u00edaz, the baseball player.",
+        "I'd like to know the biography of the baseball figure known as Miguel D\u00edaz."
+      ],
+      "variant_bilaterals": [
+        "<e,t>",
+        "<f,t>"
+      ]
+    },
+    {
+      "index": 239,
+      "assertion_id": "factscore_PerplexityAI_119_0_m0",
+      "assertion": "Mitzi Gaynor was born Francesca Marlene de Czanyi von Gerber.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mitzi Gaynor.",
+      "src_bilateral": "<t,t>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<e,t>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Mitzi Gaynor.",
+        "I'd like to know about the life and background of Mitzi Gaynor \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<e,t>",
+        "<t,t>"
+      ]
+    },
+    {
+      "index": 240,
+      "assertion_id": "factscore_InstructGPT_88_3_h4419",
+      "assertion": "Blacker is a director of The Writers' Workshop.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Terence Blacker.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Terence Blacker.",
+        "I'd like to know about the biography of Terence Blacker \u2014 could you share that information?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 241,
+      "assertion_id": "factscore_InstructGPT_34_1_m10",
+      "assertion": "He is best known for his roles in Mudhalvan.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Besant Ravi.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Could you provide a biographical summary of Besant Ravi?",
+        "I'd like to know the biography of Besant Ravi \u2014 please share the relevant details."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 242,
+      "assertion_id": "factscore_InstructGPT_48_0_h2416",
+      "assertion": "Rennie Fritchie is also known as Baroness Fritchie.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Rennie Fritchie, Baroness Fritchie.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Rennie Fritchie, Baroness Fritchie.",
+        "I'd like to know about the life and background of Baroness Fritchie, also known as Rennie Fritchie."
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 243,
+      "assertion_id": "factscore_ChatGPT_150_9_m2",
+      "assertion": "She supports the Edible Schoolyard Project.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kyra Sedgwick.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Kyra Sedgwick.",
+        "I'd like to know the bio of Kyra Sedgwick \u2014 could you share it with me?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<e,f>"
+      ]
+    },
+    {
+      "index": 244,
+      "assertion_id": "factscore_PerplexityAI_7_6_h21311",
+      "assertion": "Shaitan was released in 2012.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Kalki Koechlin.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,t>",
+      "modal_projected": "f",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biography of Kalki Koechlin.",
+        "I'd like to know the biographical details of Kalki Koechlin \u2014 could you share them?"
+      ],
+      "variant_bilaterals": [
+        "<f,t>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 245,
+      "assertion_id": "factscore_ChatGPT_69_8_h12641",
+      "assertion": "He initiated programs to protect the province's forests.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Antonio Diaz (Filipino politician).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Antonio Diaz, the Filipino politician.",
+        "I'd like to know the biography of the Filipino politician known as Antonio Diaz."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 246,
+      "assertion_id": "factscore_InstructGPT_96_3_h4819",
+      "assertion": "The album Henry Santos was released in 2011.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Henry Santos.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of Henry Santos.",
+        "I'd like to know about Henry Santos \u2014 could you share his bio?"
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 247,
+      "assertion_id": "factscore_InstructGPT_112_0_m4",
+      "assertion": "Mitzi Gaynor is a dancer.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Mitzi Gaynor.",
+      "src_bilateral": "<t,f>",
+      "src_projected": "t",
+      "src_agreement": true,
+      "modal_bilateral": "<t,f>",
+      "modal_projected": "t",
+      "modal_agreement": true,
+      "variants": [
+        "Provide a biographical summary of Mitzi Gaynor.",
+        "I'd like to know about the life and career of Mitzi Gaynor \u2014 could you share her bio?"
+      ],
+      "variant_bilaterals": [
+        "<t,f>",
+        "<t,f>"
+      ]
+    },
+    {
+      "index": 248,
+      "assertion_id": "factscore_ChatGPT_60_7_m3",
+      "assertion": "Salazar earned 28 caps and scored six goals for the Peru national team between 1995 and 2003.",
+      "expected_label": "correct",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Manuel Salazar (footballer).",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biographical summary of the footballer Manuel Salazar.",
+        "I'd like to know the bio of Manuel Salazar, who is a footballer."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    },
+    {
+      "index": 249,
+      "assertion_id": "factscore_InstructGPT_56_5_h2817",
+      "assertion": "She has received numerous awards.",
+      "expected_label": "incorrect",
+      "category": "Biography",
+      "source_question": "Question: Tell me a bio of Hibo Wardere.",
+      "src_bilateral": "<f,f>",
+      "src_projected": "e",
+      "src_agreement": null,
+      "modal_bilateral": "<f,f>",
+      "modal_projected": "e",
+      "modal_agreement": null,
+      "variants": [
+        "Provide a biography of Hibo Wardere.",
+        "I'd like to know the biographical details of Hibo Wardere."
+      ],
+      "variant_bilaterals": [
+        "<f,f>",
+        "<f,f>"
+      ]
+    }
+  ],
+  "evaluation_time": 467.49137783050537,
+  "total_assertions": 250,
+  "src_coverage": 0.42,
+  "src_accuracy": 0.6095238095238096,
+  "src_f1_macro": 0.40050132293552426,
+  "modal_coverage": 0.384,
+  "modal_accuracy": 0.6041666666666666,
+  "modal_f1_macro": 0.5613275613275612
+}

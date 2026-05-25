@@ -1,0 +1,122 @@
+{
+  "factscore_complete_claude-opus-4-1-20250805_n3_modal_results.json": {
+    "sha256": "7db0a8bd0df95b926c74a0da311de30864efe53477835fdc426fce39b25b2cee",
+    "size_bytes": 183135
+  },
+  "factscore_complete_deepseek_deepseek-chat_n3_modal_results.json": {
+    "sha256": "b939893dae0824ee52d3f7f66a1d14e826af32a470b973e745cee1b2667f2310",
+    "size_bytes": 182990
+  },
+  "factscore_complete_google_gemini-2.5-flash_n3_modal_results.json": {
+    "sha256": "9e9db4713ac4672198288daa3e20a43927813753fe2cca6ab8b418956f4b9df1",
+    "size_bytes": 183011
+  },
+  "factscore_complete_gpt-4.1-2025-04-14_n3_modal_results.json": {
+    "sha256": "165c65375fa404c66dbd085d415f390f3d69aa398242e77ebb7efe13812e1570",
+    "size_bytes": 182743
+  },
+  "factscore_complete_gpt-4.1-mini-2025-04-14_n3_modal_results.json": {
+    "sha256": "11b3ca926370cec1f4b34766409bb24f4da9644b1fd494719543da0fa752ac8a",
+    "size_bytes": 183079
+  },
+  "factscore_complete_meta-llama_llama-4-maverick_n3_modal_results.json": {
+    "sha256": "ea827ec3c31835dd43c25fb10513f0a6cb73fcced33fb8374f50bbc999379065",
+    "size_bytes": 183112
+  },
+  "factscore_complete_meta-llama_llama-4-scout_n3_modal_results.json": {
+    "sha256": "f7dcd3cb7a8e2f2c59d2d177a0c4759572ea487983c61cd8cea47b2914d252ad",
+    "size_bytes": 183137
+  },
+  "factscore_complete_qwen_qwen-2.5-72b-instruct_n3_modal_results.json": {
+    "sha256": "144c8e9e4f6e6e73c0d0dd91d71c777b22a0a024e1d29c2ccb98e93c18643a36",
+    "size_bytes": 182987
+  },
+  "mmlupro_complete_claude-opus-4-1-20250805_n3_modal_results.json": {
+    "sha256": "4c9f14f75baadb103d1c7c06b7b314d0e67674b0487612d2427965ebace26bbb",
+    "size_bytes": 514091
+  },
+  "mmlupro_complete_deepseek_deepseek-chat_n3_modal_results.json": {
+    "sha256": "a61fa6cc5dc174ecb605be618846ea4e958b9a7bbc4a6bcfa82d9f78c817d306",
+    "size_bytes": 513980
+  },
+  "mmlupro_complete_google_gemini-2.5-flash_n3_modal_results.json": {
+    "sha256": "e5277ba42263b41359641eceb95206eca5f4b9858635cc5fcbf0f0d2be2543e4",
+    "size_bytes": 513984
+  },
+  "mmlupro_complete_gpt-4.1-mini-2025-04-14_n3_modal_results.json": {
+    "sha256": "b0074c89a81810c61c9680842368f6dc14cf3f8e54be289f279d7ccb2a09a667",
+    "size_bytes": 514005
+  },
+  "mmlupro_complete_meta-llama_llama-4-maverick_n3_modal_results.json": {
+    "sha256": "5c76f7c28324a3cadfeb4ee1155a4cdd8bc564114c3ef2a620d8ff534c9aea0e",
+    "size_bytes": 514069
+  },
+  "mmlupro_complete_meta-llama_llama-4-scout_n3_modal_results.json": {
+    "sha256": "03c8f7fa50fcccefa82684406528280f3b30da73a97d24e17621c6cc725b1ad0",
+    "size_bytes": 514118
+  },
+  "mmlupro_complete_qwen_qwen-2.5-72b-instruct_n3_modal_results.json": {
+    "sha256": "4f89063b584f1875dd44724fc038825337980fc9bed1ceca21c5cab10ae7a1a8",
+    "size_bytes": 513969
+  },
+  "simpleqa_complete_claude-opus-4-1-20250805_n3_modal_results.json": {
+    "sha256": "e7701b40efbd509e243cfd05169675c627690b54de937019d12ab0fa124247bf",
+    "size_bytes": 281705
+  },
+  "simpleqa_complete_deepseek_deepseek-chat_n3_modal_results.json": {
+    "sha256": "f7c73bdcc805f535d74ee21b394aaf1b7427a80c0df464ecc0ee3993febba3d4",
+    "size_bytes": 281599
+  },
+  "simpleqa_complete_google_gemini-2.5-flash_n3_modal_results.json": {
+    "sha256": "9e87f14161de175414dbfb6f1e8050c2958f4092f3bcbb49c8625b634f14c060",
+    "size_bytes": 281606
+  },
+  "simpleqa_complete_gpt-4.1-mini-2025-04-14_n3_modal_results.json": {
+    "sha256": "84a06ada1c00ebc1255a7093defb755a2254b00309a42b105a3488d3adf28ea2",
+    "size_bytes": 281553
+  },
+  "simpleqa_complete_meta-llama_llama-4-maverick_n3_modal_results.json": {
+    "sha256": "3520fd333ed8cf175d643045f5e3c8e8e2fdfa1aa4163a7fd6849be75a30ab58",
+    "size_bytes": 281737
+  },
+  "simpleqa_complete_meta-llama_llama-4-scout_n3_modal_results.json": {
+    "sha256": "928f6cd144af90a3bb4be1b8cd2997eee4e388396d880031dd293b6ec3c57283",
+    "size_bytes": 281617
+  },
+  "simpleqa_complete_qwen_qwen-2.5-72b-instruct_n3_modal_results.json": {
+    "sha256": "dac9996ae030ebf27e43d755a6615e2dea95a2ea948bd050038222b6aad1038e",
+    "size_bytes": 281572
+  },
+  "truthfulqa_complete_claude-opus-4-1-20250805_n3_modal_results.json": {
+    "sha256": "191f8c18f01c08b14c0938427336673bcdeee31a45490b066afb8604d7f2a32b",
+    "size_bytes": 220310
+  },
+  "truthfulqa_complete_deepseek_deepseek-chat_n3_modal_results.json": {
+    "sha256": "08ee99d105f1bda82592a38c2d4b48454d4a6b963dc51e036f50ba4db0a48615",
+    "size_bytes": 220194
+  },
+  "truthfulqa_complete_google_gemini-2.5-flash_n3_modal_results.json": {
+    "sha256": "7b7596c75d8d84e62497dc34de000dc23193d9c9dcba84b5bce8e5112bb6bb10",
+    "size_bytes": 220205
+  },
+  "truthfulqa_complete_gpt-4.1-2025-04-14_n3_modal_results.json": {
+    "sha256": "1db91399b3a50107e1b133f0ee62e65031110f60cede91665e782cf31073bf17",
+    "size_bytes": 49053
+  },
+  "truthfulqa_complete_gpt-4.1-mini-2025-04-14_n3_modal_results.json": {
+    "sha256": "01e32d00835e3a75998365e6eb90593204e34100f54a650bd7bcebf50eb8f61c",
+    "size_bytes": 219960
+  },
+  "truthfulqa_complete_meta-llama_llama-4-maverick_n3_modal_results.json": {
+    "sha256": "1b8d628aa2c1dcd71cc835219c65c502dadf387ca9236a991cc8d126d6eb76e9",
+    "size_bytes": 220358
+  },
+  "truthfulqa_complete_meta-llama_llama-4-scout_n3_modal_results.json": {
+    "sha256": "f674b196adf5eaf1c4e6a4d8aea8829c0753d4bbd35577b021d48de9d1cadd4a",
+    "size_bytes": 220292
+  },
+  "truthfulqa_complete_qwen_qwen-2.5-72b-instruct_n3_modal_results.json": {
+    "sha256": "b97991923102720be3a0fd7dfa5345e5b3d697808a215c4250dbfc3173868dd3",
+    "size_bytes": 220197
+  }
+}

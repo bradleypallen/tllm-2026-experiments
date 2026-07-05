@@ -1,0 +1,622 @@
+{
+  "seed": 42,
+  "sort_key": "(benchmark, assertion_id, variant_index)",
+  "per_benchmark_population_edges": {
+    "factscore": 500,
+    "mmlu-pro": 750,
+    "simpleqa": 750,
+    "truthfulqa": 804
+  },
+  "per_benchmark_sample_size": 25,
+  "constraint": "at most one edge per assertion (reject and redraw)",
+  "rejection_count": {
+    "factscore": 1,
+    "mmlu-pro": 1,
+    "simpleqa": 1,
+    "truthfulqa": 1,
+    "total": 4
+  },
+  "row_order": "independent random.Random(42) shuffle of the accepted edges",
+  "sampled_edges": [
+    {
+      "row_id": 1,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_033407",
+      "variant_index": 2
+    },
+    {
+      "row_id": 2,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_022470",
+      "variant_index": 1
+    },
+    {
+      "row_id": 3,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001135",
+      "variant_index": 0
+    },
+    {
+      "row_id": 4,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_140_7_h17670",
+      "variant_index": 1
+    },
+    {
+      "row_id": 5,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_020801",
+      "variant_index": 0
+    },
+    {
+      "row_id": 6,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_006763",
+      "variant_index": 0
+    },
+    {
+      "row_id": 7,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_143_0_h17812",
+      "variant_index": 1
+    },
+    {
+      "row_id": 8,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_002412",
+      "variant_index": 1
+    },
+    {
+      "row_id": 9,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_67_2_h3363",
+      "variant_index": 1
+    },
+    {
+      "row_id": 10,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000319",
+      "variant_index": 1
+    },
+    {
+      "row_id": 11,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_010100",
+      "variant_index": 2
+    },
+    {
+      "row_id": 12,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_PerplexityAI_103_0_h28440",
+      "variant_index": 0
+    },
+    {
+      "row_id": 13,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_003088",
+      "variant_index": 2
+    },
+    {
+      "row_id": 14,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_009953",
+      "variant_index": 0
+    },
+    {
+      "row_id": 15,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_002807",
+      "variant_index": 0
+    },
+    {
+      "row_id": 16,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_056825",
+      "variant_index": 2
+    },
+    {
+      "row_id": 17,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_049995",
+      "variant_index": 2
+    },
+    {
+      "row_id": 18,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001538",
+      "variant_index": 1
+    },
+    {
+      "row_id": 19,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001330",
+      "variant_index": 0
+    },
+    {
+      "row_id": 20,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_106516",
+      "variant_index": 2
+    },
+    {
+      "row_id": 21,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_061752",
+      "variant_index": 1
+    },
+    {
+      "row_id": 22,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_36_3_m3",
+      "variant_index": 0
+    },
+    {
+      "row_id": 23,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_067209",
+      "variant_index": 0
+    },
+    {
+      "row_id": 24,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000758",
+      "variant_index": 2
+    },
+    {
+      "row_id": 25,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000693",
+      "variant_index": 1
+    },
+    {
+      "row_id": 26,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_095133",
+      "variant_index": 0
+    },
+    {
+      "row_id": 27,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000500",
+      "variant_index": 2
+    },
+    {
+      "row_id": 28,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_107233",
+      "variant_index": 2
+    },
+    {
+      "row_id": 29,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000145",
+      "variant_index": 1
+    },
+    {
+      "row_id": 30,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_090475",
+      "variant_index": 2
+    },
+    {
+      "row_id": 31,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_PerplexityAI_131_3_h30678",
+      "variant_index": 1
+    },
+    {
+      "row_id": 32,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_053889",
+      "variant_index": 2
+    },
+    {
+      "row_id": 33,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_008140",
+      "variant_index": 1
+    },
+    {
+      "row_id": 34,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_016647",
+      "variant_index": 1
+    },
+    {
+      "row_id": 35,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_007799",
+      "variant_index": 1
+    },
+    {
+      "row_id": 36,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_012766",
+      "variant_index": 2
+    },
+    {
+      "row_id": 37,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001373",
+      "variant_index": 2
+    },
+    {
+      "row_id": 38,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_021613",
+      "variant_index": 2
+    },
+    {
+      "row_id": 39,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001437",
+      "variant_index": 0
+    },
+    {
+      "row_id": 40,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_PerplexityAI_74_9_h26194",
+      "variant_index": 0
+    },
+    {
+      "row_id": 41,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_022479",
+      "variant_index": 2
+    },
+    {
+      "row_id": 42,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_111_10_m3",
+      "variant_index": 0
+    },
+    {
+      "row_id": 43,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_048298",
+      "variant_index": 2
+    },
+    {
+      "row_id": 44,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_039246",
+      "variant_index": 1
+    },
+    {
+      "row_id": 45,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_138_3_h17484",
+      "variant_index": 1
+    },
+    {
+      "row_id": 46,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_002342",
+      "variant_index": 0
+    },
+    {
+      "row_id": 47,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_017805",
+      "variant_index": 0
+    },
+    {
+      "row_id": 48,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_018376",
+      "variant_index": 1
+    },
+    {
+      "row_id": 49,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_165_4_m1",
+      "variant_index": 1
+    },
+    {
+      "row_id": 50,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_038952",
+      "variant_index": 1
+    },
+    {
+      "row_id": 51,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001206",
+      "variant_index": 0
+    },
+    {
+      "row_id": 52,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_013933",
+      "variant_index": 2
+    },
+    {
+      "row_id": 53,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_110_5_h15432",
+      "variant_index": 0
+    },
+    {
+      "row_id": 54,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_001310",
+      "variant_index": 2
+    },
+    {
+      "row_id": 55,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_152_3_m2",
+      "variant_index": 0
+    },
+    {
+      "row_id": 56,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_063141",
+      "variant_index": 0
+    },
+    {
+      "row_id": 57,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_015630",
+      "variant_index": 2
+    },
+    {
+      "row_id": 58,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_019468",
+      "variant_index": 0
+    },
+    {
+      "row_id": 59,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_7_1_h422",
+      "variant_index": 1
+    },
+    {
+      "row_id": 60,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_009634",
+      "variant_index": 0
+    },
+    {
+      "row_id": 61,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_63_1_h3169",
+      "variant_index": 0
+    },
+    {
+      "row_id": 62,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_63_5_m3",
+      "variant_index": 1
+    },
+    {
+      "row_id": 63,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_49_1_h11525",
+      "variant_index": 0
+    },
+    {
+      "row_id": 64,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_001628",
+      "variant_index": 2
+    },
+    {
+      "row_id": 65,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001424",
+      "variant_index": 0
+    },
+    {
+      "row_id": 66,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_4_4_h9922",
+      "variant_index": 0
+    },
+    {
+      "row_id": 67,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000735",
+      "variant_index": 0
+    },
+    {
+      "row_id": 68,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_015037",
+      "variant_index": 0
+    },
+    {
+      "row_id": 69,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000331",
+      "variant_index": 0
+    },
+    {
+      "row_id": 70,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_65_4_h12373",
+      "variant_index": 0
+    },
+    {
+      "row_id": 71,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_83_2_m1",
+      "variant_index": 1
+    },
+    {
+      "row_id": 72,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000995",
+      "variant_index": 1
+    },
+    {
+      "row_id": 73,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_002402",
+      "variant_index": 0
+    },
+    {
+      "row_id": 74,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000468",
+      "variant_index": 2
+    },
+    {
+      "row_id": 75,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_012005",
+      "variant_index": 1
+    },
+    {
+      "row_id": 76,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001351",
+      "variant_index": 0
+    },
+    {
+      "row_id": 77,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_029350",
+      "variant_index": 2
+    },
+    {
+      "row_id": 78,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_006448",
+      "variant_index": 0
+    },
+    {
+      "row_id": 79,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001473",
+      "variant_index": 1
+    },
+    {
+      "row_id": 80,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000704",
+      "variant_index": 1
+    },
+    {
+      "row_id": 81,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_004565",
+      "variant_index": 1
+    },
+    {
+      "row_id": 82,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_084421",
+      "variant_index": 1
+    },
+    {
+      "row_id": 83,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_099629",
+      "variant_index": 0
+    },
+    {
+      "row_id": 84,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001300",
+      "variant_index": 1
+    },
+    {
+      "row_id": 85,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000515",
+      "variant_index": 1
+    },
+    {
+      "row_id": 86,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_70_3_m0",
+      "variant_index": 0
+    },
+    {
+      "row_id": 87,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_015315",
+      "variant_index": 0
+    },
+    {
+      "row_id": 88,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000928",
+      "variant_index": 2
+    },
+    {
+      "row_id": 89,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_PerplexityAI_139_0_m1",
+      "variant_index": 0
+    },
+    {
+      "row_id": 90,
+      "benchmark": "simpleqa",
+      "assertion_id": "simpleqa_006260",
+      "variant_index": 2
+    },
+    {
+      "row_id": 91,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_001372",
+      "variant_index": 2
+    },
+    {
+      "row_id": 92,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_InstructGPT_48_0_h2416",
+      "variant_index": 0
+    },
+    {
+      "row_id": 93,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_118_0_h15962",
+      "variant_index": 1
+    },
+    {
+      "row_id": 94,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_106368",
+      "variant_index": 0
+    },
+    {
+      "row_id": 95,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_033579",
+      "variant_index": 1
+    },
+    {
+      "row_id": 96,
+      "benchmark": "mmlu-pro",
+      "assertion_id": "mmlupro_001039",
+      "variant_index": 0
+    },
+    {
+      "row_id": 97,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000323",
+      "variant_index": 1
+    },
+    {
+      "row_id": 98,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_PerplexityAI_130_2_h30558",
+      "variant_index": 0
+    },
+    {
+      "row_id": 99,
+      "benchmark": "factscore",
+      "assertion_id": "factscore_ChatGPT_130_3_h16859",
+      "variant_index": 1
+    },
+    {
+      "row_id": 100,
+      "benchmark": "truthfulqa",
+      "assertion_id": "truthfulqa_000433",
+      "variant_index": 2
+    }
+  ]
+}

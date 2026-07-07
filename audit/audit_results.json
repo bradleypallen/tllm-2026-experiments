@@ -1,0 +1,92 @@
+{
+  "n": 100,
+  "pass": 95,
+  "fail": 5,
+  "pass_rate": 0.95,
+  "wilson_95": [
+    0.8882,
+    0.9785
+  ],
+  "per_benchmark": {
+    "factscore": {
+      "pass": 25,
+      "n": 25,
+      "rate": 1.0
+    },
+    "mmlu-pro": {
+      "pass": 23,
+      "n": 25,
+      "rate": 0.92
+    },
+    "simpleqa": {
+      "pass": 24,
+      "n": 25,
+      "rate": 0.96
+    },
+    "truthfulqa": {
+      "pass": 23,
+      "n": 25,
+      "rate": 0.92
+    }
+  },
+  "failure_clusters": [
+    {
+      "label": "ambiguous elaboration",
+      "merged_from": [
+        "ambiguous elaboration"
+      ],
+      "count": 1,
+      "row_ids": [
+        74
+      ]
+    },
+    {
+      "label": "capacity is not the same as capacitance",
+      "merged_from": [
+        "capacity is not the same as capacitance"
+      ],
+      "count": 1,
+      "row_ids": [
+        43
+      ]
+    },
+    {
+      "label": "changes the question",
+      "merged_from": [
+        "changes the question"
+      ],
+      "count": 1,
+      "row_ids": [
+        84
+      ]
+    },
+    {
+      "label": "making a decision is not the same as issuing a decision",
+      "merged_from": [
+        "making a decision is not the same as issuing a decision"
+      ],
+      "count": 1,
+      "row_ids": [
+        48
+      ]
+    },
+    {
+      "label": "missing \u201clife\u201d in base_text",
+      "merged_from": [
+        "missing \u201clife\u201d in base_text"
+      ],
+      "count": 1,
+      "row_ids": [
+        26
+      ]
+    }
+  ],
+  "failure_clause_used": null,
+  "transformation_type_distribution_pass_rows": {},
+  "machine_suggestion_agreement": {
+    "typed_rows": 0,
+    "suggested_subset_of_human": 0,
+    "fraction": null
+  },
+  "sentence_branch": "primary (rate >= 90%)"
+}

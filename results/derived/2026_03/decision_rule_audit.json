@@ -1,0 +1,523 @@
+{
+  "rule": "Venn: TRUE={<t,f>,<t,e>}, FALSE={<f,t>,<e,t>}, ABSTAIN=I({<t,t>})+neither",
+  "commit_cells": [
+    "<e,t>",
+    "<f,t>",
+    "<t,e>",
+    "<t,f>"
+  ],
+  "all_nine": [
+    "<t,f>",
+    "<t,e>",
+    "<f,t>",
+    "<e,t>",
+    "<t,t>",
+    "<f,f>",
+    "<e,f>",
+    "<f,e>",
+    "<e,e>"
+  ],
+  "table1_rows": [
+    {
+      "benchmark": "truthfulqa",
+      "benchmark_label": "TruthfulQA",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "f1_singleton": 0.909,
+      "f1_venn": 0.905,
+      "f1_ternary": 0.938,
+      "delta_venn": -0.033,
+      "cov_singleton": 0.84,
+      "cov_venn": 0.844
+    },
+    {
+      "benchmark": "truthfulqa",
+      "benchmark_label": "TruthfulQA",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "f1_singleton": 0.766,
+      "f1_venn": 0.769,
+      "f1_ternary": 0.781,
+      "delta_venn": -0.012,
+      "cov_singleton": 0.716,
+      "cov_venn": 0.74
+    },
+    {
+      "benchmark": "truthfulqa",
+      "benchmark_label": "TruthfulQA",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "f1_singleton": 0.719,
+      "f1_venn": 0.719,
+      "f1_ternary": 0.772,
+      "delta_venn": -0.052,
+      "cov_singleton": 0.656,
+      "cov_venn": 0.656
+    },
+    {
+      "benchmark": "truthfulqa",
+      "benchmark_label": "TruthfulQA",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "f1_singleton": 0.828,
+      "f1_venn": 0.828,
+      "f1_ternary": 0.856,
+      "delta_venn": -0.028,
+      "cov_singleton": 0.8,
+      "cov_venn": 0.8
+    },
+    {
+      "benchmark": "truthfulqa",
+      "benchmark_label": "TruthfulQA",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "f1_singleton": 0.827,
+      "f1_venn": 0.827,
+      "f1_ternary": 0.831,
+      "delta_venn": -0.005,
+      "cov_singleton": 0.624,
+      "cov_venn": 0.624
+    },
+    {
+      "benchmark": "truthfulqa",
+      "benchmark_label": "TruthfulQA",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "f1_singleton": 0.834,
+      "f1_venn": 0.834,
+      "f1_ternary": 0.839,
+      "delta_venn": -0.004,
+      "cov_singleton": 0.732,
+      "cov_venn": 0.732
+    },
+    {
+      "benchmark": "simpleqa",
+      "benchmark_label": "SimpleQA",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "f1_singleton": 0.935,
+      "f1_venn": 0.892,
+      "f1_ternary": 0.943,
+      "delta_venn": -0.051,
+      "cov_singleton": 0.532,
+      "cov_venn": 0.596
+    },
+    {
+      "benchmark": "simpleqa",
+      "benchmark_label": "SimpleQA",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "f1_singleton": 0.864,
+      "f1_venn": 0.756,
+      "f1_ternary": 0.865,
+      "delta_venn": -0.109,
+      "cov_singleton": 0.556,
+      "cov_venn": 0.7
+    },
+    {
+      "benchmark": "simpleqa",
+      "benchmark_label": "SimpleQA",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "f1_singleton": 0.904,
+      "f1_venn": 0.904,
+      "f1_ternary": 0.858,
+      "delta_venn": 0.046,
+      "cov_singleton": 0.592,
+      "cov_venn": 0.596
+    },
+    {
+      "benchmark": "simpleqa",
+      "benchmark_label": "SimpleQA",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "f1_singleton": 0.624,
+      "f1_venn": 0.624,
+      "f1_ternary": 0.809,
+      "delta_venn": -0.184,
+      "cov_singleton": 0.708,
+      "cov_venn": 0.708
+    },
+    {
+      "benchmark": "simpleqa",
+      "benchmark_label": "SimpleQA",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "f1_singleton": 0.719,
+      "f1_venn": 0.719,
+      "f1_ternary": 0.843,
+      "delta_venn": -0.124,
+      "cov_singleton": 0.512,
+      "cov_venn": 0.512
+    },
+    {
+      "benchmark": "simpleqa",
+      "benchmark_label": "SimpleQA",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "f1_singleton": 0.775,
+      "f1_venn": 0.775,
+      "f1_ternary": 0.925,
+      "delta_venn": -0.15,
+      "cov_singleton": 0.632,
+      "cov_venn": 0.632
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "benchmark_label": "MMLU-Pro",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "f1_singleton": 0.905,
+      "f1_venn": 0.897,
+      "f1_ternary": 0.898,
+      "delta_venn": -0.0,
+      "cov_singleton": 0.468,
+      "cov_venn": 0.544
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "benchmark_label": "MMLU-Pro",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "f1_singleton": 0.798,
+      "f1_venn": 0.696,
+      "f1_ternary": 0.749,
+      "delta_venn": -0.054,
+      "cov_singleton": 0.368,
+      "cov_venn": 0.8
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "benchmark_label": "MMLU-Pro",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "f1_singleton": 0.699,
+      "f1_venn": 0.684,
+      "f1_ternary": 0.712,
+      "delta_venn": -0.029,
+      "cov_singleton": 0.5,
+      "cov_venn": 0.584
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "benchmark_label": "MMLU-Pro",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "f1_singleton": 0.784,
+      "f1_venn": 0.784,
+      "f1_ternary": 0.768,
+      "delta_venn": 0.017,
+      "cov_singleton": 0.744,
+      "cov_venn": 0.744
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "benchmark_label": "MMLU-Pro",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "f1_singleton": 0.762,
+      "f1_venn": 0.762,
+      "f1_ternary": 0.734,
+      "delta_venn": 0.028,
+      "cov_singleton": 0.588,
+      "cov_venn": 0.588
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "benchmark_label": "MMLU-Pro",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "f1_singleton": 0.761,
+      "f1_venn": 0.761,
+      "f1_ternary": 0.705,
+      "delta_venn": 0.055,
+      "cov_singleton": 0.636,
+      "cov_venn": 0.636
+    },
+    {
+      "benchmark": "factscore",
+      "benchmark_label": "FACTScore",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "f1_singleton": 0.524,
+      "f1_venn": 0.511,
+      "f1_ternary": 0.534,
+      "delta_venn": -0.022,
+      "cov_singleton": 0.492,
+      "cov_venn": 0.536
+    },
+    {
+      "benchmark": "factscore",
+      "benchmark_label": "FACTScore",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "f1_singleton": 0.422,
+      "f1_venn": 0.439,
+      "f1_ternary": 0.442,
+      "delta_venn": -0.003,
+      "cov_singleton": 0.424,
+      "cov_venn": 0.488
+    },
+    {
+      "benchmark": "factscore",
+      "benchmark_label": "FACTScore",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "f1_singleton": 0.439,
+      "f1_venn": 0.435,
+      "f1_ternary": 0.463,
+      "delta_venn": -0.028,
+      "cov_singleton": 0.408,
+      "cov_venn": 0.412
+    },
+    {
+      "benchmark": "factscore",
+      "benchmark_label": "FACTScore",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "f1_singleton": 0.629,
+      "f1_venn": 0.629,
+      "f1_ternary": 0.612,
+      "delta_venn": 0.017,
+      "cov_singleton": 0.7,
+      "cov_venn": 0.7
+    },
+    {
+      "benchmark": "factscore",
+      "benchmark_label": "FACTScore",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "f1_singleton": 0.527,
+      "f1_venn": 0.527,
+      "f1_ternary": 0.516,
+      "delta_venn": 0.011,
+      "cov_singleton": 0.308,
+      "cov_venn": 0.308
+    },
+    {
+      "benchmark": "factscore",
+      "benchmark_label": "FACTScore",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "f1_singleton": 0.566,
+      "f1_venn": 0.566,
+      "f1_ternary": 0.472,
+      "delta_venn": 0.094,
+      "cov_singleton": 0.364,
+      "cov_venn": 0.364
+    }
+  ],
+  "table1_summary_abs_delta_vs_ternary": {
+    "singleton": {
+      "median": 0.022353300939606108,
+      "mean": 0.04134235570293593,
+      "max": 0.18442312700790642
+    },
+    "venn": {
+      "median": 0.028379302950828217,
+      "mean": 0.04819401885102213,
+      "max": 0.18442312700790642
+    }
+  },
+  "figure2_coverage": [
+    {
+      "benchmark": "truthfulqa",
+      "model": "Claude Opus 4.1",
+      "src_cov_singleton": 0.736,
+      "src_cov_venn": 0.744,
+      "modal_cov_singleton": 0.716,
+      "modal_cov_venn": 0.74
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Llama 4 Maverick",
+      "src_cov_singleton": 0.704,
+      "src_cov_venn": 0.724,
+      "modal_cov_singleton": 0.748,
+      "modal_cov_venn": 0.784
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Llama 4 Scout",
+      "src_cov_singleton": 0.624,
+      "src_cov_venn": 0.624,
+      "modal_cov_singleton": 0.668,
+      "modal_cov_venn": 0.672
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Gemini 2.5 Flash",
+      "src_cov_singleton": 0.812,
+      "src_cov_venn": 0.812,
+      "modal_cov_singleton": 0.816,
+      "modal_cov_venn": 0.816
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "DeepSeek-V3",
+      "src_cov_singleton": 0.66,
+      "src_cov_venn": 0.66,
+      "modal_cov_singleton": 0.684,
+      "modal_cov_venn": 0.684
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Qwen 2.5 72B",
+      "src_cov_singleton": 0.732,
+      "src_cov_venn": 0.732,
+      "modal_cov_singleton": 0.724,
+      "modal_cov_venn": 0.724
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Claude Opus 4.1",
+      "src_cov_singleton": 0.524,
+      "src_cov_venn": 0.588,
+      "modal_cov_singleton": 0.524,
+      "modal_cov_venn": 0.6
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Llama 4 Maverick",
+      "src_cov_singleton": 0.568,
+      "src_cov_venn": 0.712,
+      "modal_cov_singleton": 0.62,
+      "modal_cov_venn": 0.76
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Llama 4 Scout",
+      "src_cov_singleton": 0.628,
+      "src_cov_venn": 0.628,
+      "modal_cov_singleton": 0.612,
+      "modal_cov_venn": 0.616
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Gemini 2.5 Flash",
+      "src_cov_singleton": 0.708,
+      "src_cov_venn": 0.708,
+      "modal_cov_singleton": 0.732,
+      "modal_cov_venn": 0.732
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "DeepSeek-V3",
+      "src_cov_singleton": 0.596,
+      "src_cov_venn": 0.596,
+      "modal_cov_singleton": 0.696,
+      "modal_cov_venn": 0.696
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Qwen 2.5 72B",
+      "src_cov_singleton": 0.632,
+      "src_cov_venn": 0.632,
+      "modal_cov_singleton": 0.64,
+      "modal_cov_venn": 0.64
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Claude Opus 4.1",
+      "src_cov_singleton": 0.428,
+      "src_cov_venn": 0.508,
+      "modal_cov_singleton": 0.464,
+      "modal_cov_venn": 0.58
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Llama 4 Maverick",
+      "src_cov_singleton": 0.356,
+      "src_cov_venn": 0.78,
+      "modal_cov_singleton": 0.332,
+      "modal_cov_venn": 0.772
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Llama 4 Scout",
+      "src_cov_singleton": 0.48,
+      "src_cov_venn": 0.568,
+      "modal_cov_singleton": 0.46,
+      "modal_cov_venn": 0.588
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Gemini 2.5 Flash",
+      "src_cov_singleton": 0.74,
+      "src_cov_venn": 0.74,
+      "modal_cov_singleton": 0.788,
+      "modal_cov_venn": 0.788
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "DeepSeek-V3",
+      "src_cov_singleton": 0.656,
+      "src_cov_venn": 0.656,
+      "modal_cov_singleton": 0.748,
+      "modal_cov_venn": 0.748
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Qwen 2.5 72B",
+      "src_cov_singleton": 0.636,
+      "src_cov_venn": 0.636,
+      "modal_cov_singleton": 0.656,
+      "modal_cov_venn": 0.656
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Claude Opus 4.1",
+      "src_cov_singleton": 0.492,
+      "src_cov_venn": 0.536,
+      "modal_cov_singleton": 0.356,
+      "modal_cov_venn": 0.404
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Llama 4 Maverick",
+      "src_cov_singleton": 0.424,
+      "src_cov_venn": 0.48,
+      "modal_cov_singleton": 0.18,
+      "modal_cov_venn": 0.248
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Llama 4 Scout",
+      "src_cov_singleton": 0.42,
+      "src_cov_venn": 0.424,
+      "modal_cov_singleton": 0.384,
+      "modal_cov_venn": 0.42
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Gemini 2.5 Flash",
+      "src_cov_singleton": 0.688,
+      "src_cov_venn": 0.688,
+      "modal_cov_singleton": 0.7,
+      "modal_cov_venn": 0.7
+    },
+    {
+      "benchmark": "factscore",
+      "model": "DeepSeek-V3",
+      "src_cov_singleton": 0.376,
+      "src_cov_venn": 0.376,
+      "modal_cov_singleton": 0.396,
+      "modal_cov_venn": 0.396
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Qwen 2.5 72B",
+      "src_cov_singleton": 0.364,
+      "src_cov_venn": 0.364,
+      "modal_cov_singleton": 0.356,
+      "modal_cov_venn": 0.356
+    }
+  ],
+  "figure4_headline_invariant_ternary_abstain_pct": {
+    "<t,f>": 3.9800995024875623,
+    "<f,t>": 11.837171933583289,
+    "<f,f>": 64.70994475138122,
+    "<t,t>": 2.6954177897574123,
+    "middle": 60.05665722379604
+  }
+}

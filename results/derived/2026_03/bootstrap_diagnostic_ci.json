@@ -1,0 +1,25 @@
+{
+  "method": "cluster bootstrap over (model, benchmark) cells; pooled abstention rates recomputed per resample; percentile 95% CI",
+  "seed": 42,
+  "resamples": 10000,
+  "n_cells": 24,
+  "point_estimates_pct": {
+    "<f,f>": 64.71,
+    "<t,t>": 2.695,
+    "diff": 62.015
+  },
+  "ci95_pct": {
+    "<f,f>": [
+      54.04,
+      72.792
+    ],
+    "<t,t>": [
+      1.247,
+      4.72
+    ],
+    "diff": [
+      51.212,
+      70.295
+    ]
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "per_cell": [
+    {
+      "model": "Opus 4.1",
+      "benchmark": "TruthfulQA",
+      "n_base_tf": 86,
+      "n_migrated_to_ff": 6,
+      "migration_pct": 6.976744186046512
+    },
+    {
+      "model": "Llama 4 Mav.",
+      "benchmark": "TruthfulQA",
+      "n_base_tf": 70,
+      "n_migrated_to_ff": 4,
+      "migration_pct": 5.714285714285714
+    },
+    {
+      "model": "Llama 4 Scout",
+      "benchmark": "TruthfulQA",
+      "n_base_tf": 72,
+      "n_migrated_to_ff": 8,
+      "migration_pct": 11.11111111111111
+    },
+    {
+      "model": "Gemini 2.5 Flash",
+      "benchmark": "TruthfulQA",
+      "n_base_tf": 74,
+      "n_migrated_to_ff": 4,
+      "migration_pct": 5.405405405405405
+    },
+    {
+      "model": "DeepSeek-V3",
+      "benchmark": "TruthfulQA",
+      "n_base_tf": 72,
+      "n_migrated_to_ff": 13,
+      "migration_pct": 18.055555555555554
+    },
+    {
+      "model": "Qwen 2.5 72B",
+      "benchmark": "TruthfulQA",
+      "n_base_tf": 76,
+      "n_migrated_to_ff": 10,
+      "migration_pct": 13.157894736842104
+    },
+    {
+      "model": "Opus 4.1",
+      "benchmark": "SimpleQA",
+      "n_base_tf": 25,
+      "n_migrated_to_ff": 1,
+      "migration_pct": 4.0
+    },
+    {
+      "model": "Llama 4 Mav.",
+      "benchmark": "SimpleQA",
+      "n_base_tf": 33,
+      "n_migrated_to_ff": 4,
+      "migration_pct": 12.121212121212121
+    },
+    {
+      "model": "Llama 4 Scout",
+      "benchmark": "SimpleQA",
+      "n_base_tf": 71,
+      "n_migrated_to_ff": 14,
+      "migration_pct": 19.718309859154928
+    },
+    {
+      "model": "Gemini 2.5 Flash",
+      "benchmark": "SimpleQA",
+      "n_base_tf": 15,
+      "n_migrated_to_ff": 0,
+      "migration_pct": 0.0
+    },
+    {
+      "model": "DeepSeek-V3",
+      "benchmark": "SimpleQA",
+      "n_base_tf": 16,
+      "n_migrated_to_ff": 4,
+      "migration_pct": 25.0
+    },
+    {
+      "model": "Qwen 2.5 72B",
+      "benchmark": "SimpleQA",
+      "n_base_tf": 26,
+      "n_migrated_to_ff": 5,
+      "migration_pct": 19.230769230769234
+    },
+    {
+      "model": "Opus 4.1",
+      "benchmark": "MMLU-Pro",
+      "n_base_tf": 57,
+      "n_migrated_to_ff": 2,
+      "migration_pct": 3.508771929824561
+    },
+    {
+      "model": "Llama 4 Mav.",
+      "benchmark": "MMLU-Pro",
+      "n_base_tf": 62,
+      "n_migrated_to_ff": 0,
+      "migration_pct": 0.0
+    },
+    {
+      "model": "Llama 4 Scout",
+      "benchmark": "MMLU-Pro",
+      "n_base_tf": 85,
+      "n_migrated_to_ff": 4,
+      "migration_pct": 4.705882352941177
+    },
+    {
+      "model": "Gemini 2.5 Flash",
+      "benchmark": "MMLU-Pro",
+      "n_base_tf": 64,
+      "n_migrated_to_ff": 0,
+      "migration_pct": 0.0
+    },
+    {
+      "model": "DeepSeek-V3",
+      "benchmark": "MMLU-Pro",
+      "n_base_tf": 68,
+      "n_migrated_to_ff": 1,
+      "migration_pct": 1.4705882352941175
+    },
+    {
+      "model": "Qwen 2.5 72B",
+      "benchmark": "MMLU-Pro",
+      "n_base_tf": 70,
+      "n_migrated_to_ff": 2,
+      "migration_pct": 2.857142857142857
+    },
+    {
+      "model": "Opus 4.1",
+      "benchmark": "FACTScore",
+      "n_base_tf": 101,
+      "n_migrated_to_ff": 2,
+      "migration_pct": 1.9801980198019802
+    },
+    {
+      "model": "Llama 4 Mav.",
+      "benchmark": "FACTScore",
+      "n_base_tf": 102,
+      "n_migrated_to_ff": 0,
+      "migration_pct": 0.0
+    },
+    {
+      "model": "Llama 4 Scout",
+      "benchmark": "FACTScore",
+      "n_base_tf": 100,
+      "n_migrated_to_ff": 7,
+      "migration_pct": 7.000000000000001
+    },
+    {
+      "model": "Gemini 2.5 Flash",
+      "benchmark": "FACTScore",
+      "n_base_tf": 117,
+      "n_migrated_to_ff": 12,
+      "migration_pct": 10.256410256410255
+    },
+    {
+      "model": "DeepSeek-V3",
+      "benchmark": "FACTScore",
+      "n_base_tf": 67,
+      "n_migrated_to_ff": 8,
+      "migration_pct": 11.940298507462686
+    },
+    {
+      "model": "Qwen 2.5 72B",
+      "benchmark": "FACTScore",
+      "n_base_tf": 62,
+      "n_migrated_to_ff": 5,
+      "migration_pct": 8.064516129032258
+    }
+  ],
+  "config": {
+    "canonical_models": [
+      "claude-opus-4-1-20250805",
+      "meta-llama_llama-4-maverick",
+      "meta-llama_llama-4-scout",
+      "google_gemini-2.5-flash",
+      "deepseek_deepseek-chat",
+      "qwen_qwen-2.5-72b-instruct"
+    ],
+    "benchmarks": [
+      "truthfulqa",
+      "simpleqa",
+      "mmlupro",
+      "factscore"
+    ],
+    "src_class": "<t,f>",
+    "dest_class": "<f,f>"
+  }
+}

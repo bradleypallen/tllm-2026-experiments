@@ -41,6 +41,14 @@ Each `MANIFEST.json` lists SHA-256 hashes. Confirm your local copy matches:
 python tests/test_manifest_integrity.py
 ```
 
+## Verify the paper's numbers
+
+`tests/test_paper_numbers.py` re-derives every quantitative claim in the paper (Table 1, Figures 2–3, the §7.2 bootstrap CIs and shares, the §6.3 worked examples) from the raw per-assertion records, independently of `analysis/`. No API calls:
+
+```bash
+pytest tests/test_paper_numbers.py
+```
+
 ## Reproduce the proper-benchmark results (24 cells)
 
 ```bash
@@ -77,8 +85,8 @@ The pre-generation step costs significant Opus credits and is the dominant cost 
 Per-cell cost is dominated by the bilateral evaluation (n=3 majority vote × 2 calls = 6 calls per assertion) plus three single-call approaches (forced unilateral, ternary, confidence). That's 9 API calls per assertion per cell.
 
 - 24 cells × 250 assertions × 9 calls = ~54,000 API calls for `proper_benchmark_evaluator`
-- 24 cells × 250 assertions × (3 + 2) calls = ~30,000 API calls for `modal_evaluator` (variants pre-generated)
-- Variant pre-generation (4 benchmarks × 250 assertions × ~2 paraphrases each, single Opus call per assertion) = ~1,000 Opus calls
+- 250 assertions × 2 calls per situation × (18 cells × 4 situations + 6 FACTScore cells × 3 situations) = ~45,000 API calls for `modal_evaluator` (variants pre-generated; one elicitation per situation)
+- Variant pre-generation (4 benchmarks × 250 assertions × 3 paraphrases each, 2 for FACTScore; single Opus call per assertion) = ~1,000 Opus calls
 
 Total dollar cost is dominated by the bilateral evaluation across 6 models. Claude Opus dominates the per-token spend; OpenRouter cells are cheaper. As a rough order of magnitude, a full re-run of `proper_benchmark_evaluator` across all 24 cells is on the order of low hundreds of US dollars at March 2026 pricing.
 

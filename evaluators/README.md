@@ -5,7 +5,7 @@ The scripts that produce the result files in `results/2026_03/`.
 | Script | Purpose |
 |--------|---------|
 | `proper_benchmark_evaluator.py` | Five-approach evaluator: bilateral (×3 epistemic policies) + forced unilateral + ternary + confidence@0.5, single pass per assertion. |
-| `modal_evaluator.py` | [[□p]] = ⟨min uᵢ, max vᵢ⟩ aggregated over s₀ + 2 paraphrases. Reads paraphrases from `../variant_cache/`. |
+| `modal_evaluator.py` | [[□p]] = ⟨min uᵢ, max vᵢ⟩ aggregated over s₀ + the cached paraphrases (3 per assertion; 2 for FACTScore). Reads paraphrases from `../variant_cache/`. Each situation is elicited once (`samples=1`); see `../docs/methodology.md`. |
 | `pregenerate_variants.py` | One-time paraphrase generation (Claude Opus 4.6). Output goes to `../variant_cache/`. |
 | `run_modal_suite.py` | Orchestrates `pregenerate_variants.py` + `modal_evaluator.py` across all model × benchmark combinations. |
 

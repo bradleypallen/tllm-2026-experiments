@@ -6,11 +6,11 @@ This file documents methodology changes between experimental runs. It is load-be
 
 - **`bilateral-truth` commit**: `b71915fda6faf252cdb506294e0b9c5e04511d5e`
 - **Sample size**: N = 250 per benchmark, seed = 42, balanced positive/negative
-- **Bilateral**: `samples=3`, majority vote across three (verification, refutation) call pairs
+- **Bilateral**: `samples=3`, majority vote across three (verification, refutation) call pairs (proper run). Ties (all-distinct {t,e,f}) broken by `bilateral-truth`'s default random tiebreak, not the deterministic rule of the paper's Def. 14; see [`docs/methodology.md`](docs/methodology.md).
 - **Context (s₀)**: per-assertion `source_question` field
 - **Ternary**: **evidence-based** prompt — *"Based on available evidence and knowledge, determine whether the following statement is supported by evidence, contradicted by evidence, or undetermined."* See [`prompts/2026_prompts.md`](prompts/2026_prompts.md).
 - **Confidence**: thresholded at 0.5 in the canonical metrics; raw scores are preserved in `detailed_results` for post-hoc thresholding.
-- **Modal evaluator added**: [[□p]] = ⟨min uᵢ, max vᵢ⟩ over s₀ + 2 paraphrases. Paraphrases pre-generated once with Claude Opus 4.6 and cached in [`variant_cache/`](variant_cache/).
+- **Modal evaluator added**: [[□p]] = ⟨min uᵢ, max vᵢ⟩ over s₀ + 3 paraphrases (2 for FACTScore). Paraphrases pre-generated once with Claude Opus 4.6 and cached in [`variant_cache/`](variant_cache/). Each situation, s₀ included, was elicited once (`samples=1`), so the modal run's VM(s₀, p) is a separate elicitation from the proper run's n=3 value; see [`docs/methodology.md`](docs/methodology.md).
 - **Model lineup (6 models)**:
   - Claude Opus 4.1 (`claude-opus-4-1-20250805`) — Anthropic, closed
   - DeepSeek-V3 (`deepseek/deepseek-chat`) — open, via OpenRouter

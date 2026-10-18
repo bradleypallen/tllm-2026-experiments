@@ -21,7 +21,7 @@ A single pass per assertion computes all approaches:
 | Subdirectory | Approach | Prompt frame |
 |--------------|----------|--------------|
 | `proper/` | Bilateral ⟨u,v⟩ + projection under classical / paracomplete / paraconsistent; forced unilateral (TRUE/FALSE); **evidence-based ternary**; numerical confidence | All five are recorded per-assertion. The bilateral verification/refutation prompts come from `bilateral_truth.llm_evaluators`. |
-| `modal/` | [[□p]] = ⟨min uᵢ, max vᵢ⟩ aggregated over s₀ + 2 paraphrases (n=3 situations) | Paraphrases pulled from `../../variant_cache/`. |
+| `modal/` | [[□p]] = ⟨min uᵢ, max vᵢ⟩ aggregated over s₀ + 3 paraphrases (4 situations; FACTScore: 2 paraphrases, 3 situations). Each situation elicited once (`samples=1`), so `src_bilateral` here is a separate elicitation from `proper/`'s n=3 `bilateral_tv`. | Paraphrases pulled from `../../variant_cache/`. See `../../docs/methodology.md`. |
 
 The 2026 ternary asks: *"Based on available evidence and knowledge, determine whether the following statement is supported by evidence, contradicted by evidence, or undetermined."* This is the same epistemic frame as the bilateral verification/refutation prompts — fundamentally different from the 2025 confidence-self-report ternary.
 

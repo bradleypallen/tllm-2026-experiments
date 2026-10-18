@@ -21,7 +21,9 @@ Projection to a binary prediction depends on the choice of designated values D:
 
 The empirical "F1 across the three policies" is a study of how the choice of D affects downstream performance.
 
-**Sampling**: 2026 runs use `samples=3` with majority voting on each component (u, v) independently; 2025 ran with `samples=1`.
+**Sampling**: the 2026 proper run (`results/2026_03/proper/`) uses `samples=3` with majority voting on each component (u, v) independently; the 2026 modal run (`results/2026_03/modal/`) elicits each situation once (`samples=1`, see below); 2025 ran with `samples=1`.
+
+**Tiebreak**: with `samples=3`, a tie can only arise on an all-distinct component vote {t, e, f}. The run broke such ties with `bilateral-truth`'s default `tiebreak_strategy="random"` (an unseeded `random.choice` among the tied values). This is *not* the deterministic f ≺ t ≺ e tiebreak (all-distinct → e) of the paper's Definition 14 / Remark 4; the library has no strategy implementing that order. Only the majority-voted ⟨u,v⟩ is persisted, so how many assertions were affected cannot be recovered.
 
 ## Forced unilateral (binary)
 
@@ -49,19 +51,26 @@ Below threshold = abstention. Above = predict TRUE if confidence ≥ threshold e
 
 ## Modal — [[□p]] (2026 only)
 
-For each assertion `p` with source situation `s₀`, generate `n−1` paraphrases `s₁, …, s_{n−1}` (using Claude Opus 4.6, cached in `variant_cache/`). Evaluate bilateral VM(sᵢ, p) for each situation, then aggregate:
+For each assertion `p` with source situation `s₀`, take `k` paraphrases `s₁, …, s_k` of the source question (generated once with Claude Opus 4.6, cached in `variant_cache/`). Evaluate bilateral VM(sᵢ, p) for each situation, then aggregate:
 
 [[□p]] = ⟨ min(uᵢ), max(vᵢ) ⟩
 
-This is the modal necessity estimate: a verification only "counts" if the model can verify p under every situation we tested; a refutation counts if the model can refute under any. n=3 in the canonical run (s₀ plus two paraphrases). The null situation (no context) is **not** included in the aggregation.
+This is the modal necessity estimate: a verification only "counts" if the model can verify p under every situation we tested; a refutation counts if the model can refute under any. In the canonical run **k = 3** (four situations: s₀ plus three paraphrases), except **FACTScore, where k = 2**. This matches the paper (§7). The `n3` in the cache and result filenames is the generator's `n_variants=3` setting, not the number of situations. The null situation (no context) is **not** included in the aggregation.
 
-The 2026 result files include both VM(s₀, p) (the bilateral source distribution) and [[□p]] (the modal aggregated distribution).
+**Single elicitation per situation.** `modal_evaluator.py` calls `zeta(...)` without a `samples` argument, so every situation, s₀ included, was evaluated with `samples=1`, not by the 3-vote majority used in the proper run. Consequences:
+
+- The modal files' `src_bilateral` (VM(s₀, p)) is a separate elicitation from the proper files' `bilateral_tv`. They disagree on 579 of 6,000 canonical assertions (Qwen 2.5 72B: 0; others up to 65/250 per cell). `tests/test_paper_numbers.py::test_modal_s0_is_separate_elicitation` pins this.
+- Paper quantities computed from the modal files (Figure 2 migration rates, the §6.3 worked examples) rest on single elicitations. Table 1 and Figure 3 come from the proper files and rest on the 3-vote majority.
+
+**On-the-fly fallback.** If an assertion is missing from the cache, `modal_evaluator.py` generates `n_variants − 1` paraphrases (2 by default), not the 3 the cache holds. Use `--skip-pregen` with the shipped cache to reproduce the canonical neighbourhoods.
+
+The 2026 modal result files include both VM(s₀, p) (the bilateral source distribution) and [[□p]] (the modal aggregated distribution).
 
 ## Sampling
 
 - **Selection**: `seed=42`, balanced positive/negative split, `max_samples` controls N
 - **N per cell**: 1000 (2025), 250 (2026)
-- **Per assertion**: bilateral calls majority-vote across `samples` evaluator invocations (n=1 in 2025, n=3 in 2026); all unilateral approaches are single-call
+- **Per assertion**: bilateral calls majority-vote across `samples` evaluator invocations (n=1 in 2025; n=3 in the 2026 proper run; n=1 per situation in the 2026 modal run); all unilateral approaches are single-call
 
 ## What is *not* in this evaluation pipeline
 
@@ -71,4 +80,4 @@ The 2026 result files include both VM(s₀, p) (the bilateral source distributio
 - External retrieval (no RAG)
 - Self-consistency beyond the n=3 majority vote for bilateral
 
-All approaches are zero-shot, single-turn API calls (single per-method for unilateral; six per assertion for n=3 bilateral). See [`../prompts/`](../prompts/) for the verbatim prompt strings.
+All approaches are zero-shot, single-turn API calls (single per-method for unilateral; six per assertion for n=3 bilateral in the proper run; two per situation in the modal run). See [`../prompts/`](../prompts/) for the verbatim prompt strings.

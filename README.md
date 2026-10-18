@@ -2,7 +2,7 @@
 
 Dataset of record for empirical experiments on bilateral modal logic for LLM factuality evaluation (BBL paper, 2026). This repository contains the canonical input datasets, evaluator scripts, frozen result snapshots, and analysis code for two experimental runs:
 
-- **2026-03** — current canonical run: 6 models × 4 benchmarks, N=250, evidence-based ternary, n=3 bilateral majority voting, modal evaluation included.
+- **2026-03** — current canonical run: 6 models × 4 benchmarks, N=250, evidence-based ternary, n=3 bilateral majority voting, modal evaluation included (modal run: one elicitation per situation; see [`docs/methodology.md`](docs/methodology.md)).
 - **2025-09** — earlier run preserved for comparison: 7 models × 4 benchmarks, N=1000, **confidence-based** ternary, n=1 bilateral, no modal.
 
 The two runs are not directly comparable on the "ternary" approach — see [`CHANGELOG.md`](CHANGELOG.md) and [`docs/methodology.md`](docs/methodology.md). The 2025 results are kept because they were the basis of an earlier statement in the paper draft that subsequent work led us to revise.
@@ -21,7 +21,7 @@ The two runs are not directly comparable on the "ternary" approach — see [`CHA
 | [`analysis/`](analysis/) | Visualization scripts (`visualize_*.py`). |
 | [`docs/`](docs/) | Methodology, benchmark provenance, curated findings. |
 | [`talk/`](talk/) | Presentation materials. |
-| [`tests/`](tests/) | Smoke tests for evaluators and result schemas. |
+| [`tests/`](tests/) | Integrity, prompt-drift and schema tests, smoke tests for evaluators, and a re-derivation of every number in the paper. |
 
 ## Quick start
 

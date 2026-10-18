@@ -1,0 +1,188 @@
+{
+  "F3prime_by_original_value": {
+    "<t,f>": {
+      "n": 1322,
+      "n_valid": 1309,
+      "uncertain": 0.0298,
+      "conflicting": 0.0145,
+      "either": 0.0443,
+      "e2-0_same_day_n": 392,
+      "e2-0_same_day_uncertain": 0.0306,
+      "parse_fail": 12,
+      "api_error": 1
+    },
+    "<t,e>": {
+      "n": 46,
+      "n_valid": 28,
+      "uncertain": 0.0,
+      "conflicting": 0.0,
+      "either": 0.0,
+      "e2-0_same_day_n": 0,
+      "e2-0_same_day_uncertain": null,
+      "parse_fail": 18,
+      "api_error": 0
+    },
+    "<f,t>": {
+      "n": 1570,
+      "n_valid": 1564,
+      "uncertain": 0.1215,
+      "conflicting": 0.0237,
+      "either": 0.1451,
+      "e2-0_same_day_n": 0,
+      "e2-0_same_day_uncertain": null,
+      "parse_fail": 6,
+      "api_error": 0
+    },
+    "<e,t>": {
+      "n": 143,
+      "n_valid": 47,
+      "uncertain": 0.0426,
+      "conflicting": 0.0,
+      "either": 0.0426,
+      "e2-0_same_day_n": 0,
+      "e2-0_same_day_uncertain": null,
+      "parse_fail": 96,
+      "api_error": 0
+    },
+    "<t,t>": {
+      "n": 346,
+      "n_valid": 340,
+      "uncertain": 0.0059,
+      "conflicting": 0.0147,
+      "either": 0.0206,
+      "e2-0_same_day_n": 341,
+      "e2-0_same_day_uncertain": 0.0176,
+      "parse_fail": 6,
+      "api_error": 0
+    },
+    "<f,f>": {
+      "n": 1375,
+      "n_valid": 1356,
+      "uncertain": 0.5996,
+      "conflicting": 0.0229,
+      "either": 0.6224,
+      "e2-0_same_day_n": 371,
+      "e2-0_same_day_uncertain": 0.5202,
+      "parse_fail": 19,
+      "api_error": 0
+    },
+    "<e,f>": {
+      "n": 65,
+      "n_valid": 56,
+      "uncertain": 0.2143,
+      "conflicting": 0.0179,
+      "either": 0.2321,
+      "e2-0_same_day_n": 0,
+      "e2-0_same_day_uncertain": null,
+      "parse_fail": 9,
+      "api_error": 0
+    },
+    "<f,e>": {
+      "n": 13,
+      "n_valid": 11,
+      "uncertain": 0.2727,
+      "conflicting": 0.0909,
+      "either": 0.3636,
+      "e2-0_same_day_n": 0,
+      "e2-0_same_day_uncertain": null,
+      "parse_fail": 2,
+      "api_error": 0
+    },
+    "<e,e>": {
+      "n": 120,
+      "n_valid": 42,
+      "uncertain": 0.1429,
+      "conflicting": 0.0,
+      "either": 0.1429,
+      "e2-0_same_day_n": 0,
+      "e2-0_same_day_uncertain": null,
+      "parse_fail": 78,
+      "api_error": 0
+    }
+  },
+  "P2_conflicting_gap": {
+    "pooled": {
+      "n_tt": 340,
+      "p_conflicting_tt": 0.0147,
+      "n_ctrl": 2665,
+      "p_conflicting_ctrl": 0.0188,
+      "gap": -0.0041,
+      "ci95": [
+        -0.0205,
+        0.0135
+      ]
+    },
+    "DeepSeek-V3": {
+      "n_tt": 18,
+      "p_conflicting_tt": 0,
+      "n_ctrl": 687,
+      "p_conflicting_ctrl": 0.0131,
+      "gap": -0.0131,
+      "ci95": [
+        -0.0415,
+        0.0
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "n_tt": 182,
+      "p_conflicting_tt": 0.011,
+      "n_ctrl": 349,
+      "p_conflicting_ctrl": 0.0201,
+      "gap": -0.0091,
+      "ci95": [
+        -0.0281,
+        0.011
+      ]
+    },
+    "Llama 4 Maverick": {
+      "n_tt": 60,
+      "p_conflicting_tt": 0.05,
+      "n_ctrl": 394,
+      "p_conflicting_ctrl": 0.033,
+      "gap": 0.017,
+      "ci95": [
+        -0.0346,
+        0.0625
+      ]
+    },
+    "Llama 4 Scout": {
+      "n_tt": 27,
+      "p_conflicting_tt": 0,
+      "n_ctrl": 645,
+      "p_conflicting_ctrl": 0.0295,
+      "gap": -0.0295,
+      "ci95": [
+        -0.0659,
+        -0.0052
+      ]
+    },
+    "Qwen 2.5 72B": {
+      "n_tt": 53,
+      "p_conflicting_tt": 0,
+      "n_ctrl": 590,
+      "p_conflicting_ctrl": 0.0034,
+      "gap": -0.0034,
+      "ci95": [
+        -0.0114,
+        0.0
+      ]
+    }
+  },
+  "committed_to_conflicting_same_day": {
+    "<t,f>": {
+      "n_committed_e2-0": 379,
+      "conflicting_in_e2": 4,
+      "share": 0.0106
+    },
+    "<t,t>": {
+      "n_committed_e2-0": 334,
+      "conflicting_in_e2": 5,
+      "share": 0.015
+    },
+    "<f,f>": {
+      "n_committed_e2-0": 176,
+      "conflicting_in_e2": 5,
+      "share": 0.0284
+    }
+  }
+}

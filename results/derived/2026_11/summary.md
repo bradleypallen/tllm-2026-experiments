@@ -60,3 +60,104 @@ Pairwise orderings whose CI excludes zero: Claude Opus 4.1 - Llama 4 Scout, Clau
 
 macro-F1 is computed on covered items only (abstentions excluded from both numerator and denominator); coverage = covered / N is reported beside it. Bilateral abstains on dec = abstain (<t,t> and the neither-cells); ternary on UNCERTAIN. Replicates compute_metrics in proper_benchmark_evaluator.py.
 
+## T-E1b  persistence (re-parsed)
+
+| arm | condition | scope | n valid | persistence | CI |
+| --- | --- | --- | --- | --- | --- |
+| e1-0 | treatment | pooled | 338 | 0.589 | [0.447, 0.673] |
+| e1-0 | treatment | DeepSeek-V3 | 18 | 0.389 | [0.167, 0.484] |
+| e1-0 | treatment | Gemini 2.5 Flash | 182 | 0.643 | [0.453, 0.721] |
+| e1-0 | treatment | Llama 4 Maverick | 56 | 0.321 | [0.130, 0.500] |
+| e1-0 | treatment | Llama 4 Scout | 29 | 0.483 | [0.333, 0.583] |
+| e1-0 | treatment | Qwen 2.5 72B | 53 | 0.811 | [0.727, 0.909] |
+| e1-0 | control_tf | pooled | 394 | 0.906 | [0.872, 0.936] |
+| e1-0 | control_tf | DeepSeek-V3 | 36 | 0.944 | [0.900, 1.000] |
+| e1-0 | control_tf | Gemini 2.5 Flash | 100 | 0.860 | [0.773, 0.900] |
+| e1-0 | control_tf | Llama 4 Maverick | 100 | 0.940 | [0.910, 0.975] |
+| e1-0 | control_tf | Llama 4 Scout | 58 | 0.828 | [0.773, 1.000] |
+| e1-0 | control_tf | Qwen 2.5 72B | 100 | 0.950 | [0.946, 0.958] |
+| e1-0 | control_ff | pooled | 374 | 0.845 | [0.771, 0.913] |
+| e1-0 | control_ff | DeepSeek-V3 | 36 | 0.889 | [0.818, 1.000] |
+| e1-0 | control_ff | Gemini 2.5 Flash | 80 | 0.725 | [0.596, 0.853] |
+| e1-0 | control_ff | Llama 4 Maverick | 100 | 0.920 | [0.859, 1.000] |
+| e1-0 | control_ff | Llama 4 Scout | 58 | 0.707 | [0.660, 1.000] |
+| e1-0 | control_ff | Qwen 2.5 72B | 100 | 0.930 | [0.873, 0.986] |
+| e1-a | treatment | pooled | 298 | 0.044 | [0.018, 0.092] |
+| e1-a | treatment | DeepSeek-V3 | 18 | 0.056 | [0.000, 0.091] |
+| e1-a | treatment | Gemini 2.5 Flash | 181 | 0.011 | [0.000, 0.032] |
+| e1-a | treatment | Llama 4 Maverick | 25 | 0.000 | [0.000, 0.000] |
+| e1-a | treatment | Llama 4 Scout | 22 | 0.227 | [0.143, 1.000] |
+| e1-a | treatment | Qwen 2.5 72B | 52 | 0.096 | [0.000, 0.182] |
+| e1-a | control_tf | pooled | 540 | 0.828 | [0.732, 0.886] |
+| e1-a | control_tf | DeepSeek-V3 | 36 | 0.806 | [0.567, 0.917] |
+| e1-a | control_tf | Gemini 2.5 Flash | 269 | 0.918 | [0.899, 0.939] |
+| e1-a | control_tf | Llama 4 Maverick | 81 | 0.889 | [0.848, 1.000] |
+| e1-a | control_tf | Llama 4 Scout | 49 | 0.510 | [0.400, 0.579] |
+| e1-a | control_tf | Qwen 2.5 72B | 105 | 0.705 | [0.545, 0.809] |
+| e1-a | control_ff | pooled | 323 | 0.901 | [0.826, 0.963] |
+| e1-a | control_ff | DeepSeek-V3 | 36 | 0.917 | [0.864, 1.000] |
+| e1-a | control_ff | Gemini 2.5 Flash | 80 | 0.762 | [0.635, 0.889] |
+| e1-a | control_ff | Llama 4 Maverick | 50 | 0.960 | [0.833, 1.000] |
+| e1-a | control_ff | Llama 4 Scout | 51 | 0.843 | [0.765, 0.909] |
+| e1-a | control_ff | Qwen 2.5 72B | 106 | 1.000 | [1.000, 1.000] |
+| e1-b | treatment | pooled | 295 | 0.024 | [0.008, 0.054] |
+| e1-b | treatment | DeepSeek-V3 | 18 | 0.000 | [0.000, 0.000] |
+| e1-b | treatment | Gemini 2.5 Flash | 182 | 0.011 | [0.000, 0.030] |
+| e1-b | treatment | Llama 4 Maverick | 23 | 0.043 | [0.000, 0.052] |
+| e1-b | treatment | Llama 4 Scout | 21 | 0.191 | [0.154, 0.333] |
+| e1-b | treatment | Qwen 2.5 72B | 51 | 0.000 | [0.000, 0.000] |
+
+### P1  E1-0 minus E1-a, treatment (paired)
+
+| scope | n | diff | CI |
+| --- | --- | --- | --- |
+| pooled | 298 | +0.587 | [0.433, 0.664] |
+| DeepSeek-V3 | 18 | +0.333 | [0.167, 0.387] |
+| Gemini 2.5 Flash | 181 | +0.630 | [0.434, 0.711] |
+| Llama 4 Maverick | 25 | +0.480 | [0.000, 0.632] |
+| Llama 4 Scout | 22 | +0.227 | [-1.000, 0.357] |
+| Qwen 2.5 72B | 52 | +0.731 | [0.700, 0.769] |
+
+### T-E1c  collapse direction x gold (pooled, E1-a treatment)
+
+- gold_TRUE|verification: 53
+- gold_TRUE|refutation: 119
+- gold_FALSE|verification: 35
+- gold_FALSE|refutation: 46
+- gold_FALSE|both: 14
+- gold_TRUE|both: 18
+
+## F-3'  by original bilateral value
+
+| value | n | UNCERTAIN | CONFLICTING | either | E2-0 UNCERTAIN (same day) |
+| --- | --- | --- | --- | --- | --- |
+| <t,f> | 1322 | 0.030 | 0.015 | 0.044 | 0.031 |
+| <t,e> | 46 | 0.000 | 0.000 | 0.000 | - |
+| <f,t> | 1570 | 0.121 | 0.024 | 0.145 | - |
+| <e,t> | 143 | 0.043 | 0.000 | 0.043 | - |
+| <t,t> | 346 | 0.006 | 0.015 | 0.021 | 0.018 |
+| <f,f> | 1375 | 0.600 | 0.023 | 0.622 | 0.520 |
+| <e,f> | 65 | 0.214 | 0.018 | 0.232 | - |
+| <f,e> | 13 | 0.273 | 0.091 | 0.364 | - |
+| <e,e> | 120 | 0.143 | 0.000 | 0.143 | - |
+
+### P2  P(CONFLICTING|<t,t>) - P(CONFLICTING|controls)
+
+| scope | n <t,t> | P(C|tt) | P(C|ctrl) | gap | CI |
+| --- | --- | --- | --- | --- | --- |
+| pooled | 340 | 0.015 | 0.019 | -0.004 | [-0.021, 0.013] |
+| DeepSeek-V3 | 18 | 0.000 | 0.013 | -0.013 | [-0.042, 0.000] |
+| Gemini 2.5 Flash | 182 | 0.011 | 0.020 | -0.009 | [-0.028, 0.011] |
+| Llama 4 Maverick | 60 | 0.050 | 0.033 | +0.017 | [-0.035, 0.062] |
+| Llama 4 Scout | 27 | 0.000 | 0.029 | -0.029 | [-0.066, -0.005] |
+| Qwen 2.5 72B | 53 | 0.000 | 0.003 | -0.003 | [-0.011, 0.000] |
+
+## T-E3  compliance base rate
+
+| model | n | c(M) | Wilson 95% | <t,t> share (Mar) |
+| --- | --- | --- | --- | --- |
+| Qwen 2.5 72B | 100 | 0.020 | [0.005, 0.070] | 0.053 |
+| Llama 4 Scout | 98 | 0.031 | [0.011, 0.086] | 0.029 |
+| Llama 4 Maverick | 100 | 0.000 | [0.000, 0.037] | 0.064 |
+| Gemini 2.5 Flash | 100 | 0.150 | [0.093, 0.233] | 0.182 |
+| DeepSeek-V3 | 100 | 0.020 | [0.005, 0.070] | 0.018 |

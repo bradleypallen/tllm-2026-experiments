@@ -1,0 +1,1211 @@
+{
+  "parsing": "re-parsed from raw under the final rule; <e,e> from parse failure reported separately and excluded from persistence denominators (count stated)",
+  "T-E1a_matrices": {
+    "e1-0|treatment|pooled": {
+      "from": "<t,t>",
+      "n": 346,
+      "<t,f>": 57,
+      "<t,e>": 10,
+      "<f,t>": 64,
+      "<e,t>": 1,
+      "<t,t>": 199,
+      "<f,f>": 6,
+      "<e,f>": 0,
+      "<f,e>": 1,
+      "<e,e>": 8,
+      "n_ee_from_failures": 8,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|treatment|DeepSeek-V3": {
+      "from": "<t,t>",
+      "n": 18,
+      "<t,f>": 8,
+      "<t,e>": 0,
+      "<f,t>": 2,
+      "<e,t>": 0,
+      "<t,t>": 7,
+      "<f,f>": 1,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|treatment|Gemini 2.5 Flash": {
+      "from": "<t,t>",
+      "n": 182,
+      "<t,f>": 22,
+      "<t,e>": 0,
+      "<f,t>": 42,
+      "<e,t>": 0,
+      "<t,t>": 117,
+      "<f,f>": 1,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|treatment|Llama 4 Maverick": {
+      "from": "<t,t>",
+      "n": 64,
+      "<t,f>": 15,
+      "<t,e>": 8,
+      "<f,t>": 11,
+      "<e,t>": 0,
+      "<t,t>": 18,
+      "<f,f>": 3,
+      "<e,f>": 0,
+      "<f,e>": 1,
+      "<e,e>": 8,
+      "n_ee_from_failures": 8,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|treatment|Llama 4 Scout": {
+      "from": "<t,t>",
+      "n": 29,
+      "<t,f>": 6,
+      "<t,e>": 2,
+      "<f,t>": 5,
+      "<e,t>": 1,
+      "<t,t>": 14,
+      "<f,f>": 1,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|treatment|Qwen 2.5 72B": {
+      "from": "<t,t>",
+      "n": 53,
+      "<t,f>": 6,
+      "<t,e>": 0,
+      "<f,t>": 4,
+      "<e,t>": 0,
+      "<t,t>": 43,
+      "<f,f>": 0,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_tf|pooled": {
+      "from": "<t,f>",
+      "n": 394,
+      "<t,f>": 357,
+      "<t,e>": 2,
+      "<f,t>": 2,
+      "<e,t>": 0,
+      "<t,t>": 20,
+      "<f,f>": 13,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_tf|DeepSeek-V3": {
+      "from": "<t,f>",
+      "n": 36,
+      "<t,f>": 34,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 1,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_tf|Gemini 2.5 Flash": {
+      "from": "<t,f>",
+      "n": 100,
+      "<t,f>": 86,
+      "<t,e>": 0,
+      "<f,t>": 2,
+      "<e,t>": 0,
+      "<t,t>": 9,
+      "<f,f>": 3,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_tf|Llama 4 Maverick": {
+      "from": "<t,f>",
+      "n": 100,
+      "<t,f>": 94,
+      "<t,e>": 1,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 4,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_tf|Llama 4 Scout": {
+      "from": "<t,f>",
+      "n": 58,
+      "<t,f>": 48,
+      "<t,e>": 1,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 7,
+      "<f,f>": 2,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_tf|Qwen 2.5 72B": {
+      "from": "<t,f>",
+      "n": 100,
+      "<t,f>": 95,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 2,
+      "<f,f>": 3,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_ff|pooled": {
+      "from": "<f,f>",
+      "n": 374,
+      "<t,f>": 26,
+      "<t,e>": 0,
+      "<f,t>": 22,
+      "<e,t>": 0,
+      "<t,t>": 4,
+      "<f,f>": 316,
+      "<e,f>": 4,
+      "<f,e>": 2,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_ff|DeepSeek-V3": {
+      "from": "<f,f>",
+      "n": 36,
+      "<t,f>": 2,
+      "<t,e>": 0,
+      "<f,t>": 2,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 32,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_ff|Gemini 2.5 Flash": {
+      "from": "<f,f>",
+      "n": 80,
+      "<t,f>": 11,
+      "<t,e>": 0,
+      "<f,t>": 8,
+      "<e,t>": 0,
+      "<t,t>": 3,
+      "<f,f>": 58,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_ff|Llama 4 Maverick": {
+      "from": "<f,f>",
+      "n": 100,
+      "<t,f>": 2,
+      "<t,e>": 0,
+      "<f,t>": 2,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 92,
+      "<e,f>": 3,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_ff|Llama 4 Scout": {
+      "from": "<f,f>",
+      "n": 58,
+      "<t,f>": 5,
+      "<t,e>": 0,
+      "<f,t>": 9,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 41,
+      "<e,f>": 1,
+      "<f,e>": 2,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-0|control_ff|Qwen 2.5 72B": {
+      "from": "<f,f>",
+      "n": 100,
+      "<t,f>": 6,
+      "<t,e>": 0,
+      "<f,t>": 1,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 93,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|treatment|pooled": {
+      "from": "<t,t>",
+      "n": 346,
+      "<t,f>": 165,
+      "<t,e>": 0,
+      "<f,t>": 88,
+      "<e,t>": 0,
+      "<t,t>": 13,
+      "<f,f>": 32,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 48,
+      "n_ee_from_failures": 48,
+      "n_with_trailing_text": 1
+    },
+    "e1-a|treatment|DeepSeek-V3": {
+      "from": "<t,t>",
+      "n": 18,
+      "<t,f>": 13,
+      "<t,e>": 0,
+      "<f,t>": 4,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 0,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|treatment|Gemini 2.5 Flash": {
+      "from": "<t,t>",
+      "n": 182,
+      "<t,f>": 122,
+      "<t,e>": 0,
+      "<f,t>": 48,
+      "<e,t>": 0,
+      "<t,t>": 2,
+      "<f,f>": 9,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 1,
+      "n_ee_from_failures": 1,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|treatment|Llama 4 Maverick": {
+      "from": "<t,t>",
+      "n": 64,
+      "<t,f>": 9,
+      "<t,e>": 0,
+      "<f,t>": 10,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 6,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 39,
+      "n_ee_from_failures": 39,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|treatment|Llama 4 Scout": {
+      "from": "<t,t>",
+      "n": 29,
+      "<t,f>": 6,
+      "<t,e>": 0,
+      "<f,t>": 8,
+      "<e,t>": 0,
+      "<t,t>": 5,
+      "<f,f>": 3,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 7,
+      "n_ee_from_failures": 7,
+      "n_with_trailing_text": 1
+    },
+    "e1-a|treatment|Qwen 2.5 72B": {
+      "from": "<t,t>",
+      "n": 53,
+      "<t,f>": 15,
+      "<t,e>": 0,
+      "<f,t>": 18,
+      "<e,t>": 0,
+      "<t,t>": 5,
+      "<f,f>": 14,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 1,
+      "n_ee_from_failures": 1,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_tf|pooled": {
+      "from": "<t,f>",
+      "n": 597,
+      "<t,f>": 447,
+      "<t,e>": 0,
+      "<f,t>": 6,
+      "<e,t>": 0,
+      "<t,t>": 8,
+      "<f,f>": 79,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 57,
+      "n_ee_from_failures": 57,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_tf|DeepSeek-V3": {
+      "from": "<t,f>",
+      "n": 36,
+      "<t,f>": 29,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 7,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_tf|Gemini 2.5 Flash": {
+      "from": "<t,f>",
+      "n": 269,
+      "<t,f>": 247,
+      "<t,e>": 0,
+      "<f,t>": 5,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 17,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_tf|Llama 4 Maverick": {
+      "from": "<t,f>",
+      "n": 128,
+      "<t,f>": 72,
+      "<t,e>": 0,
+      "<f,t>": 1,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 8,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 47,
+      "n_ee_from_failures": 47,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_tf|Llama 4 Scout": {
+      "from": "<t,f>",
+      "n": 58,
+      "<t,f>": 25,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 7,
+      "<f,f>": 17,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 9,
+      "n_ee_from_failures": 9,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_tf|Qwen 2.5 72B": {
+      "from": "<t,f>",
+      "n": 106,
+      "<t,f>": 74,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 30,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 1,
+      "n_ee_from_failures": 1,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_ff|pooled": {
+      "from": "<f,f>",
+      "n": 408,
+      "<t,f>": 19,
+      "<t,e>": 0,
+      "<f,t>": 12,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 291,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 85,
+      "n_ee_from_failures": 85,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_ff|DeepSeek-V3": {
+      "from": "<f,f>",
+      "n": 36,
+      "<t,f>": 1,
+      "<t,e>": 0,
+      "<f,t>": 2,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 33,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_ff|Gemini 2.5 Flash": {
+      "from": "<f,f>",
+      "n": 80,
+      "<t,f>": 16,
+      "<t,e>": 0,
+      "<f,t>": 3,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 61,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_ff|Llama 4 Maverick": {
+      "from": "<f,f>",
+      "n": 128,
+      "<t,f>": 2,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 48,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 78,
+      "n_ee_from_failures": 78,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_ff|Llama 4 Scout": {
+      "from": "<f,f>",
+      "n": 58,
+      "<t,f>": 0,
+      "<t,e>": 0,
+      "<f,t>": 7,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 43,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 7,
+      "n_ee_from_failures": 7,
+      "n_with_trailing_text": 0
+    },
+    "e1-a|control_ff|Qwen 2.5 72B": {
+      "from": "<f,f>",
+      "n": 106,
+      "<t,f>": 0,
+      "<t,e>": 0,
+      "<f,t>": 0,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 106,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-b|treatment|pooled": {
+      "from": "<t,t>",
+      "n": 346,
+      "<t,f>": 132,
+      "<t,e>": 0,
+      "<f,t>": 122,
+      "<e,t>": 0,
+      "<t,t>": 7,
+      "<f,f>": 34,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 51,
+      "n_ee_from_failures": 51,
+      "n_with_trailing_text": 2
+    },
+    "e1-b|treatment|DeepSeek-V3": {
+      "from": "<t,t>",
+      "n": 18,
+      "<t,f>": 13,
+      "<t,e>": 0,
+      "<f,t>": 5,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 0,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-b|treatment|Gemini 2.5 Flash": {
+      "from": "<t,t>",
+      "n": 182,
+      "<t,f>": 94,
+      "<t,e>": 0,
+      "<f,t>": 77,
+      "<e,t>": 0,
+      "<t,t>": 2,
+      "<f,f>": 9,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 0,
+      "n_ee_from_failures": 0,
+      "n_with_trailing_text": 0
+    },
+    "e1-b|treatment|Llama 4 Maverick": {
+      "from": "<t,t>",
+      "n": 64,
+      "<t,f>": 6,
+      "<t,e>": 0,
+      "<f,t>": 11,
+      "<e,t>": 0,
+      "<t,t>": 1,
+      "<f,f>": 5,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 41,
+      "n_ee_from_failures": 41,
+      "n_with_trailing_text": 0
+    },
+    "e1-b|treatment|Llama 4 Scout": {
+      "from": "<t,t>",
+      "n": 29,
+      "<t,f>": 4,
+      "<t,e>": 0,
+      "<f,t>": 5,
+      "<e,t>": 0,
+      "<t,t>": 4,
+      "<f,f>": 8,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 8,
+      "n_ee_from_failures": 8,
+      "n_with_trailing_text": 2
+    },
+    "e1-b|treatment|Qwen 2.5 72B": {
+      "from": "<t,t>",
+      "n": 53,
+      "<t,f>": 15,
+      "<t,e>": 0,
+      "<f,t>": 24,
+      "<e,t>": 0,
+      "<t,t>": 0,
+      "<f,f>": 12,
+      "<e,f>": 0,
+      "<f,e>": 0,
+      "<e,e>": 2,
+      "n_ee_from_failures": 2,
+      "n_with_trailing_text": 0
+    }
+  },
+  "T-E1b_persistence": {
+    "e1-0|treatment|pooled": {
+      "n_valid": 338,
+      "persistence": 0.5888,
+      "ci95": [
+        0.4474,
+        0.6735
+      ]
+    },
+    "e1-0|treatment|DeepSeek-V3": {
+      "n_valid": 18,
+      "persistence": 0.3889,
+      "ci95": [
+        0.1667,
+        0.4839
+      ]
+    },
+    "e1-0|treatment|Gemini 2.5 Flash": {
+      "n_valid": 182,
+      "persistence": 0.6429,
+      "ci95": [
+        0.4528,
+        0.7209
+      ]
+    },
+    "e1-0|treatment|Llama 4 Maverick": {
+      "n_valid": 56,
+      "persistence": 0.3214,
+      "ci95": [
+        0.1296,
+        0.5
+      ]
+    },
+    "e1-0|treatment|Llama 4 Scout": {
+      "n_valid": 29,
+      "persistence": 0.4828,
+      "ci95": [
+        0.3333,
+        0.5833
+      ]
+    },
+    "e1-0|treatment|Qwen 2.5 72B": {
+      "n_valid": 53,
+      "persistence": 0.8113,
+      "ci95": [
+        0.7273,
+        0.9091
+      ]
+    },
+    "e1-0|control_tf|pooled": {
+      "n_valid": 394,
+      "persistence": 0.9061,
+      "ci95": [
+        0.8717,
+        0.9357
+      ]
+    },
+    "e1-0|control_tf|DeepSeek-V3": {
+      "n_valid": 36,
+      "persistence": 0.9444,
+      "ci95": [
+        0.9,
+        1.0
+      ]
+    },
+    "e1-0|control_tf|Gemini 2.5 Flash": {
+      "n_valid": 100,
+      "persistence": 0.86,
+      "ci95": [
+        0.7727,
+        0.9
+      ]
+    },
+    "e1-0|control_tf|Llama 4 Maverick": {
+      "n_valid": 100,
+      "persistence": 0.94,
+      "ci95": [
+        0.9097,
+        0.975
+      ]
+    },
+    "e1-0|control_tf|Llama 4 Scout": {
+      "n_valid": 58,
+      "persistence": 0.8276,
+      "ci95": [
+        0.7727,
+        1.0
+      ]
+    },
+    "e1-0|control_tf|Qwen 2.5 72B": {
+      "n_valid": 100,
+      "persistence": 0.95,
+      "ci95": [
+        0.9464,
+        0.9583
+      ]
+    },
+    "e1-0|control_ff|pooled": {
+      "n_valid": 374,
+      "persistence": 0.8449,
+      "ci95": [
+        0.7711,
+        0.9134
+      ]
+    },
+    "e1-0|control_ff|DeepSeek-V3": {
+      "n_valid": 36,
+      "persistence": 0.8889,
+      "ci95": [
+        0.8182,
+        1.0
+      ]
+    },
+    "e1-0|control_ff|Gemini 2.5 Flash": {
+      "n_valid": 80,
+      "persistence": 0.725,
+      "ci95": [
+        0.5962,
+        0.8529
+      ]
+    },
+    "e1-0|control_ff|Llama 4 Maverick": {
+      "n_valid": 100,
+      "persistence": 0.92,
+      "ci95": [
+        0.8594,
+        1.0
+      ]
+    },
+    "e1-0|control_ff|Llama 4 Scout": {
+      "n_valid": 58,
+      "persistence": 0.7069,
+      "ci95": [
+        0.66,
+        1.0
+      ]
+    },
+    "e1-0|control_ff|Qwen 2.5 72B": {
+      "n_valid": 100,
+      "persistence": 0.93,
+      "ci95": [
+        0.873,
+        0.9855
+      ]
+    },
+    "e1-a|treatment|pooled": {
+      "n_valid": 298,
+      "persistence": 0.0436,
+      "ci95": [
+        0.0178,
+        0.0923
+      ]
+    },
+    "e1-a|treatment|DeepSeek-V3": {
+      "n_valid": 18,
+      "persistence": 0.0556,
+      "ci95": [
+        0.0,
+        0.0909
+      ]
+    },
+    "e1-a|treatment|Gemini 2.5 Flash": {
+      "n_valid": 181,
+      "persistence": 0.011,
+      "ci95": [
+        0.0,
+        0.0316
+      ]
+    },
+    "e1-a|treatment|Llama 4 Maverick": {
+      "n_valid": 25,
+      "persistence": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "e1-a|treatment|Llama 4 Scout": {
+      "n_valid": 22,
+      "persistence": 0.2273,
+      "ci95": [
+        0.1429,
+        1.0
+      ]
+    },
+    "e1-a|treatment|Qwen 2.5 72B": {
+      "n_valid": 52,
+      "persistence": 0.0962,
+      "ci95": [
+        0.0,
+        0.1818
+      ]
+    },
+    "e1-a|control_tf|pooled": {
+      "n_valid": 540,
+      "persistence": 0.8278,
+      "ci95": [
+        0.7322,
+        0.8865
+      ]
+    },
+    "e1-a|control_tf|DeepSeek-V3": {
+      "n_valid": 36,
+      "persistence": 0.8056,
+      "ci95": [
+        0.5667,
+        0.9167
+      ]
+    },
+    "e1-a|control_tf|Gemini 2.5 Flash": {
+      "n_valid": 269,
+      "persistence": 0.9182,
+      "ci95": [
+        0.8991,
+        0.9386
+      ]
+    },
+    "e1-a|control_tf|Llama 4 Maverick": {
+      "n_valid": 81,
+      "persistence": 0.8889,
+      "ci95": [
+        0.8478,
+        1.0
+      ]
+    },
+    "e1-a|control_tf|Llama 4 Scout": {
+      "n_valid": 49,
+      "persistence": 0.5102,
+      "ci95": [
+        0.4,
+        0.5789
+      ]
+    },
+    "e1-a|control_tf|Qwen 2.5 72B": {
+      "n_valid": 105,
+      "persistence": 0.7048,
+      "ci95": [
+        0.5455,
+        0.8095
+      ]
+    },
+    "e1-a|control_ff|pooled": {
+      "n_valid": 323,
+      "persistence": 0.9009,
+      "ci95": [
+        0.8261,
+        0.9627
+      ]
+    },
+    "e1-a|control_ff|DeepSeek-V3": {
+      "n_valid": 36,
+      "persistence": 0.9167,
+      "ci95": [
+        0.8636,
+        1.0
+      ]
+    },
+    "e1-a|control_ff|Gemini 2.5 Flash": {
+      "n_valid": 80,
+      "persistence": 0.7625,
+      "ci95": [
+        0.6346,
+        0.8889
+      ]
+    },
+    "e1-a|control_ff|Llama 4 Maverick": {
+      "n_valid": 50,
+      "persistence": 0.96,
+      "ci95": [
+        0.8333,
+        1.0
+      ]
+    },
+    "e1-a|control_ff|Llama 4 Scout": {
+      "n_valid": 51,
+      "persistence": 0.8431,
+      "ci95": [
+        0.7647,
+        0.9091
+      ]
+    },
+    "e1-a|control_ff|Qwen 2.5 72B": {
+      "n_valid": 106,
+      "persistence": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "e1-b|treatment|pooled": {
+      "n_valid": 295,
+      "persistence": 0.0237,
+      "ci95": [
+        0.0082,
+        0.0541
+      ]
+    },
+    "e1-b|treatment|DeepSeek-V3": {
+      "n_valid": 18,
+      "persistence": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    },
+    "e1-b|treatment|Gemini 2.5 Flash": {
+      "n_valid": 182,
+      "persistence": 0.011,
+      "ci95": [
+        0.0,
+        0.0301
+      ]
+    },
+    "e1-b|treatment|Llama 4 Maverick": {
+      "n_valid": 23,
+      "persistence": 0.0435,
+      "ci95": [
+        0.0,
+        0.0517
+      ]
+    },
+    "e1-b|treatment|Llama 4 Scout": {
+      "n_valid": 21,
+      "persistence": 0.1905,
+      "ci95": [
+        0.1538,
+        0.3333
+      ]
+    },
+    "e1-b|treatment|Qwen 2.5 72B": {
+      "n_valid": 51,
+      "persistence": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "P1_E1-0_minus_E1-a_treatment": {
+    "pooled": {
+      "n_paired": 298,
+      "diff": 0.5872,
+      "ci95": [
+        0.4333,
+        0.664
+      ]
+    },
+    "DeepSeek-V3": {
+      "n_paired": 18,
+      "diff": 0.3333,
+      "ci95": [
+        0.1667,
+        0.3871
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "n_paired": 181,
+      "diff": 0.6298,
+      "ci95": [
+        0.434,
+        0.7109
+      ]
+    },
+    "Llama 4 Maverick": {
+      "n_paired": 25,
+      "diff": 0.48,
+      "ci95": [
+        0.0,
+        0.6316
+      ]
+    },
+    "Llama 4 Scout": {
+      "n_paired": 22,
+      "diff": 0.2273,
+      "ci95": [
+        -1.0,
+        0.3571
+      ]
+    },
+    "Qwen 2.5 72B": {
+      "n_paired": 52,
+      "diff": 0.7308,
+      "ci95": [
+        0.7,
+        0.7692
+      ]
+    }
+  },
+  "E1-0_minus_E1-a_control_tf": {
+    "pooled": {
+      "n_paired": 347,
+      "diff": 0.1326,
+      "ci95": [
+        0.0359,
+        0.2222
+      ]
+    },
+    "DeepSeek-V3": {
+      "n_paired": 36,
+      "diff": 0.1389,
+      "ci95": [
+        0.0455,
+        0.3333
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "n_paired": 100,
+      "diff": -0.07,
+      "ci95": [
+        -0.1458,
+        -0.02
+      ]
+    },
+    "Llama 4 Maverick": {
+      "n_paired": 63,
+      "diff": 0.0952,
+      "ci95": [
+        -0.1429,
+        0.1944
+      ]
+    },
+    "Llama 4 Scout": {
+      "n_paired": 49,
+      "diff": 0.3673,
+      "ci95": [
+        0.3158,
+        0.6
+      ]
+    },
+    "Qwen 2.5 72B": {
+      "n_paired": 99,
+      "diff": 0.2424,
+      "ci95": [
+        0.1429,
+        0.4
+      ]
+    }
+  },
+  "E1-0_minus_E1-a_control_ff": {
+    "pooled": {
+      "n_paired": 306,
+      "diff": -0.0686,
+      "ci95": [
+        -0.1074,
+        -0.0325
+      ]
+    },
+    "DeepSeek-V3": {
+      "n_paired": 36,
+      "diff": -0.0278,
+      "ci95": [
+        -0.0455,
+        0.0
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "n_paired": 80,
+      "diff": -0.0375,
+      "ci95": [
+        -0.125,
+        0.0
+      ]
+    },
+    "Llama 4 Maverick": {
+      "n_paired": 39,
+      "diff": -0.0513,
+      "ci95": [
+        -0.0833,
+        0.0
+      ]
+    },
+    "Llama 4 Scout": {
+      "n_paired": 51,
+      "diff": -0.1569,
+      "ci95": [
+        -0.25,
+        0.2
+      ]
+    },
+    "Qwen 2.5 72B": {
+      "n_paired": 100,
+      "diff": -0.07,
+      "ci95": [
+        -0.127,
+        -0.0145
+      ]
+    }
+  },
+  "E1-a_minus_E1-b_treatment": {
+    "pooled": {
+      "n_paired": 288,
+      "diff": 0.0174,
+      "ci95": [
+        -0.0044,
+        0.0514
+      ]
+    },
+    "DeepSeek-V3": {
+      "n_paired": 18,
+      "diff": 0.0556,
+      "ci95": [
+        0.0,
+        0.0909
+      ]
+    },
+    "Gemini 2.5 Flash": {
+      "n_paired": 181,
+      "diff": 0.0,
+      "ci95": [
+        -0.0126,
+        0.0144
+      ]
+    },
+    "Llama 4 Maverick": {
+      "n_paired": 20,
+      "diff": -0.05,
+      "ci95": [
+        -0.0577,
+        0.0
+      ]
+    },
+    "Llama 4 Scout": {
+      "n_paired": 18,
+      "diff": 0.0556,
+      "ci95": [
+        0.0,
+        0.0769
+      ]
+    },
+    "Qwen 2.5 72B": {
+      "n_paired": 51,
+      "diff": 0.0784,
+      "ci95": [
+        0.0,
+        0.1818
+      ]
+    }
+  },
+  "T-E1c_collapse_direction": {
+    "DeepSeek-V3|gold_FALSE|refutation": 5,
+    "DeepSeek-V3|gold_FALSE|verification": 2,
+    "DeepSeek-V3|gold_TRUE|refutation": 8,
+    "DeepSeek-V3|gold_TRUE|verification": 2,
+    "Gemini 2.5 Flash|gold_FALSE|both": 4,
+    "Gemini 2.5 Flash|gold_FALSE|refutation": 31,
+    "Gemini 2.5 Flash|gold_FALSE|verification": 21,
+    "Gemini 2.5 Flash|gold_TRUE|both": 5,
+    "Gemini 2.5 Flash|gold_TRUE|refutation": 91,
+    "Gemini 2.5 Flash|gold_TRUE|verification": 27,
+    "Llama 4 Maverick|gold_FALSE|both": 3,
+    "Llama 4 Maverick|gold_FALSE|refutation": 1,
+    "Llama 4 Maverick|gold_FALSE|verification": 2,
+    "Llama 4 Maverick|gold_TRUE|both": 3,
+    "Llama 4 Maverick|gold_TRUE|refutation": 8,
+    "Llama 4 Maverick|gold_TRUE|verification": 8,
+    "Llama 4 Scout|gold_FALSE|both": 1,
+    "Llama 4 Scout|gold_FALSE|refutation": 2,
+    "Llama 4 Scout|gold_FALSE|verification": 5,
+    "Llama 4 Scout|gold_TRUE|both": 2,
+    "Llama 4 Scout|gold_TRUE|refutation": 4,
+    "Llama 4 Scout|gold_TRUE|verification": 3,
+    "Qwen 2.5 72B|gold_FALSE|both": 6,
+    "Qwen 2.5 72B|gold_FALSE|refutation": 7,
+    "Qwen 2.5 72B|gold_FALSE|verification": 5,
+    "Qwen 2.5 72B|gold_TRUE|both": 8,
+    "Qwen 2.5 72B|gold_TRUE|refutation": 8,
+    "Qwen 2.5 72B|gold_TRUE|verification": 13
+  },
+  "T-E1c_pooled": {
+    "gold_TRUE|verification": 53,
+    "gold_TRUE|refutation": 119,
+    "gold_FALSE|verification": 35,
+    "gold_FALSE|refutation": 46,
+    "gold_FALSE|both": 14,
+    "gold_TRUE|both": 18
+  }
+}

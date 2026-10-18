@@ -124,3 +124,44 @@ git checkout 8545986a51ce1af5d3df9dfc373a8fad58914636
 ```
 
 This is provided for completeness; ongoing work targets the 2026 methodology.
+
+## The November 2026 revision experiments (E1-0, E1-a, E1-b, E2, E2-0, E3)
+
+Specified in "BBL Revision Experiments: E1–E3 Specification" (2026-10-18) and run in response to
+the LNCS reviews. Prompts: [`prompts/2026_11_revision_prompts.md`](prompts/2026_11_revision_prompts.md).
+Item lists: [`datasets/revision_2026_11/`](datasets/revision_2026_11/), built deterministically
+(seed 42) from the frozen `results/2026_03/proper/` files by `build_item_lists.py`; their SHA-256s are
+in that directory's `MANIFEST.json` and selection counts in `SELECTION.json`.
+
+Five of the paper's six models are run. **Claude Opus 4.1 (`claude-opus-4-1-20250805`) was retired
+on the Claude API on 2026-08-05** and is excluded; it contributed 25 of the 371 ⟨t,t⟩ items.
+
+Calls go directly to OpenRouter's OpenAI-compatible endpoint so that the serving provider can be
+pinned and recorded; prompts, temperature (0) and context handling are those of the 2026-03 run.
+Every result file is accompanied by a `.meta.json` with the harness commit, prompt hashes, item-list
+hash, full request parameters, pinned provider, and the `provider` and `model` strings the endpoint
+returned. Raw response text is kept for every elicitation.
+
+```bash
+# 0. item lists (already committed; re-running must reproduce the MANIFEST hashes)
+python datasets/revision_2026_11/build_item_lists.py
+python -m pytest tests/test_revision_2026_11.py -q
+
+# 1. offline dry run of the whole plan (mock client, no calls)
+python evaluators/run_revision_suite.py --dry-run
+
+# 2. live smoke test: 5 items per cell, provider recorded but not pinned (375 calls:
+#    5 items x 15 calls/item [E1-0 6, E1-a 3, E1-b 3, E2 1, E2-0 1, E3 1] x 5 models)
+#    -> inspect results/2026_11/smoke/*/*.meta.json: providers_seen, models_returned, parse_fail_rate
+python evaluators/run_revision_suite.py --smoke
+
+# 3. full run (Qwen first; E2, E2-0, E1-0, E1-a, E1-b, E3), resumable
+python evaluators/run_revision_suite.py            # add --parallel to run the four non-Qwen models concurrently
+
+# single cell, e.g. with an explicit provider pin
+python evaluators/revision_2026_11_evaluator.py --mode e1-a --model deepseek/deepseek-chat --provider <slug>
+```
+
+Outputs: `results/2026_11/<mode>/<mode>_<model_safe>.jsonl` (+ `.meta.json`). Call counts at the
+committed item lists: E1-0 ≈ 6,700; E1-a ≈ 4,050; E1-b ≈ 1,040; E2 5,000; E2-0 ≈ 1,110; E3 500;
+total ≈ 18,400.

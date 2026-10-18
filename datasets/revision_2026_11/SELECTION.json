@@ -1,0 +1,58 @@
+{
+  "seed": 42,
+  "control_multiplier": 2,
+  "baseline_per_state": 100,
+  "e3_per_polarity": 50,
+  "source": "results/2026_03/proper",
+  "records": {
+    "e1_items.jsonl": 1351,
+    "e3_items.jsonl": 500
+  },
+  "summary": {
+    "meta-llama/llama-4-maverick": {
+      "treatment": 64,
+      "control_tf": 128,
+      "control_ff": 128,
+      "baseline_subset": 264,
+      "e3_robust_true": 50,
+      "e3_robust_false": 50,
+      "excluded_ee": 64
+    },
+    "meta-llama/llama-4-scout": {
+      "treatment": 29,
+      "control_tf": 58,
+      "control_ff": 58,
+      "baseline_subset": 145,
+      "e3_robust_true": 50,
+      "e3_robust_false": 50,
+      "excluded_ee": 56
+    },
+    "google/gemini-2.5-flash": {
+      "treatment": 182,
+      "control_tf": 269,
+      "control_ff": 80,
+      "baseline_subset": 362,
+      "e3_robust_true": 50,
+      "e3_robust_false": 50,
+      "excluded_ee": 0
+    },
+    "deepseek/deepseek-chat": {
+      "treatment": 18,
+      "control_tf": 36,
+      "control_ff": 36,
+      "baseline_subset": 90,
+      "e3_robust_true": 50,
+      "e3_robust_false": 50,
+      "excluded_ee": 0
+    },
+    "qwen/qwen-2.5-72b-instruct": {
+      "treatment": 53,
+      "control_tf": 106,
+      "control_ff": 106,
+      "baseline_subset": 253,
+      "e3_robust_true": 50,
+      "e3_robust_false": 50,
+      "excluded_ee": 0
+    }
+  }
+}

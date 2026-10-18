@@ -1,0 +1,46 @@
+{
+  "mode": "e2-0",
+  "model": "deepseek/deepseek-chat",
+  "samples": 1,
+  "harness_commit": "28ce38d6d753fbf040e682560bb9eecb499b1dec",
+  "prompt_hashes": {
+    "revision_2026_11_prompts.py": "2c8706e84e7dc0adbc1cc06ae138cdf85bee05cb6b14e37057f71fb0493c7fb5",
+    "2026_11_revision_prompts.md": "38f57bca497f9f9b2b40412246651ee5b61c89a4627fcd465fd360c4c562217b"
+  },
+  "item_list_sha256": "d65631b47f9d41f93f3f2a7bddda73951990bfea36a291d1a61e284c97a051d3",
+  "n_items": 90,
+  "request_params": {
+    "endpoint": "https://openrouter.ai/api/v1",
+    "model": "deepseek/deepseek-chat",
+    "temperature": 0.0,
+    "max_tokens": 32,
+    "extra_body": {
+      "provider": {
+        "order": [
+          "deepinfra"
+        ],
+        "allow_fallbacks": false
+      }
+    }
+  },
+  "provider_pinned": "deepinfra",
+  "allow_fallbacks": false,
+  "dry_run": false,
+  "python": "3.11.11",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "started_at": "2026-10-18T19:18:47.116201+00:00",
+  "first_response": {
+    "provider": "DeepInfra",
+    "model_returned": "deepseek/deepseek-chat"
+  },
+  "finished_at": "2026-10-18T19:19:40.439573+00:00",
+  "n_elicitations": 90,
+  "parse_fail_rate": 0.0,
+  "api_error_rate": 0.0,
+  "providers_seen": [
+    "DeepInfra"
+  ],
+  "models_returned": [
+    "deepseek/deepseek-chat"
+  ]
+}

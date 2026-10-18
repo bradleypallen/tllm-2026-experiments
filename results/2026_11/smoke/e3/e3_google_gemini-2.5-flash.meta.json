@@ -1,0 +1,39 @@
+{
+  "mode": "e3",
+  "model": "google/gemini-2.5-flash",
+  "samples": 1,
+  "harness_commit": "a23c4c2cea9209f293e4f9ce602851a71c679676",
+  "prompt_hashes": {
+    "revision_2026_11_prompts.py": "2c8706e84e7dc0adbc1cc06ae138cdf85bee05cb6b14e37057f71fb0493c7fb5",
+    "2026_11_revision_prompts.md": "38f57bca497f9f9b2b40412246651ee5b61c89a4627fcd465fd360c4c562217b"
+  },
+  "item_list_sha256": "bb8eccd955ea51d542631a54d36e18caed9b8398e6cff271c944eb3eb3311804",
+  "n_items": 5,
+  "request_params": {
+    "endpoint": "https://openrouter.ai/api/v1",
+    "model": "google/gemini-2.5-flash",
+    "temperature": 0.0,
+    "max_tokens": 32,
+    "extra_body": {}
+  },
+  "provider_pinned": null,
+  "allow_fallbacks": false,
+  "dry_run": false,
+  "python": "3.11.11",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "started_at": "2026-10-18T18:11:24.156900+00:00",
+  "first_response": {
+    "provider": "Google",
+    "model_returned": "google/gemini-2.5-flash"
+  },
+  "finished_at": "2026-10-18T18:11:26.926313+00:00",
+  "n_elicitations": 5,
+  "parse_fail_rate": 0.0,
+  "api_error_rate": 0.0,
+  "providers_seen": [
+    "Google"
+  ],
+  "models_returned": [
+    "google/gemini-2.5-flash"
+  ]
+}

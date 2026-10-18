@@ -1,0 +1,39 @@
+{
+  "mode": "e2",
+  "model": "qwen/qwen-2.5-72b-instruct",
+  "samples": 1,
+  "harness_commit": "a23c4c2cea9209f293e4f9ce602851a71c679676",
+  "prompt_hashes": {
+    "revision_2026_11_prompts.py": "2c8706e84e7dc0adbc1cc06ae138cdf85bee05cb6b14e37057f71fb0493c7fb5",
+    "2026_11_revision_prompts.md": "38f57bca497f9f9b2b40412246651ee5b61c89a4627fcd465fd360c4c562217b"
+  },
+  "item_list_sha256": "1e9bfc5f32d2161323b21746274c4d9544cd8b408a83594040b417391b0ba64c",
+  "n_items": 5,
+  "request_params": {
+    "endpoint": "https://openrouter.ai/api/v1",
+    "model": "qwen/qwen-2.5-72b-instruct",
+    "temperature": 0.0,
+    "max_tokens": 32,
+    "extra_body": {}
+  },
+  "provider_pinned": null,
+  "allow_fallbacks": false,
+  "dry_run": false,
+  "python": "3.11.11",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "started_at": "2026-10-18T18:05:23.093364+00:00",
+  "first_response": {
+    "provider": "DeepInfra",
+    "model_returned": "qwen/qwen-2.5-72b-instruct"
+  },
+  "finished_at": "2026-10-18T18:05:25.260573+00:00",
+  "n_elicitations": 5,
+  "parse_fail_rate": 0.0,
+  "api_error_rate": 0.0,
+  "providers_seen": [
+    "DeepInfra"
+  ],
+  "models_returned": [
+    "qwen/qwen-2.5-72b-instruct"
+  ]
+}

@@ -94,7 +94,7 @@ BACKOFF_SECONDS = (2, 4, 8)
 # ---------------------------------------------------------------------------------------------
 
 class OpenRouterClient:
-    def __init__(self, model: str, provider: str | None, allow_fallbacks: bool):
+    def __init__(self, model: str, provider: str | None, allow_fallbacks: bool, reasoning_off: bool = False):
         from openai import OpenAI  # imported lazily so --dry-run needs no SDK
         key = os.environ.get("OPENROUTER_API_KEY")
         if not key:
@@ -106,6 +106,10 @@ class OpenRouterClient:
         self.extra_body: dict[str, Any] = {}
         if provider:
             self.extra_body["provider"] = {"order": [provider], "allow_fallbacks": allow_fallbacks}
+        if reasoning_off:
+            # Thinking models (Gemini 2.5 Flash) may spend max_tokens on reasoning and return empty
+            # content; this asks OpenRouter to disable reasoning. Recorded in request_params.
+            self.extra_body["reasoning"] = {"enabled": False}
 
     def request_params(self) -> dict[str, Any]:
         return {"endpoint": OPENROUTER_BASE_URL, "model": self.model, "temperature": TEMPERATURE,
@@ -302,11 +306,14 @@ def main() -> None:
     ap.add_argument("--allow-fallbacks", action="store_true", help="permit fallback on pinned-provider outage (flagged)")
     ap.add_argument("--dry-run", action="store_true", help="mock client, no network, output to <out-dir>/dry_run/")
     ap.add_argument("--sleep", type=float, default=0.0, help="seconds to sleep between items")
+    ap.add_argument("--reasoning-off", action="store_true",
+                    help="send reasoning={enabled:false}; use if a thinking model returns empty content under max_tokens=32")
     args = ap.parse_args()
 
     samples = args.samples if args.mode.startswith("e1") else 1
     provider = None if args.no_pin else (args.provider or DEFAULT_PROVIDER[args.model])
-    client = MockClient(args.model) if args.dry_run else OpenRouterClient(args.model, provider, args.allow_fallbacks)
+    client = (MockClient(args.model) if args.dry_run
+              else OpenRouterClient(args.model, provider, args.allow_fallbacks, args.reasoning_off))
 
     items, items_sha = items_for(args.mode, args.model, args.items)
     if args.limit:

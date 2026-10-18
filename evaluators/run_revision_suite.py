@@ -37,8 +37,13 @@ OTHERS = ["meta-llama/llama-4-maverick", "meta-llama/llama-4-scout", "deepseek/d
 MODES_IN_ORDER = ["e2", "e2-0", "e1-0", "e1-a", "e1-b", "e3"]
 
 
+REASONING_OFF: set[str] = set()
+
+
 def run_cell(mode: str, model: str, extra: list[str]) -> int:
     cmd = [sys.executable, str(EVALUATOR), "--mode", mode, "--model", model, *extra]
+    if model in REASONING_OFF:
+        cmd.append("--reasoning-off")
     print(f"\n=== {mode} × {model} ===\n$ {' '.join(cmd)}", flush=True)
     return subprocess.call(cmd)
 
@@ -50,9 +55,12 @@ def main() -> None:
     ap.add_argument("--parallel", action="store_true", help="run the models of a stage concurrently")
     ap.add_argument("--skip", nargs="*", default=[], choices=MODES_IN_ORDER, help="modes to skip")
     ap.add_argument("--only", nargs="*", default=None, choices=MODES_IN_ORDER, help="modes to run")
+    ap.add_argument("--reasoning-off", nargs="*", default=[], metavar="MODEL",
+                    help="models to run with reasoning disabled (e.g. google/gemini-2.5-flash); passed through")
     args = ap.parse_args()
 
     modes = [m for m in MODES_IN_ORDER if m not in args.skip and (args.only is None or m in args.only)]
+    REASONING_OFF.update(args.reasoning_off)
     extra: list[str] = []
     if args.dry_run:
         extra.append("--dry-run")

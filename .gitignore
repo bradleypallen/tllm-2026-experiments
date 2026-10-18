@@ -37,3 +37,6 @@ logs/
 CLAUDE.md
 CLAUDE.local.md
 .claude/
+
+# revision experiment scratch output
+results/2026_11/dry_run/

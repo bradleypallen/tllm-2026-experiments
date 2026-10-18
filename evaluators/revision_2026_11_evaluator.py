@@ -74,12 +74,13 @@ MODEL_STEMS = {
 }
 
 # Default pinned provider per model (spec §2).  OpenRouter provider slugs; override with --provider.
-# DeepSeek is left unpinned until the smoke test shows which provider serves the V3 alias.
+# DeepSeek pinned from the 2026-10-18 smoke test: DeepInfra served 62/75 unpinned calls with zero
+# parse failures (fp4 endpoint); StreamLake served 13 and produced all four DeepSeek parse failures.
 DEFAULT_PROVIDER = {
     "meta-llama/llama-4-maverick": "digitalocean",
     "meta-llama/llama-4-scout": "deepinfra",
     "google/gemini-2.5-flash": "google-ai-studio",
-    "deepseek/deepseek-chat": None,
+    "deepseek/deepseek-chat": "deepinfra",
     "qwen/qwen-2.5-72b-instruct": "deepinfra",
 }
 

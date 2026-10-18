@@ -500,7 +500,8 @@ def summary_md(tm, rk, cov, e1, e2, e3) -> None:
         L += ["", "### P2  P(CONFLICTING|<t,t>) - P(CONFLICTING|controls)", "", "| scope | n <t,t> | P(C|tt) | P(C|ctrl) | gap | CI |", "| --- | --- | --- | --- | --- | --- |"]
         for s, v in e2["P2_conflicting_gap"].items():
             ci = f"[{v['ci95'][0]:.3f}, {v['ci95'][1]:.3f}]" if v["ci95"] else "n<10"
-            L.append(f"| {s} | {v['n_tt']} | {v['p_conflicting_tt']:.3f} | {v['p_conflicting_ctrl']:.3f} | {v['gap'] if v['gap'] is None else f'{v['gap']:+.3f}'} | {ci} |")
+            gap = "-" if v["gap"] is None else f"{v['gap']:+.3f}"
+            L.append(f"| {s} | {v['n_tt']} | {v['p_conflicting_tt']:.3f} | {v['p_conflicting_ctrl']:.3f} | {gap} | {ci} |")
     if e3:
         L += ["", "## T-E3  compliance base rate", "", "| model | n | c(M) | Wilson 95% | <t,t> share (Mar) |", "| --- | --- | --- | --- | --- |"]
         for lab, r in e3["rows"].items():

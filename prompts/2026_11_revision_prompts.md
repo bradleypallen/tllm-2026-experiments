@@ -102,9 +102,18 @@ One normaliser: strip leading and trailing whitespace; strip one trailing period
 whitespace to single spaces; upper-case. Then:
 
 - Single-token arms (E1-0, E2, E2-0, E3): exact match against the arm's legal set, else `PARSE_FAIL`.
-- Joint arms (E1-a, E1-b): the whole normalised response must match
+- Joint arms (E1-a, E1-b): the response must *begin* with
   `VERIFICATION: <V>[;|,|newline] REFUTATION: <R>` with `<V>` in {VERIFIED, CANNOT VERIFY} and
-  `<R>` in {REFUTED, CANNOT REFUTE}; anything else is `PARSE_FAIL` for the whole elicitation.
+  `<R>` in {REFUTED, CANNOT REFUTE}. Text after that answer (an explanation the model appended
+  after a line break) is ignored and the elicitation is flagged `trailing_text`. Leading text, a
+  missing or swapped field, an illegal token, or two alternative answers is `PARSE_FAIL` for the
+  whole elicitation.
+  *Widened 2026-10-18*, after the live smoke test showed Llama 4 Scout appending explanations to
+  otherwise well-formed answers (the initial rule required the whole response to be the answer).
+  The widening is applied uniformly to all models by re-parsing stored raw text in
+  `analysis/revision_2026_11.py`; `parsed` fields written by the evaluator before the change
+  reflect the strict rule and are superseded by the re-parse. Scout also sometimes reasons in
+  prose instead of answering; those remain `PARSE_FAIL` and their rate is reported per model.
 - Component mapping: VERIFIED → u = t, CANNOT VERIFY → u = f, REFUTED → v = t, CANNOT REFUTE → v = f;
   `PARSE_FAIL` or `API_ERROR` → e for that elicitation.
 - Majority vote per component over n = 3; a component with no strict majority is e.

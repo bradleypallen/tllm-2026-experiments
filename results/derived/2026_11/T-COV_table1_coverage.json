@@ -1,0 +1,245 @@
+{
+  "abstention_handling": "macro-F1 is computed on covered items only (abstentions excluded from both numerator and denominator); coverage = covered / N is reported beside it. Bilateral abstains on dec = abstain (<t,t> and the neither-cells); ternary on UNCERTAIN. Replicates compute_metrics in proper_benchmark_evaluator.py.",
+  "rows": [
+    {
+      "benchmark": "truthfulqa",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "bilateral_f1": 0.905,
+      "bilateral_coverage": 0.844,
+      "ternary_f1": 0.938,
+      "ternary_coverage": 0.904,
+      "delta_f1": -0.033
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "bilateral_f1": 0.769,
+      "bilateral_coverage": 0.74,
+      "ternary_f1": 0.781,
+      "ternary_coverage": 0.916,
+      "delta_f1": -0.012
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "bilateral_f1": 0.719,
+      "bilateral_coverage": 0.656,
+      "ternary_f1": 0.772,
+      "ternary_coverage": 0.876,
+      "delta_f1": -0.052
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "bilateral_f1": 0.828,
+      "bilateral_coverage": 0.8,
+      "ternary_f1": 0.856,
+      "ternary_coverage": 0.892,
+      "delta_f1": -0.028
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "bilateral_f1": 0.827,
+      "bilateral_coverage": 0.624,
+      "ternary_f1": 0.831,
+      "ternary_coverage": 0.712,
+      "delta_f1": -0.005
+    },
+    {
+      "benchmark": "truthfulqa",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "bilateral_f1": 0.834,
+      "bilateral_coverage": 0.732,
+      "ternary_f1": 0.839,
+      "ternary_coverage": 0.752,
+      "delta_f1": -0.004
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "bilateral_f1": 0.892,
+      "bilateral_coverage": 0.596,
+      "ternary_f1": 0.943,
+      "ternary_coverage": 0.648,
+      "delta_f1": -0.051
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "bilateral_f1": 0.756,
+      "bilateral_coverage": 0.7,
+      "ternary_f1": 0.865,
+      "ternary_coverage": 0.892,
+      "delta_f1": -0.109
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "bilateral_f1": 0.904,
+      "bilateral_coverage": 0.596,
+      "ternary_f1": 0.858,
+      "ternary_coverage": 0.784,
+      "delta_f1": 0.046
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "bilateral_f1": 0.624,
+      "bilateral_coverage": 0.708,
+      "ternary_f1": 0.809,
+      "ternary_coverage": 0.968,
+      "delta_f1": -0.184
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "bilateral_f1": 0.719,
+      "bilateral_coverage": 0.512,
+      "ternary_f1": 0.843,
+      "ternary_coverage": 0.48,
+      "delta_f1": -0.124
+    },
+    {
+      "benchmark": "simpleqa",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "bilateral_f1": 0.775,
+      "bilateral_coverage": 0.632,
+      "ternary_f1": 0.925,
+      "ternary_coverage": 0.556,
+      "delta_f1": -0.15
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "bilateral_f1": 0.897,
+      "bilateral_coverage": 0.544,
+      "ternary_f1": 0.898,
+      "ternary_coverage": 0.664,
+      "delta_f1": -0.0
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "bilateral_f1": 0.696,
+      "bilateral_coverage": 0.8,
+      "ternary_f1": 0.749,
+      "ternary_coverage": 0.572,
+      "delta_f1": -0.054
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "bilateral_f1": 0.684,
+      "bilateral_coverage": 0.584,
+      "ternary_f1": 0.712,
+      "ternary_coverage": 0.668,
+      "delta_f1": -0.029
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "bilateral_f1": 0.784,
+      "bilateral_coverage": 0.744,
+      "ternary_f1": 0.768,
+      "ternary_coverage": 0.964,
+      "delta_f1": 0.017
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "bilateral_f1": 0.762,
+      "bilateral_coverage": 0.588,
+      "ternary_f1": 0.734,
+      "ternary_coverage": 0.664,
+      "delta_f1": 0.028
+    },
+    {
+      "benchmark": "mmlu-pro",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "bilateral_f1": 0.761,
+      "bilateral_coverage": 0.636,
+      "ternary_f1": 0.705,
+      "ternary_coverage": 0.76,
+      "delta_f1": 0.055
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Claude Opus 4.1",
+      "n": 250,
+      "bilateral_f1": 0.511,
+      "bilateral_coverage": 0.536,
+      "ternary_f1": 0.534,
+      "ternary_coverage": 0.616,
+      "delta_f1": -0.022
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Llama 4 Maverick",
+      "n": 250,
+      "bilateral_f1": 0.439,
+      "bilateral_coverage": 0.488,
+      "ternary_f1": 0.442,
+      "ternary_coverage": 0.812,
+      "delta_f1": -0.003
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Llama 4 Scout",
+      "n": 250,
+      "bilateral_f1": 0.435,
+      "bilateral_coverage": 0.412,
+      "ternary_f1": 0.463,
+      "ternary_coverage": 0.572,
+      "delta_f1": -0.028
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Gemini 2.5 Flash",
+      "n": 250,
+      "bilateral_f1": 0.629,
+      "bilateral_coverage": 0.7,
+      "ternary_f1": 0.612,
+      "ternary_coverage": 0.892,
+      "delta_f1": 0.017
+    },
+    {
+      "benchmark": "factscore",
+      "model": "DeepSeek-V3",
+      "n": 250,
+      "bilateral_f1": 0.527,
+      "bilateral_coverage": 0.308,
+      "ternary_f1": 0.516,
+      "ternary_coverage": 0.356,
+      "delta_f1": 0.011
+    },
+    {
+      "benchmark": "factscore",
+      "model": "Qwen 2.5 72B",
+      "n": 250,
+      "bilateral_f1": 0.566,
+      "bilateral_coverage": 0.364,
+      "ternary_f1": 0.472,
+      "ternary_coverage": 0.456,
+      "delta_f1": 0.094
+    }
+  ]
+}

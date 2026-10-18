@@ -1,0 +1,278 @@
+{
+  "description": "Full <t,f> -> NINE transition under paraphrase: share of <t,f>-at-s0 assertions whose [[box p]](s0) takes each value. Figure 2 reports only the <f,f> column.",
+  "per_model": {
+    "Claude Opus 4.1": {
+      "n_tf": 212,
+      "<t,f>": {
+        "count": 151,
+        "share": 0.7123
+      },
+      "<t,e>": {
+        "count": 12,
+        "share": 0.0566
+      },
+      "<f,t>": {
+        "count": 2,
+        "share": 0.0094
+      },
+      "<e,t>": {
+        "count": 2,
+        "share": 0.0094
+      },
+      "<t,t>": {
+        "count": 5,
+        "share": 0.0236
+      },
+      "<f,f>": {
+        "count": 9,
+        "share": 0.0425
+      },
+      "<e,f>": {
+        "count": 10,
+        "share": 0.0472
+      },
+      "<f,e>": {
+        "count": 2,
+        "share": 0.0094
+      },
+      "<e,e>": {
+        "count": 19,
+        "share": 0.0896
+      }
+    },
+    "Llama 4 Maverick": {
+      "n_tf": 205,
+      "<t,f>": {
+        "count": 114,
+        "share": 0.5561
+      },
+      "<t,e>": {
+        "count": 8,
+        "share": 0.039
+      },
+      "<f,t>": {
+        "count": 1,
+        "share": 0.0049
+      },
+      "<e,t>": {
+        "count": 7,
+        "share": 0.0341
+      },
+      "<t,t>": {
+        "count": 5,
+        "share": 0.0244
+      },
+      "<f,f>": {
+        "count": 8,
+        "share": 0.039
+      },
+      "<e,f>": {
+        "count": 18,
+        "share": 0.0878
+      },
+      "<f,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<e,e>": {
+        "count": 44,
+        "share": 0.2146
+      }
+    },
+    "Llama 4 Scout": {
+      "n_tf": 243,
+      "<t,f>": {
+        "count": 167,
+        "share": 0.6872
+      },
+      "<t,e>": {
+        "count": 4,
+        "share": 0.0165
+      },
+      "<f,t>": {
+        "count": 7,
+        "share": 0.0288
+      },
+      "<e,t>": {
+        "count": 2,
+        "share": 0.0082
+      },
+      "<t,t>": {
+        "count": 16,
+        "share": 0.0658
+      },
+      "<f,f>": {
+        "count": 29,
+        "share": 0.1193
+      },
+      "<e,f>": {
+        "count": 12,
+        "share": 0.0494
+      },
+      "<f,e>": {
+        "count": 3,
+        "share": 0.0123
+      },
+      "<e,e>": {
+        "count": 3,
+        "share": 0.0123
+      }
+    },
+    "Gemini 2.5 Flash": {
+      "n_tf": 206,
+      "<t,f>": {
+        "count": 157,
+        "share": 0.7621
+      },
+      "<t,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<f,t>": {
+        "count": 8,
+        "share": 0.0388
+      },
+      "<e,t>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<t,t>": {
+        "count": 25,
+        "share": 0.1214
+      },
+      "<f,f>": {
+        "count": 16,
+        "share": 0.0777
+      },
+      "<e,f>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<f,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<e,e>": {
+        "count": 0,
+        "share": 0.0
+      }
+    },
+    "DeepSeek-V3": {
+      "n_tf": 155,
+      "<t,f>": {
+        "count": 112,
+        "share": 0.7226
+      },
+      "<t,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<f,t>": {
+        "count": 7,
+        "share": 0.0452
+      },
+      "<e,t>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<t,t>": {
+        "count": 11,
+        "share": 0.071
+      },
+      "<f,f>": {
+        "count": 25,
+        "share": 0.1613
+      },
+      "<e,f>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<f,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<e,e>": {
+        "count": 0,
+        "share": 0.0
+      }
+    },
+    "Qwen 2.5 72B": {
+      "n_tf": 164,
+      "<t,f>": {
+        "count": 129,
+        "share": 0.7866
+      },
+      "<t,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<f,t>": {
+        "count": 6,
+        "share": 0.0366
+      },
+      "<e,t>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<t,t>": {
+        "count": 9,
+        "share": 0.0549
+      },
+      "<f,f>": {
+        "count": 20,
+        "share": 0.122
+      },
+      "<e,f>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<f,e>": {
+        "count": 0,
+        "share": 0.0
+      },
+      "<e,e>": {
+        "count": 0,
+        "share": 0.0
+      }
+    }
+  },
+  "pooled": {
+    "n_tf": 1185,
+    "<t,f>": {
+      "count": 830,
+      "share": 0.7004
+    },
+    "<t,e>": {
+      "count": 24,
+      "share": 0.0203
+    },
+    "<f,t>": {
+      "count": 31,
+      "share": 0.0262
+    },
+    "<e,t>": {
+      "count": 11,
+      "share": 0.0093
+    },
+    "<t,t>": {
+      "count": 71,
+      "share": 0.0599
+    },
+    "<f,f>": {
+      "count": 107,
+      "share": 0.0903
+    },
+    "<e,f>": {
+      "count": 40,
+      "share": 0.0338
+    },
+    "<f,e>": {
+      "count": 5,
+      "share": 0.0042
+    },
+    "<e,e>": {
+      "count": 66,
+      "share": 0.0557
+    }
+  }
+}

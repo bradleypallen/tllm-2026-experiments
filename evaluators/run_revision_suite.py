@@ -14,7 +14,7 @@ re-running this script after an interruption continues where it stopped.  ``--pa
 models of a stage concurrently (one subprocess per model); modes within a model stay sequential.
 
 Examples
-    python evaluators/run_revision_suite.py --smoke                 # live smoke test, ~100 calls
+    python evaluators/run_revision_suite.py --smoke                 # live smoke test, 375 calls (5 items x 15 calls/item x 5 models)
     python evaluators/run_revision_suite.py --dry-run               # whole plan with the mock client
     python evaluators/run_revision_suite.py                         # the real thing, sequential
     python evaluators/run_revision_suite.py --parallel --skip e3    # four models at once, no E3

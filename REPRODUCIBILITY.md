@@ -150,7 +150,8 @@ python -m pytest tests/test_revision_2026_11.py -q
 # 1. offline dry run of the whole plan (mock client, no calls)
 python evaluators/run_revision_suite.py --dry-run
 
-# 2. live smoke test: 5 items per cell, provider recorded but not pinned (~100 calls)
+# 2. live smoke test: 5 items per cell, provider recorded but not pinned (375 calls:
+#    5 items x 15 calls/item [E1-0 6, E1-a 3, E1-b 3, E2 1, E2-0 1, E3 1] x 5 models)
 #    -> inspect results/2026_11/smoke/*/*.meta.json: providers_seen, models_returned, parse_fail_rate
 python evaluators/run_revision_suite.py --smoke
 

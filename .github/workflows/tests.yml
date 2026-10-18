@@ -1,0 +1,58 @@
+name: tests
+
+# Runs the full test suite: manifest integrity (SHA-256 of every dataset/result file),
+# prompt drift against the pinned bilateral-truth commit, result-schema checks, the
+# evaluator smoke test, and the re-derivation of every number in the paper.
+#
+# datasets/mmlupro_complete.json (115 MB) is stored in Git LFS. GitHub's free LFS
+# bandwidth is 1 GB/month, so the LFS objects are cached in actions/cache keyed on the
+# list of LFS asset ids: the file is downloaded once per change, not once per run.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out (LFS pointers only)
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Compute LFS asset list for the cache key
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+
+      - name: Restore LFS object cache
+        uses: actions/cache@v4
+        with:
+          path: .git/lfs
+          key: lfs-${{ hashFiles('.lfs-assets-id') }}
+
+      - name: Pull LFS objects (served from cache when the key matches)
+        run: git lfs pull
+
+      - name: Set up Python 3.11 (version used for the 2026 runs)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install pinned dependencies and pytest
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+
+      - name: Run tests
+        run: python -m pytest tests/

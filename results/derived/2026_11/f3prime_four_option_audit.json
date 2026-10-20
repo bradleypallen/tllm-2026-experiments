@@ -1,0 +1,94 @@
+{
+  "description": "Generate F-3': abstention under the four-option prompt, by original bilateral value.",
+  "groups": [
+    "<t,f>",
+    "<f,t>",
+    "<f,f>",
+    "<t,t>",
+    "middle"
+  ],
+  "counts": {
+    "<t,f>": {
+      "n": 1322,
+      "valid": 1309,
+      "uncertain": 39,
+      "conflicting": 19,
+      "fail": 13,
+      "e2-0_n": 394,
+      "e2-0_valid": 392,
+      "e2-0_uncertain": 12,
+      "e2-0_fail": 2
+    },
+    "<f,t>": {
+      "n": 1570,
+      "valid": 1564,
+      "uncertain": 190,
+      "conflicting": 37,
+      "fail": 6,
+      "e2-0_n": 0,
+      "e2-0_valid": 0,
+      "e2-0_uncertain": 0,
+      "e2-0_fail": 0
+    },
+    "<f,f>": {
+      "n": 1375,
+      "valid": 1356,
+      "uncertain": 813,
+      "conflicting": 31,
+      "fail": 19,
+      "e2-0_n": 374,
+      "e2-0_valid": 371,
+      "e2-0_uncertain": 193,
+      "e2-0_fail": 3
+    },
+    "<t,t>": {
+      "n": 346,
+      "valid": 340,
+      "uncertain": 2,
+      "conflicting": 5,
+      "fail": 6,
+      "e2-0_n": 346,
+      "e2-0_valid": 341,
+      "e2-0_uncertain": 6,
+      "e2-0_fail": 5
+    },
+    "middle": {
+      "n": 387,
+      "valid": 184,
+      "uncertain": 23,
+      "conflicting": 2,
+      "fail": 203,
+      "e2-0_n": 0,
+      "e2-0_valid": 0,
+      "e2-0_uncertain": 0,
+      "e2-0_fail": 0
+    }
+  },
+  "shares_pct": {
+    "<t,f>": {
+      "uncertain": 2.98,
+      "conflicting": 1.45,
+      "e2-0_uncertain": 3.06
+    },
+    "<f,t>": {
+      "uncertain": 12.15,
+      "conflicting": 2.37,
+      "e2-0_uncertain": null
+    },
+    "<f,f>": {
+      "uncertain": 59.96,
+      "conflicting": 2.29,
+      "e2-0_uncertain": 52.02
+    },
+    "<t,t>": {
+      "uncertain": 0.59,
+      "conflicting": 1.47,
+      "e2-0_uncertain": 1.76
+    },
+    "middle": {
+      "uncertain": 12.5,
+      "conflicting": 1.09,
+      "e2-0_uncertain": null
+    }
+  }
+}

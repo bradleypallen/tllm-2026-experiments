@@ -176,48 +176,20 @@ TERNARY_TOKENS = ("TRUE", "FALSE", "UNCERTAIN")
 FOUR_OPTION_TOKENS = ("TRUE", "FALSE", "UNCERTAIN", "CONFLICTING")
 
 _JOINT_RE = re.compile(
-    r"^VERIFICATION:\s*(VERIFIED|CANNOT VERIFY)\s*[;|,]?\s*REFUTATION:\s*(REFUTED|CANNOT REFUTE)\s*$"
+    r"^VERIFICATION:\s*(VERIFIED|CANNOT VERIFY)\s*[;\n|,]?\s*REFUTATION:\s*(REFUTED|CANNOT REFUTE)$"
 )
 
 
 def parse_joint(text: str) -> tuple[str, str] | str:
     """Parse an E1 joint response into (verification_token, refutation_token) or PARSE_FAIL.
 
-    Rule (prompts/2026_11_revision_prompts.md, "Parsing"): the response must BEGIN with the two
-    labelled fields, in order, each holding a token from its legal set. Text after the first line
-    break following a complete answer (an explanation the model appended) is ignored; the record is
-    flagged ``trailing_text`` by the caller. Leading text, a missing or swapped field, or an illegal
-    token is PARSE_FAIL for the whole elicitation.
-
-    Widened on 2026-10-18 after the smoke test showed Llama 4 Scout appending explanations to
-    otherwise well-formed answers; applied uniformly to all models by re-parsing stored raw text.
+    The whole response must consist of the two labelled fields; a field with a token outside its
+    legal set, a missing field, or any extra text is PARSE_FAIL for the whole elicitation (spec §4).
     """
-    # Whole response is the answer (fields on one line or two): the strict rule.
     m = _JOINT_RE.match(normalise(text))
-    if m:
-        return m.group(1), m.group(2)
-    # First-line rule: the answer on the first line (or first two, if the fields are split),
-    # followed by an explanation the model appended.
-    lines = [ln.strip() for ln in text.strip().upper().split("\n") if ln.strip()]
-    if not lines:
+    if not m:
         return PARSE_FAIL
-    head = lines[0]
-    if "REFUTATION:" not in head and len(lines) > 1:
-        head = head + " " + lines[1]
-    head = re.sub(r"\s+", " ", head)
-    if head.endswith("."):
-        head = head[:-1]
-    m = _JOINT_RE.match(head)
-    if m:
-        return m.group(1), m.group(2)
-    return PARSE_FAIL
-
-
-def has_trailing_text(text: str) -> bool:
-    """True when parse_joint succeeded only by ignoring text after the answer (first-line rule)."""
-    if parse_joint(text) == PARSE_FAIL:
-        return False
-    return _JOINT_RE.match(normalise(text)) is None
+    return m.group(1), m.group(2)
 
 
 def component(token: str) -> str:

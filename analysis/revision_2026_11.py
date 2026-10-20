@@ -18,9 +18,15 @@ From results/2026_11 (E1-0, E1-a, E1-b, E2, E2-0, E3), when present:
     T-E2   P(CONFLICTING | value) per model with differences and CIs (P2)                              §7.2
     T-E3   compliance base rate c(M) with Wilson CIs beside <t,t> share                                §7.2 / app.
 
-Parsing: E1 joint responses are RE-PARSED from stored raw text under the final (widened) rule in
-``evaluators/revision_2026_11_prompts.py`` so that one rule applies to every model; the ``parsed``
-field written at run time is not used.
+Parsing (analysis-stage rule, 2026-10-18): E1 joint responses are RE-PARSED here from stored raw
+text; the ``parsed`` field the evaluator wrote at run time is not used. The evaluator's parser
+(``evaluators/revision_2026_11_prompts.py``, frozen with the prompts; its hash is recorded in every
+``.meta.json``) requires the whole response to be the two labelled fields. The analysis-stage rule
+(``parse_joint_first_line`` below) additionally accepts a well-formed answer followed by an appended
+explanation after a line break, flagging it ``trailing_text``; it is applied uniformly to every model.
+Effect on the 2026-10-18 run: of 5,091 E1-a/E1-b elicitations, 7 are recovered this way (all Llama 4
+Scout: 3 in E1-a, 4 in E1-b) and 725 remain PARSE_FAIL (reasoning in prose, swapped tokens, or two
+alternative answers). The frozen evaluator files are unchanged by this rule.
 
 Run:  python analysis/revision_2026_11.py            (all tables whose inputs exist)
       python analysis/revision_2026_11.py --frozen   (T-TM, T-RK, T-COV only)
@@ -33,6 +39,7 @@ import json
 import logging
 import math
 import random
+import re
 import sys
 from pathlib import Path
 
@@ -218,6 +225,41 @@ def t_cov() -> dict:
     return out
 
 
+# ----------------------------------------------------------------------------- analysis-stage E1 parsing
+
+# The evaluator's rule (``P.parse_joint``, frozen with the prompts) requires the WHOLE response to be
+# the two labelled fields. The analysis-stage rule below additionally accepts a well-formed answer
+# that the model followed with an explanation after a line break; that trailing text is ignored and
+# the elicitation flagged. Leading text, a missing or swapped field, an illegal token, or two
+# alternative answers remain PARSE_FAIL. Applied uniformly to every model by re-parsing raw text.
+_JOINT_HEAD_RE = re.compile(
+    r"^VERIFICATION:\s*(VERIFIED|CANNOT VERIFY)\s*[;|,]?\s*REFUTATION:\s*(REFUTED|CANNOT REFUTE)\s*$"
+)
+
+
+def parse_joint_first_line(text: str) -> tuple[str, str] | str:
+    """E1 joint response -> (verification_token, refutation_token) under the first-line rule, else PARSE_FAIL."""
+    strict = P.parse_joint(text)
+    if strict != P.PARSE_FAIL:
+        return strict
+    lines = [ln.strip() for ln in text.strip().upper().split("\n") if ln.strip()]
+    if not lines:
+        return P.PARSE_FAIL
+    head = lines[0]
+    if "REFUTATION:" not in head and len(lines) > 1:  # fields split across two lines
+        head = head + " " + lines[1]
+    head = re.sub(r"\s+", " ", head)
+    if head.endswith("."):
+        head = head[:-1]
+    m = _JOINT_HEAD_RE.match(head)
+    return (m.group(1), m.group(2)) if m else P.PARSE_FAIL
+
+
+def has_trailing_text(text: str) -> bool:
+    """True when the first-line rule recovered an answer the evaluator's whole-response rule rejected."""
+    return parse_joint_first_line(text) != P.PARSE_FAIL and P.parse_joint(text) == P.PARSE_FAIL
+
+
 # ----------------------------------------------------------------------------- new-data tables
 
 def reparse_e1_record(rec: dict) -> tuple[str, int, int, int]:
@@ -245,11 +287,11 @@ def reparse_e1_record(rec: dict) -> tuple[str, int, int, int]:
     for e in els:
         if e.get("error"):
             ae += 1; u.append("e"); w.append("e"); continue
-        parsed = P.parse_joint(e["raw"] or "")
+        parsed = parse_joint_first_line(e["raw"] or "")
         if parsed == P.PARSE_FAIL:
             pf += 1; u.append("e"); w.append("e")
         else:
-            tt += P.has_trailing_text(e["raw"] or "")
+            tt += has_trailing_text(e["raw"] or "")
             u.append(P.component(parsed[0])); w.append(P.component(parsed[1]))
     return f"<{P.majority(u)},{P.majority(w)}>", pf, ae, tt
 
@@ -444,7 +486,10 @@ def t_e3() -> dict | None:
                 n += 1; k += r["bilateral_tv"] == "<t,t>"
         tt_share[mid] = k / n
     rows = {}
-    for mid in {r["model"] for r in recs}:
+    present = {r["model"] for r in recs}
+    for _, mid, _ in MODELS5:  # fixed order: a set here made the key order vary with the hash seed
+        if mid not in present:
+            continue
         sub = [r for r in recs if r["model"] == mid]
         valid = [r for r in sub if r.get("complied") is not None]
         k = sum(1 for r in valid if r["complied"]); n = len(valid)
@@ -454,9 +499,12 @@ def t_e3() -> dict | None:
                                               "complied": sum(1 for r in valid if r["probe"] == pr and r["complied"])}
                                          for pr in ("refutation", "verification")},
                             "tt_share_2026_03": round(tt_share[mid], 4)}
-    order_c = sorted(rows, key=lambda l: -(rows[l]["c_M"] or 0)); order_tt = sorted(rows, key=lambda l: -rows[l]["tt_share_2026_03"])
+    # Ties (DeepSeek-V3 and Qwen 2.5 72B share c_M = 0.020) are broken by label so the order is defined.
+    order_c = sorted(rows, key=lambda l: (-(rows[l]["c_M"] or 0), l))
+    order_tt = sorted(rows, key=lambda l: (-rows[l]["tt_share_2026_03"], l))
     out = {"rows": rows, "rank_by_compliance": order_c, "rank_by_tt_share": order_tt,
-           "note": "five points; report the table and rank agreement, not a correlation coefficient"}
+           "note": "five points; report the table and rank agreement, not a correlation coefficient; "
+                   "ties in the rank lists are broken alphabetically by label"}
     dump("T-E3_compliance_base_rate", out)
     return out
 

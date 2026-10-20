@@ -84,28 +84,7 @@ def test_joint_parsing():
     assert P.parse_joint("VERIFICATION: VERIFIED") == P.PARSE_FAIL                        # missing field
     assert P.parse_joint("VERIFICATION: TRUE; REFUTATION: REFUTED") == P.PARSE_FAIL        # illegal token
     assert P.parse_joint("REFUTATION: REFUTED; VERIFICATION: VERIFIED") == P.PARSE_FAIL    # wrong order
-    assert P.parse_joint("Sure. VERIFICATION: VERIFIED; REFUTATION: REFUTED") == P.PARSE_FAIL  # leading text
-    # Swapped tokens (seen from Llama 4 Scout in the smoke test) are illegal for their fields.
-    assert P.parse_joint("VERIFICATION: REFUTED; REFUTATION: VERIFIED\n\nExplanation: ...") == P.PARSE_FAIL
-    # Reasoning instead of answering (Scout, smoke test) fails.
-    assert P.parse_joint("To assess the assertion, let's calculate Jane's mean score.\n\nThe scores are") == P.PARSE_FAIL
-
-
-def test_joint_parsing_first_line_rule():
-    """Widened 2026-10-18: a well-formed answer followed by an appended explanation is accepted and flagged."""
-    scout = "VERIFICATION: CANNOT VERIFY; REFUTATION: REFUTED\n\nRoberto Clemente was a Puerto Rican professional baseball player who"
-    assert P.parse_joint(scout) == ("CANNOT VERIFY", "REFUTED")
-    assert P.has_trailing_text(scout) is True
-    assert P.has_trailing_text("VERIFICATION: CANNOT VERIFY; REFUTATION: REFUTED") is False
-    # Answer split across two lines, then explanation.
-    split = "VERIFICATION: VERIFIED\nREFUTATION: CANNOT REFUTE\n\nBecause the sources agree."
-    assert P.parse_joint(split) == ("VERIFIED", "CANNOT REFUTE")
-    assert P.has_trailing_text(split) is True
-    # Trailing period on the answer line, then explanation.
-    assert P.parse_joint("VERIFICATION: VERIFIED; REFUTATION: CANNOT REFUTE.\nThe claim is well documented.") == ("VERIFIED", "CANNOT REFUTE")
-    # Two alternative answers offered (Scout, smoke test): the first line is taken only if complete and legal.
-    two = "VERIFICATION: REFUTED; REFUTATION: VERIFIED \n\nor alternatively in the required format:\nVERIFICATION: CANNOT VERIFY; REFUTATION: REFUTED"
-    assert P.parse_joint(two) == P.PARSE_FAIL
+    assert P.parse_joint("Sure. VERIFICATION: VERIFIED; REFUTATION: REFUTED") == P.PARSE_FAIL  # extra text
 
 
 def test_component_and_majority():

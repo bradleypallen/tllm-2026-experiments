@@ -1,24 +1,24 @@
 {
   "rows": {
-    "Qwen 2.5 72B": {
+    "Llama 4 Maverick": {
       "n_valid": 100,
-      "complied": 2,
-      "c_M": 0.02,
+      "complied": 0,
+      "c_M": 0.0,
       "wilson95": [
-        0.0055,
-        0.07
+        0.0,
+        0.037
       ],
       "by_probe": {
         "refutation": {
           "n": 50,
-          "complied": 2
+          "complied": 0
         },
         "verification": {
           "n": 50,
           "complied": 0
         }
       },
-      "tt_share_2026_03": 0.053
+      "tt_share_2026_03": 0.064
     },
     "Llama 4 Scout": {
       "n_valid": 98,
@@ -39,26 +39,6 @@
         }
       },
       "tt_share_2026_03": 0.029
-    },
-    "Llama 4 Maverick": {
-      "n_valid": 100,
-      "complied": 0,
-      "c_M": 0.0,
-      "wilson95": [
-        0.0,
-        0.037
-      ],
-      "by_probe": {
-        "refutation": {
-          "n": 50,
-          "complied": 0
-        },
-        "verification": {
-          "n": 50,
-          "complied": 0
-        }
-      },
-      "tt_share_2026_03": 0.064
     },
     "Gemini 2.5 Flash": {
       "n_valid": 100,
@@ -99,13 +79,33 @@
         }
       },
       "tt_share_2026_03": 0.018
+    },
+    "Qwen 2.5 72B": {
+      "n_valid": 100,
+      "complied": 2,
+      "c_M": 0.02,
+      "wilson95": [
+        0.0055,
+        0.07
+      ],
+      "by_probe": {
+        "refutation": {
+          "n": 50,
+          "complied": 2
+        },
+        "verification": {
+          "n": 50,
+          "complied": 0
+        }
+      },
+      "tt_share_2026_03": 0.053
     }
   },
   "rank_by_compliance": [
     "Gemini 2.5 Flash",
     "Llama 4 Scout",
-    "Qwen 2.5 72B",
     "DeepSeek-V3",
+    "Qwen 2.5 72B",
     "Llama 4 Maverick"
   ],
   "rank_by_tt_share": [
@@ -115,5 +115,5 @@
     "Llama 4 Scout",
     "DeepSeek-V3"
   ],
-  "note": "five points; report the table and rank agreement, not a correlation coefficient"
+  "note": "five points; report the table and rank agreement, not a correlation coefficient; ties in the rank lists are broken alphabetically by label"
 }

@@ -156,8 +156,8 @@ macro-F1 is computed on covered items only (abstentions excluded from both numer
 
 | model | n | c(M) | Wilson 95% | <t,t> share (Mar) |
 | --- | --- | --- | --- | --- |
-| Qwen 2.5 72B | 100 | 0.020 | [0.005, 0.070] | 0.053 |
-| Llama 4 Scout | 98 | 0.031 | [0.011, 0.086] | 0.029 |
 | Llama 4 Maverick | 100 | 0.000 | [0.000, 0.037] | 0.064 |
+| Llama 4 Scout | 98 | 0.031 | [0.011, 0.086] | 0.029 |
 | Gemini 2.5 Flash | 100 | 0.150 | [0.093, 0.233] | 0.182 |
 | DeepSeek-V3 | 100 | 0.020 | [0.005, 0.070] | 0.018 |
+| Qwen 2.5 72B | 100 | 0.020 | [0.005, 0.070] | 0.053 |

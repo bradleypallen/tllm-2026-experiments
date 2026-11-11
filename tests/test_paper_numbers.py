@@ -124,6 +124,12 @@ def box(tvs: list[str]) -> str:
     return f"<{_INV[min(_ORD[u] for u in us)]},{_INV[max(_ORD[v] for v in vs)]}>"
 
 
+def diamond(tvs: list[str]) -> str:
+    """Definition 7: [[◇p]] = <max u, min v> under f < e < t."""
+    us, vs = zip(*(_parse(t) for t in tvs))
+    return f"<{_INV[max(_ORD[u] for u in us)]},{_INV[min(_ORD[v] for v in vs)]}>"
+
+
 def macro_f1(golds: list[bool], preds: list[str]) -> float:
     """Macro-F1 over the TRUE/FALSE classes, on covered (non-abstained) items only."""
     pairs = [(g, p == "TRUE") for g, p in zip(golds, preds) if p in ("TRUE", "FALSE")]
@@ -347,3 +353,18 @@ def test_s63_example2_prompt_sensitive(modal) -> None:
     # Modal field at the variant nodes: succ(s_i) = {s_i, s_0} under the symmetric back-edge.
     field = [box([v, r["src_bilateral"]]) for v in r["variant_bilaterals"]]
     assert field == ["<f,f>", "<t,f>", "<t,f>"]
+
+    # ◇p column of the modal-field table (added in the 2026-11 revision, Reviewer 2 major 2).
+    s0, variants = r["src_bilateral"], r["variant_bilaterals"]
+    assert diamond([s0, *variants]) == "<t,f>"                                  # at s_0
+    assert [diamond([v, s0]) for v in variants] == ["<t,f>", "<t,f>", "<t,f>"]  # at s_1..s_3, with back-edge
+    # The reviewer's observation: ⟨t,f⟩ at s_0 is the identity for meet, so the □p column is the same
+    # with or without the back-edge; the only cell that depends on it is ◇p at s_1.
+    assert [box([v]) for v in variants] == field
+    assert [diamond([v]) for v in variants] == ["<f,f>", "<t,f>", "<t,f>"]
+    # Modal duality (Theorem 1) on this instance: ◇p = ¬□¬p at every node.
+    neg = lambda tv: "<{1},{0}>".format(*_parse(tv))
+    for succ in ([s0, *variants], *([v, s0] for v in variants)):
+        assert diamond(succ) == neg(box([neg(t) for t in succ]))
+    # The star is a sampling choice: one extra edge s_1 -- s_2 changes the classification of s_2.
+    assert box([variants[1], s0, variants[0]]) == "<f,f>"

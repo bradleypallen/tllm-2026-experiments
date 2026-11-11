@@ -224,9 +224,11 @@ def main() -> None:
 
     # ---- LNCS tabular fragment (body only; the caption is the author's) ---------------------------
     TFx, FFx = r"$\langle\mathfrak{t},\mathfrak{f}\rangle$", r"$\langle\mathfrak{f},\mathfrak{f}\rangle$"
-    T = [r"\begin{tabular}{l@{\quad}r@{\qquad}r@{\quad}r@{\quad}l@{\qquad}r@{\quad}r}", r"\toprule",
-         rf" & & \multicolumn{{3}}{{l}}{{Any change from {TFx} (\%)}} & \multicolumn{{2}}{{l}}{{To {FFx} (\%)}} \\",
-         r"Model & $n$ & Repeat & Paraphrase & Difference [95\% CI] & Repeat & Paraphrase \\", r"\midrule"]
+    # Column heads are abbreviated (Rep. = identical repeats, Par. = paraphrases, Diff. = Par. - Rep.)
+    # because the spelled-out heads made the table 47pt wider than the LNCS text block (122mm).
+    T = [r"\begin{tabular}{@{}l@{\quad}r@{\qquad}r@{\quad}r@{\quad}l@{\qquad}r@{\quad}r@{}}", r"\toprule",
+         rf" & & \multicolumn{{3}}{{l}}{{Any change from {TFx} (\%)}} & \multicolumn{{2}}{{l@{{}}}}{{To {FFx} (\%)}} \\",
+         r"Model & $n$ & Rep. & Par. & Diff. [95\% CI] & Rep. & Par. \\", r"\midrule"]
 
     def frow(label, o):
         a, f = o["any_change"], o["to_ff"]

@@ -134,7 +134,7 @@ def main() -> None:
     x = np.arange(len(TV_GROUPS))
     w = 0.26
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    fig, ax = plt.subplots(figsize=(7.4, 4.3))
+    fig, ax = plt.subplots(figsize=(6.0, 3.7))   # LNCS text width is ~4.8in
     fig.patch.set_facecolor("white")
 
     style = {"uncertain": dict(color=C_UNCERTAIN),
@@ -146,17 +146,18 @@ def main() -> None:
         for xi, v, g in zip(xs, vals, TV_GROUPS):
             if v is None:
                 if key == "e2-0_uncertain":
-                    ax.text(xi, 1.0, "–", ha="center", va="bottom", fontsize=8, color="#888888")
+                    ax.text(xi, 1.0, "–", ha="center", va="bottom", fontsize=10, color="#888888")
                 continue
             kw = dict(style[key])
             if key != "e2-0_uncertain":
                 kw.update(edgecolor="white", linewidth=0.6)
             ax.bar(xi, v, width=w, zorder=3, **kw)
-            ax.text(xi, v + 1.5, f"{v:.0f}%", ha="center", va="bottom", fontsize=7.5, color=INK)
+            ax.text(xi, v + 1.5, f"{v:.0f}%", ha="center", va="bottom", fontsize=9, color=INK)
 
     ax.set_xticks(x)
-    ax.set_xticklabels([TV_LABELS[g] for g in TV_GROUPS], fontsize=8, linespacing=1.3)
-    ax.set_ylabel("% of valid responses", fontsize=9)
+    ax.set_xticklabels([TV_LABELS[g] for g in TV_GROUPS], fontsize=9.5, linespacing=1.3)
+    ax.tick_params(axis="y", labelsize=9.5)
+    ax.set_ylabel("% of valid responses", fontsize=10)
     ax.set_ylim(0, 105)
     ax.set_xlim(-0.6, len(TV_GROUPS) - 0.4)
     ax.spines["top"].set_visible(False)
@@ -169,7 +170,7 @@ def main() -> None:
     handles = [Patch(facecolor=C_UNCERTAIN, label=SERIES[0][0]),
                Patch(facecolor=C_CONFLICTING, label=SERIES[1][0]),
                Patch(facecolor="white", edgecolor=C_UNCERTAIN, hatch="////", label=SERIES[2][0])]
-    ax.legend(handles=handles, fontsize=7.5, frameon=False, loc="upper left")
+    ax.legend(handles=handles, fontsize=9, frameon=False, loc="upper left")
 
     fig.tight_layout()
     fig.savefig(OUT.with_suffix(".pdf"), bbox_inches="tight", dpi=150)

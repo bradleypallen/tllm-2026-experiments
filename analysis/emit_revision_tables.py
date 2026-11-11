@@ -201,7 +201,7 @@ def lncs_e1_persistence() -> None:
         r = rates.get(f"{arm}|{cond}|pooled")
         return "--" if r is None or not r["ci95"] else f"[{r['ci95'][0]:.3f}, {r['ci95'][1]:.3f}]"
 
-    L = [r"\begin{tabular}{ll rrr}", r"\toprule",
+    L = [r"\begin{tabular}{l@{\quad}l@{\qquad}r@{\quad}r@{\quad}r}", r"\toprule",
          r"Original value & Scope & E1-0 & E1-a & E1-b \\", r"\midrule"]
     for cond, lab in (("treatment", TT), ("control_tf", TF), ("control_ff", FF)):
         L.append(f"{lab} & Pooled & " + " & ".join(cell(a, cond, "pooled") for a in arms) + r" \\")
@@ -211,8 +211,8 @@ def lncs_e1_persistence() -> None:
                 L.append(f" & {m} & " + " & ".join(cell(a, cond, m) for a in arms) + r" \\")
         L.append(r"\midrule")
     p1 = e1["P1_E1-0_minus_E1-a_treatment"]["pooled"]; ab = e1["E1-a_minus_E1-b_treatment"]["pooled"]
-    L.append(rf"\multicolumn{{5}}{{l}}{{Paired on {TT} items: E1-0 $-$ E1-a $= {p1['diff']:+.3f}$ {ci(p1['ci95'])} ($n={p1['n_paired']}$)}} \\")
-    L.append(rf"\multicolumn{{5}}{{l}}{{\phantom{{Paired on {TT} items: }}E1-a $-$ E1-b $= {ab['diff']:+.3f}$ {ci(ab['ci95'])} ($n={ab['n_paired']}$)}} \\")
+    L.append(rf"\multicolumn{{5}}{{l}}{{Paired on {TT} items: E1-0 $-$ E1-a $= {p1['diff']:+.3f}$ ${ci(p1['ci95'])}$ ($n={p1['n_paired']}$)}} \\")
+    L.append(rf"\multicolumn{{5}}{{l}}{{\phantom{{Paired on {TT} items: }}E1-a $-$ E1-b $= {ab['diff']:+.3f}$ ${ci(ab['ci95'])}$ ($n={ab['n_paired']}$)}} \\")
     L += [r"\bottomrule", r"\end{tabular}"]
     write_fragment("e1_persistence_tabular.tex", L)
 
@@ -221,7 +221,7 @@ def lncs_transition() -> None:
     """T-TM: where base <t,f> assertions go under box, per model and pooled (percent of row)."""
     tm = json.loads((D / "T-TM_transition_matrix.json").read_text())
     e_cells = ["<t,e>", "<e,t>", "<e,f>", "<f,e>", "<e,e>"]
-    L = [r"\begin{tabular}{l r rrrrr}", r"\toprule",
+    L = [r"\begin{tabular}{l@{\quad}r@{\qquad}r@{\quad}r@{\quad}r@{\quad}r@{\quad}r}", r"\toprule",
          rf"Model & $n$ & {TF} & {FF} & {TT} & {FT} & $\mathfrak{{e}}$-bearing \\", r"\midrule"]
 
     def row(label, d):

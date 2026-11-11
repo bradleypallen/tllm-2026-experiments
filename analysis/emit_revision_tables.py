@@ -13,6 +13,7 @@ Outputs: results/derived/2026_11/tables/
          Each file is a complete table environment with \\label; captions are placeholders
          marked TODO for the author. Labels: tab:e1-persistence, tab:e3-compliance,
          tab:f1-percell (replacing the existing Table 1), tab:f3prime-p2.
+         tables/lncs/*_tabular.tex are tabular bodies only (no caption), for the LNCS manuscript.
 
 Run:  python3 analysis/emit_revision_tables.py
 """
@@ -153,5 +154,87 @@ def f3prime_p2() -> None:
     write("f3prime_p2.tex", "\n".join(L))
 
 
+# ----------------------------------------------------------------------------- LNCS fragments
+# Tabular bodies only (no table environment, caption or label), for pasting between
+# "% BEGIN GENERATED" / "% END GENERATED" markers in bbl-paper-lncs-v2/paper.tex, whose house
+# style puts the caption above the tabular. Captions are the author's.
+
+TT, TF, FF = (r"$\langle\mathfrak{t},\mathfrak{t}\rangle$", r"$\langle\mathfrak{t},\mathfrak{f}\rangle$",
+              r"$\langle\mathfrak{f},\mathfrak{f}\rangle$")
+FT = r"$\langle\mathfrak{f},\mathfrak{t}\rangle$"
+
+
+def write_fragment(name: str, lines: list[str]) -> None:
+    d = OUT / "lncs"
+    d.mkdir(parents=True, exist_ok=True)
+    (d / name).write_text("\n".join(lines) + "\n")
+    log.info("wrote tables/lncs/%s", name)
+
+
+def lncs_table1_coverage() -> None:
+    cov = json.loads((D / "T-COV_table1_coverage.json").read_text())
+    rows = {(r["benchmark"], r["model"]): r for r in cov["rows"]}
+    L = [r"\begin{tabular}{ll rr r}", r"\toprule",
+         r"Benchmark & Model & Bilateral (cov.) & Ternary (cov.) & $\Delta$ \\", r"\midrule"]
+    for i, bench in enumerate(["truthfulqa", "simpleqa", "mmlu-pro", "factscore"]):
+        for j, lab in enumerate(MODELS6):
+            r = rows[(bench, lab)]
+            delta = "0.000" if r["delta_f1"] == 0 else f"{r['delta_f1']:+.3f}"
+            L.append(f"{BENCH_LABEL[bench] if j == 0 else ''} & {lab} & {r['bilateral_f1']:.3f} ({r['bilateral_coverage']:.2f}) & "
+                     f"{r['ternary_f1']:.3f} ({r['ternary_coverage']:.2f}) & {delta} \\\\")
+        L.append(r"\midrule" if i < 3 else r"\bottomrule")
+    L.append(r"\end{tabular}")
+    write_fragment("table1_coverage_tabular.tex", L)
+
+
+def lncs_e1_persistence() -> None:
+    """Compact: treatment pooled + per model for the three arms; controls pooled. Cell = persistence (n valid)."""
+    e1 = json.loads((D / "T-E1_neutral_reelicitation.json").read_text())
+    rates = e1["T-E1b_persistence"]
+    arms = ["e1-0", "e1-a", "e1-b"]
+
+    def cell(arm, cond, scope):
+        r = rates.get(f"{arm}|{cond}|{scope}")
+        return "--" if r is None else f"{r['persistence']:.3f} ({r['n_valid']})"
+
+    def ci_cell(arm, cond):
+        r = rates.get(f"{arm}|{cond}|pooled")
+        return "--" if r is None or not r["ci95"] else f"[{r['ci95'][0]:.3f}, {r['ci95'][1]:.3f}]"
+
+    L = [r"\begin{tabular}{ll rrr}", r"\toprule",
+         r"Original value & Scope & E1-0 & E1-a & E1-b \\", r"\midrule"]
+    for cond, lab in (("treatment", TT), ("control_tf", TF), ("control_ff", FF)):
+        L.append(f"{lab} & Pooled & " + " & ".join(cell(a, cond, "pooled") for a in arms) + r" \\")
+        L.append(r" & \quad 95\% CI & " + " & ".join(ci_cell(a, cond) for a in arms) + r" \\")
+        if cond == "treatment":
+            for m in MODELS5:
+                L.append(f" & {m} & " + " & ".join(cell(a, cond, m) for a in arms) + r" \\")
+        L.append(r"\midrule")
+    p1 = e1["P1_E1-0_minus_E1-a_treatment"]["pooled"]; ab = e1["E1-a_minus_E1-b_treatment"]["pooled"]
+    L.append(rf"\multicolumn{{5}}{{l}}{{Paired on {TT} items: E1-0 $-$ E1-a $= {p1['diff']:+.3f}$ {ci(p1['ci95'])} ($n={p1['n_paired']}$)}} \\")
+    L.append(rf"\multicolumn{{5}}{{l}}{{\phantom{{Paired on {TT} items: }}E1-a $-$ E1-b $= {ab['diff']:+.3f}$ {ci(ab['ci95'])} ($n={ab['n_paired']}$)}} \\")
+    L += [r"\bottomrule", r"\end{tabular}"]
+    write_fragment("e1_persistence_tabular.tex", L)
+
+
+def lncs_transition() -> None:
+    """T-TM: where base <t,f> assertions go under box, per model and pooled (percent of row)."""
+    tm = json.loads((D / "T-TM_transition_matrix.json").read_text())
+    e_cells = ["<t,e>", "<e,t>", "<e,f>", "<f,e>", "<e,e>"]
+    L = [r"\begin{tabular}{l r rrrrr}", r"\toprule",
+         rf"Model & $n$ & {TF} & {FF} & {TT} & {FT} & $\mathfrak{{e}}$-bearing \\", r"\midrule"]
+
+    def row(label, d):
+        pct = lambda v: 100 * d[v]["count"] / d["n_tf"]
+        e = 100 * sum(d[v]["count"] for v in e_cells) / d["n_tf"]
+        return (f"{label} & {d['n_tf']} & {pct('<t,f>'):.1f} & {pct('<f,f>'):.1f} & {pct('<t,t>'):.1f} & "
+                f"{pct('<f,t>'):.1f} & {e:.1f} \\\\")
+    for m in MODELS6:
+        L.append(row(m, tm["per_model"][m]))
+    L += [r"\midrule", row("Pooled", tm["pooled"]), r"\bottomrule", r"\end{tabular}"]
+    write_fragment("transition_tabular.tex", L)
+
+
 if __name__ == "__main__":
     e1_persistence(); e3_compliance(); table1_coverage(); f3prime_p2()
+    lncs_table1_coverage(); lncs_e1_persistence(); lncs_transition()

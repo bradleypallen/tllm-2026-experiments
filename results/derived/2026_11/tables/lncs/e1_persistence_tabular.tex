@@ -1,0 +1,22 @@
+\begin{tabular}{ll rrr}
+\toprule
+Original value & Scope & E1-0 & E1-a & E1-b \\
+\midrule
+$\langle\mathfrak{t},\mathfrak{t}\rangle$ & Pooled & 0.589 (338) & 0.044 (298) & 0.024 (295) \\
+ & \quad 95\% CI & [0.447, 0.673] & [0.018, 0.092] & [0.008, 0.054] \\
+ & Llama 4 Maverick & 0.321 (56) & 0.000 (25) & 0.043 (23) \\
+ & Llama 4 Scout & 0.483 (29) & 0.227 (22) & 0.191 (21) \\
+ & Gemini 2.5 Flash & 0.643 (182) & 0.011 (181) & 0.011 (182) \\
+ & DeepSeek-V3 & 0.389 (18) & 0.056 (18) & 0.000 (18) \\
+ & Qwen 2.5 72B & 0.811 (53) & 0.096 (52) & 0.000 (51) \\
+\midrule
+$\langle\mathfrak{t},\mathfrak{f}\rangle$ & Pooled & 0.906 (394) & 0.828 (540) & -- \\
+ & \quad 95\% CI & [0.872, 0.936] & [0.732, 0.886] & -- \\
+\midrule
+$\langle\mathfrak{f},\mathfrak{f}\rangle$ & Pooled & 0.845 (374) & 0.901 (323) & -- \\
+ & \quad 95\% CI & [0.771, 0.913] & [0.826, 0.963] & -- \\
+\midrule
+\multicolumn{5}{l}{Paired on $\langle\mathfrak{t},\mathfrak{t}\rangle$ items: E1-0 $-$ E1-a $= +0.587$ [0.433, 0.664] ($n=298$)} \\
+\multicolumn{5}{l}{\phantom{Paired on $\langle\mathfrak{t},\mathfrak{t}\rangle$ items: }E1-a $-$ E1-b $= +0.017$ [-0.004, 0.051] ($n=288$)} \\
+\bottomrule
+\end{tabular}

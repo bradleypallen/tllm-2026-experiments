@@ -1,7 +1,7 @@
 # Revision 2026-11: what the E1–E3 results say and what §7.2 needs
 
 Working notes for incorporating the November 2026 revision experiments into the paper
-(`bbl_paper/paper.tex`, §7.2 = `sec:diagnostic`). Everything here is derivable offline from
+(`paper.tex` in the manuscript repo `bradleypallen/bbl-paper-lncs-v2`, §7.2 = `sec:diagnostic`). Everything here is derivable offline from
 `results/derived/2026_11/` and the raw records in `results/2026_11/`; no network needed.
 Numbers are pinned by `tests/test_revision_numbers.py` (re-derived from raw) and
 `tests/test_paper_numbers.py` (the existing paper numbers). Run `pytest tests/` after any change.
@@ -22,9 +22,13 @@ everywhere. Analysis commit `f079283`; figure/table artifacts from the commit th
 | all derived numbers | `results/derived/2026_11/summary.md` and the `T-*.json` files | — |
 | regenerate | `python analysis/revision_2026_11.py && python analysis/make_f3prime_figure.py && python analysis/emit_revision_tables.py` | — |
 
-Paper repo convention: figures are read from `bbl_paper/bbl_revisions/` (`migration_tf_to_ff.pdf`,
-`tv_diagnostic.pdf` live there). Copies of the F-3′ PDF and the four `.tex` tables are staged in
-`bbl_paper/bbl_revisions/` (uncommitted there). Captions in the `.tex` files are marked `TODO`.
+Manuscript repo convention (corrected 2026-11-11; an earlier version of this note pointed at
+`bbl_paper/bbl_revisions/`, which is not the live manuscript, and the copies staged there have been
+removed): the manuscript is the single file `paper.tex` in `bradleypallen/bbl-paper-lncs-v2`, with
+figures in `images/`. On its branch `revision-2026-11` the F-3′ PDF is in `images/` and the tables
+are inline in `paper.tex`, between `BEGIN GENERATED` / `END GENERATED` markers, taken from the
+tabular-only fragments in `results/derived/2026_11/tables/lncs/` and
+`results/derived/2026_11_e4/tables/lncs/`. Captions of the new floats are marked `TODO`.
 
 ## 1. E1 answers the ⟨t,t⟩ question §7.2 left open
 

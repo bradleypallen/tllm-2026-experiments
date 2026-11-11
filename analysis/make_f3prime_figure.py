@@ -21,7 +21,8 @@ colour-vision deficiency; the same-day E2-0 bar is the UNCERTAIN hue with a hatc
 rather than a third hue.
 
 Data   : results/2026_11/e2/, results/2026_11/e2-0/ (five models; Opus 4.1 retired)
-Outputs: results/derived/2026_11/f3prime_four_option.pdf (+ .png; copy into bbl_paper/bbl_revisions/)
+Outputs: results/derived/2026_11/f3prime_four_option.pdf (+ .png; copy the PDF into images/ of the
+         manuscript repo, bradleypallen/bbl-paper-lncs-v2)
          results/derived/2026_11/f3prime_four_option_audit.json (plotted numbers, for trace)
 
 Run:  python3 analysis/make_f3prime_figure.py

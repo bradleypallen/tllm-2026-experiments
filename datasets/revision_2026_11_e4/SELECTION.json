@@ -1,0 +1,47 @@
+{
+  "source": "results/2026_03/modal (src_bilateral == <t,f>)",
+  "records": 1322,
+  "by_model": {
+    "meta-llama/llama-4-maverick": {
+      "total": 267,
+      "truthfulqa": 70,
+      "simpleqa": 33,
+      "mmlu-pro": 62,
+      "factscore": 102
+    },
+    "meta-llama/llama-4-scout": {
+      "total": 328,
+      "truthfulqa": 72,
+      "simpleqa": 71,
+      "mmlu-pro": 85,
+      "factscore": 100
+    },
+    "google/gemini-2.5-flash": {
+      "total": 270,
+      "truthfulqa": 74,
+      "simpleqa": 15,
+      "mmlu-pro": 64,
+      "factscore": 117
+    },
+    "deepseek/deepseek-chat": {
+      "total": 223,
+      "truthfulqa": 72,
+      "simpleqa": 16,
+      "mmlu-pro": 68,
+      "factscore": 67
+    },
+    "qwen/qwen-2.5-72b-instruct": {
+      "total": 234,
+      "truthfulqa": 76,
+      "simpleqa": 26,
+      "mmlu-pro": 70,
+      "factscore": 62
+    }
+  },
+  "by_benchmark": {
+    "truthfulqa": 364,
+    "simpleqa": 161,
+    "mmlu-pro": 349,
+    "factscore": 448
+  }
+}

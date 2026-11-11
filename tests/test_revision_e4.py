@@ -105,3 +105,12 @@ def test_offline_dry_run(tmp_path) -> None:
         assert r["box_par"] == E4.box([base] + [s["tv"] for s in r["situations"] if s["arm"] == "par"])
         for s in r["situations"]:
             assert set(s["verification"]) >= {"raw", "parsed", "provider", "model_returned", "error"}
+
+
+def test_provider_pins_are_octobers_except_maverick() -> None:
+    """Spec §10 (amendment of 2026-11-11): DigitalOcean withdrew Llama 4 Maverick; E4 pins Parasail."""
+    import revision_2026_11_evaluator as R
+    assert E4.E4_PROVIDER["meta-llama/llama-4-maverick"] == "parasail"
+    assert {m: v for m, v in E4.E4_PROVIDER.items() if m != "meta-llama/llama-4-maverick"} == \
+        {m: v for m, v in R.DEFAULT_PROVIDER.items() if m != "meta-llama/llama-4-maverick"}
+    assert R.DEFAULT_PROVIDER["meta-llama/llama-4-maverick"] == "digitalocean"   # October evaluator unmodified

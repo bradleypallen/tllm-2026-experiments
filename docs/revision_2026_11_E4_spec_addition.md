@@ -123,3 +123,23 @@ New files only:
 
 Untouched: `prompts/`, `evaluators/revision_2026_11_prompts.py`,
 `evaluators/revision_2026_11_evaluator.py`, `datasets/revision_2026_11/`, `results/2026_11/`.
+
+## 10. Amendments
+
+**2026-11-11, after the first smoke test and before any full-run call (approved by the author).**
+The pinned smoke test (5 items per model) passed every gate for Gemini 2.5 Flash, Llama 4 Scout
+and DeepSeek-V3 (70 calls each, no API or parse errors, served by the pinned provider). Two
+stop conditions fired:
+
+1. **Llama 4 Maverick.** All 42 calls failed with HTTP 404: DigitalOcean, the October pin, no
+   longer serves `meta-llama/llama-4-maverick`. E4 pins **Parasail** (fp8) for Maverick instead
+   (`E4_PROVIDER` in `evaluators/revision_e4_evaluator.py`). §4's "pinned as on 2026-10-18" holds
+   for the other four models. Both E4 arms for an item run on the same provider on the same day,
+   so the paired comparison is unaffected; Maverick's E4 results are not comparable with its
+   October (DigitalOcean) results at the level of the serving endpoint, and the paper says so.
+2. **Qwen 2.5 72B.** 13 of 14 calls failed with HTTP 429 ("temporarily rate-limited upstream")
+   at DeepInfra, the model's only endpoint. Qwen is run separately when the endpoint clears;
+   the §8 cut-off applies to it on its own. If it does not clear, E4 is reported on four models.
+
+The failed smoke records are kept in `results/2026_11_e4/smoke/`; Maverick's re-smoke on
+Parasail is in `results/2026_11_e4/smoke_parasail/`.

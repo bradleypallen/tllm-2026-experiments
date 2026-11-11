@@ -52,6 +52,9 @@ log = logging.getLogger("revision_e4")
 ITEMS = PROJECT_ROOT / "datasets" / "revision_2026_11_e4" / "e4_items.jsonl"
 SPEC = PROJECT_ROOT / "docs" / "revision_2026_11_E4_spec_addition.md"
 OUT_DIR = PROJECT_ROOT / "results" / "2026_11_e4"
+# Provider pins are the October ones except where an endpoint has since been withdrawn (spec §10,
+# amendment of 2026-11-11): DigitalOcean no longer serves Llama 4 Maverick, so E4 pins Parasail (fp8).
+E4_PROVIDER = {**R.DEFAULT_PROVIDER, "meta-llama/llama-4-maverick": "parasail"}
 _ORD = {"f": 0, "e": 1, "t": 2}
 _INV = "fet"
 
@@ -112,13 +115,13 @@ def main() -> None:
     ap.add_argument("--items", type=Path, default=ITEMS)
     ap.add_argument("--out-dir", type=Path, default=OUT_DIR)
     ap.add_argument("--limit", type=int, help="process at most N items (smoke tests)")
-    ap.add_argument("--provider", help="OpenRouter provider slug to pin (default: the October pins)")
+    ap.add_argument("--provider", help="OpenRouter provider slug to pin (default: E4_PROVIDER)")
     ap.add_argument("--no-pin", action="store_true", help="do not pin a provider; record whatever serves")
     ap.add_argument("--allow-fallbacks", action="store_true", help="permit fallback on pinned-provider outage (flagged)")
     ap.add_argument("--dry-run", action="store_true", help="mock client, no network, output to <out-dir>/dry_run/")
     args = ap.parse_args()
 
-    provider = None if args.no_pin else (args.provider or R.DEFAULT_PROVIDER[args.model])
+    provider = None if args.no_pin else (args.provider or E4_PROVIDER[args.model])
     client = (R.MockClient(args.model) if args.dry_run
               else R.OpenRouterClient(args.model, provider, args.allow_fallbacks))
 

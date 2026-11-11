@@ -119,8 +119,17 @@ tie at 0.020 is broken alphabetically in the rank list (stated in the table note
 
 ## 5. §7.1 inputs that already exist (from the frozen March data)
 
-- T-RK: per-model ⟨t,f⟩→⟨f,f⟩ migration with cluster-bootstrap CIs over benchmark cells;
-  orderings whose pairwise CI excludes zero are listed in `summary.md` (nine of fifteen pairs).
-- T-TM: full ⟨t,f⟩→NINE transition (pooled: ⟨t,f⟩ 0.700, ⟨f,f⟩ 0.090, ⟨t,t⟩ 0.060, ⟨e,e⟩ 0.056, …).
+- T-RK: per-model ⟨t,f⟩→⟨f,f⟩ migration with cluster-bootstrap CIs over the four benchmark cells:
+  DeepSeek-V3 11.7% [4.1, 19.3], Scout 10.1% [6.0, 15.7], Qwen 9.4% [4.7, 14.7], Gemini 5.9% [0.0, 9.4],
+  Opus 4.1 4.1% [2.2, 6.4], Maverick 3.0% [0.0, 7.8]. **7 of 15** pairwise orderings have a CI excluding zero
+  (listed in `summary.md`).
+- T-TM: full ⟨t,f⟩→NINE transition, pooled n = 1,591: ⟨t,f⟩ 0.739 (so 26.2% change), ⟨f,f⟩ 0.073,
+  ⟨t,t⟩ 0.067, ⟨e,e⟩ 0.043, ⟨e,f⟩ 0.027, ⟨f,t⟩ 0.024, ⟨t,e⟩ 0.017, ⟨e,t⟩ 0.007, ⟨f,e⟩ 0.003.
+  *Corrected 2026-11-11:* the tables committed on 2026-10-18/20 silently omitted MMLU-Pro (a filename
+  glob for `mmlu-pro_complete_*`; the modal files are `mmlupro_complete_*`) and reported n = 1,185,
+  ⟨f,f⟩ 0.090, 9 of 15 orderings. `tests/test_revision_numbers.py` now pins the four-benchmark totals.
+- Same-day identical-prompt floor (E1-0, three single elicitations per item, base = first): of 439 items
+  with base ⟨t,f⟩, the □-style aggregate over the two further repeats changes in 6 (1.4%) and goes to
+  ⟨f,f⟩ in 3 (0.7%); all three elicitations agree on ⟨u,v⟩ for 97.3% of the 1,114 items.
 - T-COV: Table 1 with coverage — `tables/table1_coverage.tex` is a drop-in replacement for
   `tab:f1-percell` (caption marked TODO).

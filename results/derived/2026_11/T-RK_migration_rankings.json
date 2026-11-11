@@ -4,188 +4,188 @@
   "resamples": 10000,
   "rates": {
     "Claude Opus 4.1": {
-      "n_tf": 212,
-      "migration_pct": 4.25,
+      "n_tf": 269,
+      "migration_pct": 4.09,
       "ci95": [
-        1.98,
-        6.98
+        2.22,
+        6.35
       ],
       "note": "4 benchmark cells per model; CI from resampling those 4 cells"
     },
     "Llama 4 Maverick": {
-      "n_tf": 205,
-      "migration_pct": 3.9,
+      "n_tf": 267,
+      "migration_pct": 3.0,
       "ci95": [
         0.0,
-        12.12
+        7.77
       ],
       "note": "4 benchmark cells per model; CI from resampling those 4 cells"
     },
     "Llama 4 Scout": {
-      "n_tf": 243,
-      "migration_pct": 11.93,
+      "n_tf": 328,
+      "migration_pct": 10.06,
       "ci95": [
-        7.0,
-        19.72
+        5.95,
+        15.65
       ],
       "note": "4 benchmark cells per model; CI from resampling those 4 cells"
     },
     "Gemini 2.5 Flash": {
-      "n_tf": 206,
-      "migration_pct": 7.77,
+      "n_tf": 270,
+      "migration_pct": 5.93,
       "ci95": [
         0.0,
-        10.26
+        9.41
       ],
       "note": "4 benchmark cells per model; CI from resampling those 4 cells"
     },
     "DeepSeek-V3": {
-      "n_tf": 155,
-      "migration_pct": 16.13,
+      "n_tf": 223,
+      "migration_pct": 11.66,
       "ci95": [
-        11.94,
-        25.0
+        4.06,
+        19.32
       ],
       "note": "4 benchmark cells per model; CI from resampling those 4 cells"
     },
     "Qwen 2.5 72B": {
-      "n_tf": 164,
-      "migration_pct": 12.2,
+      "n_tf": 234,
+      "migration_pct": 9.4,
       "ci95": [
-        8.06,
-        19.23
+        4.66,
+        14.71
       ],
       "note": "4 benchmark cells per model; CI from resampling those 4 cells"
     }
   },
   "ranking_by_point_estimate": [
     "DeepSeek-V3",
-    "Qwen 2.5 72B",
     "Llama 4 Scout",
+    "Qwen 2.5 72B",
     "Gemini 2.5 Flash",
     "Claude Opus 4.1",
     "Llama 4 Maverick"
   ],
   "pairwise": {
     "Claude Opus 4.1 - Llama 4 Maverick": {
-      "diff_pp": 0.34,
+      "diff_pp": 1.09,
       "ci95": [
-        -8.12,
-        2.01
+        -3.67,
+        2.94
       ],
       "excludes_zero": false
     },
     "Claude Opus 4.1 - Llama 4 Scout": {
-      "diff_pp": -7.69,
+      "diff_pp": -5.97,
       "ci95": [
-        -15.72,
-        -4.13
+        -11.95,
+        -2.05
       ],
       "excludes_zero": true
     },
     "Claude Opus 4.1 - Gemini 2.5 Flash": {
-      "diff_pp": -3.52,
+      "diff_pp": -1.84,
       "ci95": [
-        -8.28,
-        4.0
+        -6.71,
+        3.66
       ],
       "excludes_zero": false
     },
     "Claude Opus 4.1 - DeepSeek-V3": {
-      "diff_pp": -11.88,
+      "diff_pp": -7.57,
       "ci95": [
-        -21.0,
-        -9.96
+        -14.55,
+        -1.12
       ],
       "excludes_zero": true
     },
     "Claude Opus 4.1 - Qwen 2.5 72B": {
-      "diff_pp": -7.95,
+      "diff_pp": -5.31,
       "ci95": [
-        -15.23,
-        -6.08
+        -10.64,
+        -1.09
       ],
       "excludes_zero": true
     },
     "Llama 4 Maverick - Llama 4 Scout": {
-      "diff_pp": -8.03,
+      "diff_pp": -7.06,
       "ci95": [
-        -9.7,
-        -5.4
+        -9.32,
+        -4.61
       ],
       "excludes_zero": true
     },
     "Llama 4 Maverick - Gemini 2.5 Flash": {
-      "diff_pp": -3.86,
+      "diff_pp": -2.93,
       "ci95": [
-        -10.26,
-        12.12
+        -8.66,
+        6.11
       ],
       "excludes_zero": false
     },
     "Llama 4 Maverick - DeepSeek-V3": {
-      "diff_pp": -12.23,
+      "diff_pp": -8.66,
       "ci95": [
-        -12.88,
-        -11.37
+        -12.78,
+        -1.74
       ],
       "excludes_zero": true
     },
     "Llama 4 Maverick - Qwen 2.5 72B": {
-      "diff_pp": -8.29,
+      "diff_pp": -6.41,
       "ci95": [
-        -8.54,
-        -6.8
+        -8.48,
+        -3.08
       ],
       "excludes_zero": true
     },
     "Llama 4 Scout - Gemini 2.5 Flash": {
-      "diff_pp": 4.17,
+      "diff_pp": 4.14,
       "ci95": [
-        -3.26,
-        19.72
+        -1.62,
+        14.18
       ],
       "excludes_zero": false
     },
     "Llama 4 Scout - DeepSeek-V3": {
-      "diff_pp": -4.19,
+      "diff_pp": -1.6,
       "ci95": [
-        -6.94,
-        -1.7
+        -6.39,
+        4.79
       ],
-      "excludes_zero": true
+      "excludes_zero": false
     },
     "Llama 4 Scout - Qwen 2.5 72B": {
-      "diff_pp": -0.26,
+      "diff_pp": 0.66,
       "ci95": [
-        -2.26,
-        1.3
+        -2.15,
+        3.95
       ],
       "excludes_zero": false
     },
     "Gemini 2.5 Flash - DeepSeek-V3": {
-      "diff_pp": -8.36,
+      "diff_pp": -5.73,
       "ci95": [
-        -25.0,
-        -1.68
+        -14.82,
+        -0.18
       ],
       "excludes_zero": true
     },
     "Gemini 2.5 Flash - Qwen 2.5 72B": {
-      "diff_pp": -4.43,
+      "diff_pp": -3.48,
       "ci95": [
-        -19.23,
-        2.19
+        -11.49,
+        1.33
       ],
       "excludes_zero": false
     },
     "DeepSeek-V3 - Qwen 2.5 72B": {
-      "diff_pp": 3.93,
+      "diff_pp": 2.26,
       "ci95": [
-        3.0,
-        5.77
+        -1.34,
+        4.61
       ],
-      "excludes_zero": true
+      "excludes_zero": false
     }
   },
   "supported_orderings": [
@@ -195,8 +195,6 @@
     "Llama 4 Maverick - Llama 4 Scout",
     "Llama 4 Maverick - DeepSeek-V3",
     "Llama 4 Maverick - Qwen 2.5 72B",
-    "Llama 4 Scout - DeepSeek-V3",
-    "Gemini 2.5 Flash - DeepSeek-V3",
-    "DeepSeek-V3 - Qwen 2.5 72B"
+    "Gemini 2.5 Flash - DeepSeek-V3"
   ]
 }

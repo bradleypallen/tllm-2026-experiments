@@ -73,6 +73,18 @@ BENCHES = ["truthfulqa", "simpleqa", "mmlu-pro", "factscore"]
 LABEL = {mid: lab for _, mid, lab in MODELS6}
 NINE = list(ALL_NINE)
 
+# Modal result files use their own benchmark stems (note: "mmlupro", not "mmlu-pro").
+MODAL_STEM = {"truthfulqa": "truthfulqa_complete", "simpleqa": "simpleqa_complete",
+              "mmlu-pro": "mmlupro_complete", "factscore": "factscore_complete"}
+
+
+def modal_path(bench: str, stem: str) -> Path:
+    """Path of a canonical modal result file; a missing cell is an error, never a silent skip."""
+    p = MODAL / f"{MODAL_STEM[bench]}_{stem}_n3_modal_results.json"
+    if not p.exists():
+        raise FileNotFoundError(f"missing modal cell: {p}")
+    return p
+
 
 # ----------------------------------------------------------------------------- helpers
 
@@ -133,9 +145,7 @@ def t_tm() -> dict:
     for stem, mid, lab in MODELS6:
         c = collections.Counter(); n = 0
         for bench in BENCHES:
-            p = next(MODAL.glob(f"{bench}_complete_{stem}_n3_modal_results.json"), None)
-            if p is None:
-                continue
+            p = modal_path(bench, stem)
             for r in json.loads(p.read_text())["detailed_results"]:
                 if r.get("src_bilateral") == "<t,f>":
                     c[r.get("modal_bilateral")] += 1; n += 1
@@ -156,9 +166,7 @@ def t_rk() -> dict:
     for stem, mid, lab in MODELS6:
         cells = []
         for bench in BENCHES:
-            p = next(MODAL.glob(f"{bench}_complete_{stem}_n3_modal_results.json"), None)
-            if p is None:
-                continue
+            p = modal_path(bench, stem)
             n = k = 0
             for r in json.loads(p.read_text())["detailed_results"]:
                 if r.get("src_bilateral") == "<t,f>":

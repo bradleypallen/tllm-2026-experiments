@@ -225,3 +225,35 @@ def test_derived_json_agrees() -> None:
     e3 = json.loads((DERIVED / "T-E3_compliance_base_rate.json").read_text())["rows"]
     for lab, (n, c) in E3.items():
         assert (e3[lab]["n_valid"], round(e3[lab]["c_M"], 3)) == (n, c)
+
+
+# ── T-TM / T-RK: the frozen-data tables must cover all four benchmarks ─────────
+# Regression test: an earlier version of analysis/revision_2026_11.py globbed
+# "mmlu-pro_complete_*" (the modal files are "mmlupro_complete_*") and silently dropped MMLU-Pro.
+_MODAL_STEM = {"TruthfulQA": "truthfulqa_complete", "SimpleQA": "simpleqa_complete",
+               "MMLU-Pro": "mmlupro_complete", "FACTScore": "factscore_complete"}
+_MODELS6 = {"claude-opus-4-1-20250805": "Claude Opus 4.1", "meta-llama_llama-4-maverick": "Llama 4 Maverick",
+            "meta-llama_llama-4-scout": "Llama 4 Scout", "google_gemini-2.5-flash": "Gemini 2.5 Flash",
+            "deepseek_deepseek-chat": "DeepSeek-V3", "qwen_qwen-2.5-72b-instruct": "Qwen 2.5 72B"}
+TTM_POOLED = {"n_tf": 1591, "<t,f>": 1175, "<f,f>": 116, "<t,t>": 107}   # stay 73.9%, ignorance 7.3%, <t,t> 6.7%
+
+
+def test_transition_and_ranking_tables_cover_four_benchmarks() -> None:
+    modal = REPO_ROOT / "results" / "2026_03" / "modal"
+    pooled, per_model = Counter(), Counter()
+    for stem, lab in _MODELS6.items():
+        for bench_stem in _MODAL_STEM.values():
+            d = json.loads((modal / f"{bench_stem}_{stem}_n3_modal_results.json").read_text())
+            for r in d["detailed_results"]:
+                if r["src_bilateral"] == "<t,f>":
+                    pooled[r["modal_bilateral"]] += 1; per_model[lab] += 1
+    n = sum(pooled.values())
+    log.info("T-TM from raw: n=%d %s", n, dict(pooled))
+    assert n == TTM_POOLED["n_tf"]
+    for v in ("<t,f>", "<f,f>", "<t,t>"):
+        assert pooled[v] == TTM_POOLED[v]
+    tm = json.loads((DERIVED / "T-TM_transition_matrix.json").read_text())
+    assert tm["pooled"]["n_tf"] == n
+    assert {v: tm["pooled"][v]["count"] for v in pooled} == dict(pooled)
+    rk = json.loads((DERIVED / "T-RK_migration_rankings.json").read_text())
+    assert {lab: r["n_tf"] for lab, r in rk["rates"].items()} == dict(per_model)

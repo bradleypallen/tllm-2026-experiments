@@ -6,28 +6,28 @@ Seed 42, 10000 bootstrap resamples. Files: `results/derived/2026_11/`.
 
 | value | count | share |
 | --- | --- | --- |
-| <t,f> | 830 | 0.700 |
-| <t,e> | 24 | 0.020 |
-| <f,t> | 31 | 0.026 |
-| <e,t> | 11 | 0.009 |
-| <t,t> | 71 | 0.060 |
-| <f,f> | 107 | 0.090 |
-| <e,f> | 40 | 0.034 |
-| <f,e> | 5 | 0.004 |
-| <e,e> | 66 | 0.056 |
+| <t,f> | 1175 | 0.739 |
+| <t,e> | 27 | 0.017 |
+| <f,t> | 38 | 0.024 |
+| <e,t> | 11 | 0.007 |
+| <t,t> | 107 | 0.067 |
+| <f,f> | 116 | 0.073 |
+| <e,f> | 43 | 0.027 |
+| <f,e> | 5 | 0.003 |
+| <e,e> | 69 | 0.043 |
 
 ## T-RK  <t,f> -> <f,f> migration by model (95% CI over benchmark cells)
 
 | model | n <t,f> | migration % | CI |
 | --- | --- | --- | --- |
-| DeepSeek-V3 | 155 | 16.1 | [11.9, 25.0] |
-| Qwen 2.5 72B | 164 | 12.2 | [8.1, 19.2] |
-| Llama 4 Scout | 243 | 11.9 | [7.0, 19.7] |
-| Gemini 2.5 Flash | 206 | 7.8 | [0.0, 10.3] |
-| Claude Opus 4.1 | 212 | 4.2 | [2.0, 7.0] |
-| Llama 4 Maverick | 205 | 3.9 | [0.0, 12.1] |
+| DeepSeek-V3 | 223 | 11.7 | [4.1, 19.3] |
+| Llama 4 Scout | 328 | 10.1 | [6.0, 15.7] |
+| Qwen 2.5 72B | 234 | 9.4 | [4.7, 14.7] |
+| Gemini 2.5 Flash | 270 | 5.9 | [0.0, 9.4] |
+| Claude Opus 4.1 | 269 | 4.1 | [2.2, 6.3] |
+| Llama 4 Maverick | 267 | 3.0 | [0.0, 7.8] |
 
-Pairwise orderings whose CI excludes zero: Claude Opus 4.1 - Llama 4 Scout, Claude Opus 4.1 - DeepSeek-V3, Claude Opus 4.1 - Qwen 2.5 72B, Llama 4 Maverick - Llama 4 Scout, Llama 4 Maverick - DeepSeek-V3, Llama 4 Maverick - Qwen 2.5 72B, Llama 4 Scout - DeepSeek-V3, Gemini 2.5 Flash - DeepSeek-V3, DeepSeek-V3 - Qwen 2.5 72B
+Pairwise orderings whose CI excludes zero: Claude Opus 4.1 - Llama 4 Scout, Claude Opus 4.1 - DeepSeek-V3, Claude Opus 4.1 - Qwen 2.5 72B, Llama 4 Maverick - Llama 4 Scout, Llama 4 Maverick - DeepSeek-V3, Llama 4 Maverick - Qwen 2.5 72B, Gemini 2.5 Flash - DeepSeek-V3
 
 ## T-COV  Table 1 with coverage
 

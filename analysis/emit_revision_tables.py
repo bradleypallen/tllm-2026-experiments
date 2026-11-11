@@ -13,7 +13,8 @@ Outputs: results/derived/2026_11/tables/
          Each file is a complete table environment with \\label; captions are placeholders
          marked TODO for the author. Labels: tab:e1-persistence, tab:e3-compliance,
          tab:f1-percell (replacing the existing Table 1), tab:f3prime-p2.
-         tables/lncs/*_tabular.tex are tabular bodies only (no caption), for the LNCS manuscript.
+         tables/lncs/*_tabular.tex are tabular bodies only (no caption), for the LNCS manuscript:
+           table1_coverage, e1_persistence, transition, e3_compliance, f3prime_p2.
 
 Run:  python3 analysis/emit_revision_tables.py
 """
@@ -235,6 +236,38 @@ def lncs_transition() -> None:
     write_fragment("transition_tabular.tex", L)
 
 
+def lncs_e3_compliance() -> None:
+    """T-E3: compliance base rate c(M) with its Wilson interval, beside the March <t,t> share. Rows by c(M)."""
+    e3 = json.loads((D / "T-E3_compliance_base_rate.json").read_text())
+    L = [r"\begin{tabular}{@{}l@{\qquad}r@{\quad}r@{\quad}l@{\qquad}r@{}}", r"\toprule",
+         rf"Model & $n$ & $c(M)$ & 95\% CI & {TT} share \\", r"\midrule"]
+    for lab in e3["rank_by_compliance"]:
+        r = e3["rows"][lab]
+        L.append(f"{lab} & {r['n_valid']} & {r['c_M']:.3f} & ${ci(r['wilson95'])}$ & {r['tt_share_2026_03']:.3f} \\\\")
+    L += [r"\bottomrule", r"\end{tabular}"]
+    write_fragment("e3_compliance_tabular.tex", L)
+
+
+def lncs_f3prime_p2() -> None:
+    """T-E2 / P2: share of valid four-option responses that are CONFLICTING, on <t,t> items and on the
+    <t,f> and <f,f> controls, with the gap and its interval. Cell = share (n valid)."""
+    p2 = json.loads((D / "T-E2_four_option.json").read_text())["P2_conflicting_gap"]
+    L = [r"\begin{tabular}{@{}l@{\qquad}r@{\quad}r@{\qquad}l@{}}", r"\toprule",
+         r" & \multicolumn{2}{l}{Share \texttt{CONFLICTING} ($n$ valid)} & \\",
+         rf"Model & {TT} & Controls & Gap [95\% CI] \\", r"\midrule"]
+
+    def row(label, r):
+        gap = "--" if r["gap"] is None else f"${r['gap']:+.3f}$ ${ci(r['ci95'])}$"
+        return (f"{label} & {r['p_conflicting_tt']:.3f} ({r['n_tt']}) & "
+                f"{r['p_conflicting_ctrl']:.3f} ({r['n_ctrl']}) & {gap} \\\\")
+    for m in MODELS5:
+        if m in p2:
+            L.append(row(m, p2[m]))
+    L += [r"\midrule", row("Pooled", p2["pooled"]), r"\bottomrule", r"\end{tabular}"]
+    write_fragment("f3prime_p2_tabular.tex", L)
+
+
 if __name__ == "__main__":
     e1_persistence(); e3_compliance(); table1_coverage(); f3prime_p2()
     lncs_table1_coverage(); lncs_e1_persistence(); lncs_transition()
+    lncs_e3_compliance(); lncs_f3prime_p2()

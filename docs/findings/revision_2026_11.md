@@ -133,3 +133,34 @@ tie at 0.020 is broken alphabetically in the rank list (stated in the table note
   ⟨f,f⟩ in 3 (0.7%); all three elicitations agree on ⟨u,v⟩ for 97.3% of the 1,114 items.
 - T-COV: Table 1 with coverage — `tables/table1_coverage.tex` is a drop-in replacement for
   `tab:f1-percell` (caption marked TODO).
+
+## 6. E4 / E4-0: paraphrase versus identical repetition (run 2026-11-11)
+
+Answers Reviewer 2, major comment 4. Spec: `docs/revision_2026_11_E4_spec_addition.md` (approved
+before any call; two dated amendments). 1,322 March ⟨t,f⟩ items, five models, 16,716 calls, no API
+errors, each model served only by its pinned provider (Maverick on Parasail: DigitalOcean withdrew
+the model). Results: `results/2026_11_e4/`; derived: `results/derived/2026_11_e4/`;
+manuscript table body: `results/derived/2026_11_e4/tables/lncs/e4_paraphrase_vs_repeat_tabular.tex`.
+
+Conditioning on a same-day base of ⟨t,f⟩ (n = 1,165; 11.9% of the items were no longer ⟨t,f⟩ at s₀):
+
+| | identical repeats | paraphrases | paired difference [95% CI] |
+|---|---|---|---|
+| any change from ⟨t,f⟩ | 0.9% (10) | 16.0% (186) | +15.1 pts [9.2, 22.4] |
+| to ⟨f,f⟩ | 0.4% (5) | 5.4% (63) | +5.0 pts [2.9, 7.5] |
+
+- **P3 holds** (fixed in advance): paraphrase change exceeds identical-repetition change, CI excludes zero.
+  Discordance: 180 items change under paraphrase only, 4 under repetition only, 6 under both.
+- Where paraphrase sends ⟨t,f⟩: ⟨f,f⟩ 5.4%, ⟨t,t⟩ 4.0%, e-bearing 6.0%, ⟨f,t⟩ 0.6%. Under repetition:
+  ⟨f,f⟩ 0.4%, ⟨t,t⟩ 0.4%, nothing else.
+- **Parse failures are part of the paraphrase effect.** An unparsed component occurs in 3.4% of
+  paraphrase situations against 0.8% of identical repeats; 70 of the 186 paraphrase changes land on
+  an e-bearing value. Counting only changes to a value with no e: 10.0% against 0.9%. (Not
+  pre-specified; reported as a sensitivity figure.)
+- **March figures on the same items** (five models, same-day base ⟨t,f⟩, n = 1,165): 20.6% any change,
+  5.5% to ⟨f,f⟩. The migration to ⟨f,f⟩ reproduces (5.5% in March, 5.4% now); overall change is lower
+  now, mostly in the e-bearing values.
+- Per-model excess (paraphrase − repeat, any change): Maverick +24.4 [4.8, 43.5], Scout +19.3
+  [15.7, 22.9], Gemini +12.3 [9.3, 18.4], Qwen +9.4 [2.4, 18.6], DeepSeek-V3 +7.5 [2.5, 15.0].
+  Every model's CI excludes zero. 4 of 10 pairwise orderings are supported: Scout above Gemini,
+  DeepSeek-V3 and Qwen; Gemini above DeepSeek-V3. Maverick's interval is too wide to rank.

@@ -114,3 +114,42 @@ def test_provider_pins_are_octobers_except_maverick() -> None:
     assert {m: v for m, v in E4.E4_PROVIDER.items() if m != "meta-llama/llama-4-maverick"} == \
         {m: v for m, v in R.DEFAULT_PROVIDER.items() if m != "meta-llama/llama-4-maverick"}
     assert R.DEFAULT_PROVIDER["meta-llama/llama-4-maverick"] == "digitalocean"   # October evaluator unmodified
+
+
+# ── E4 results: headline counts re-derived from raw text, independently of analysis/revision_e4.py ──
+E4_POOLED = {"n": 1165, "rep_changed": 10, "par_changed": 186, "rep_ff": 5, "par_ff": 63}
+
+
+def test_e4_results_complete_and_headline_counts() -> None:
+    res = REPO_ROOT / "results" / "2026_11_e4"
+    order = {"f": 0, "e": 1, "t": 2}
+    tot: Counter = Counter()
+    n_elic = 0
+    for model, n_items in EXPECTED_BY_MODEL.items():
+        stem = "e4_" + model.replace("/", "_")
+        meta = json.loads((res / f"{stem}.meta.json").read_text())
+        recs = [json.loads(l) for l in (res / f"{stem}.jsonl").read_text().splitlines() if l.strip()]
+        assert len(recs) == n_items == meta["n_items"] and meta["finished_at"]
+        assert meta["api_error_rate"] == 0.0 and meta["allow_fallbacks"] is False
+        assert len(meta["providers_seen"]) == 1 and meta["models_returned"] == [model]
+        for r in recs:
+            tv = {"base": [], "rep": [], "par": []}
+            for s in r["situations"]:
+                n_elic += 2
+                u = P.component(P.parse_single(s["verification"]["raw"] or "", P.VERIFICATION_TOKENS))
+                v = P.component(P.parse_single(s["refutation"]["raw"] or "", P.REFUTATION_TOKENS))
+                tv[s["arm"]].append((u, v))
+            if tv["base"][0] != ("t", "f"):
+                continue
+            agg = lambda xs: ("fet"[min(order[x[0]] for x in xs)], "fet"[max(order[x[1]] for x in xs)])
+            rep, par = agg(tv["base"] + tv["rep"]), agg(tv["base"] + tv["par"])
+            tot["n"] += 1
+            tot["rep_changed"] += rep != ("t", "f"); tot["par_changed"] += par != ("t", "f")
+            tot["rep_ff"] += rep == ("f", "f"); tot["par_ff"] += par == ("f", "f")
+    assert n_elic == PLANNED_CALLS
+    assert dict(tot) == E4_POOLED
+    derived = json.loads((REPO_ROOT / "results" / "derived" / "2026_11_e4" / "T-E4_paraphrase_vs_repeat.json").read_text())
+    pooled = derived["T-E4b_rates"]["pooled"]
+    assert pooled["n"] == E4_POOLED["n"]
+    assert pooled["any_change"]["repeat"] == round(10 / 1165, 4) and pooled["any_change"]["paraphrase"] == round(186 / 1165, 4)
+    assert derived["P3"]["holds"] is True

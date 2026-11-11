@@ -165,3 +165,26 @@ python evaluators/revision_2026_11_evaluator.py --mode e1-a --model deepseek/dee
 Outputs: `results/2026_11/<mode>/<mode>_<model_safe>.jsonl` (+ `.meta.json`). Call counts at the
 committed item lists: E1-0 ≈ 6,700; E1-a ≈ 4,050; E1-b ≈ 1,040; E2 5,000; E2-0 ≈ 1,110; E3 500;
 total ≈ 18,400.
+
+## E4 / E4-0: paraphrase versus identical repetition (2026-11-11)
+
+Specified in [`docs/revision_2026_11_E4_spec_addition.md`](docs/revision_2026_11_E4_spec_addition.md),
+approved before any call, with two dated amendments (Parasail pinned for Llama 4 Maverick after
+DigitalOcean withdrew it; Qwen run started separately the same day after a rate limit cleared).
+For each of the 1,322 (model, assertion) pairs whose value at s₀ in the 2026-03 paraphrase run is
+⟨t,f⟩ (five models): one base elicitation at s₀, *k* identical repeats, and the *k* cached
+paraphrases, interleaved, one elicitation per situation. Frozen prompts, temperature 0, pinned
+providers. 16,716 calls.
+
+```bash
+python datasets/revision_2026_11_e4/build_e4_items.py     # deterministic; must reproduce MANIFEST.json
+python -m pytest tests/test_revision_e4.py -q
+python evaluators/run_e4_suite.py --dry-run               # offline, mock client
+python evaluators/run_e4_suite.py --smoke                 # 5 live items per model, pinned (350 calls)
+python evaluators/run_e4_suite.py                         # full run, five models concurrently, resumable
+python analysis/revision_e4.py                            # -> results/derived/2026_11_e4/
+```
+
+Outputs: `results/2026_11_e4/e4_<model_safe>.jsonl` (+ `.meta.json`, `MANIFEST.json`,
+`requirements.lock`); the smoke directories, including the two cells that failed the first smoke
+test, are kept as provenance.

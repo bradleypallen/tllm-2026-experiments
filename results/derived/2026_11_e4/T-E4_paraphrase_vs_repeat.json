@@ -1,0 +1,1026 @@
+{
+  "spec": "docs/revision_2026_11_E4_spec_addition.md",
+  "seed": 42,
+  "resamples": 10000,
+  "models": [
+    "Llama 4 Maverick",
+    "Llama 4 Scout",
+    "Gemini 2.5 Flash",
+    "DeepSeek-V3",
+    "Qwen 2.5 72B"
+  ],
+  "runs": {
+    "Llama 4 Maverick": {
+      "n_items": 267,
+      "n_records": 267,
+      "n_elicitations": 3330,
+      "parse_fail_rate": 0.0399,
+      "api_error_rate": 0.0,
+      "provider_pinned": "parasail",
+      "providers_seen": [
+        "Parasail"
+      ],
+      "models_returned": [
+        "meta-llama/llama-4-maverick"
+      ],
+      "started_at": "2026-11-11T19:41:27.041371+00:00",
+      "finished_at": "2026-11-11T20:06:45.776298+00:00",
+      "harness_commit": "c1ef861e0711004c44b7bbfc2f8a503e783d473b"
+    },
+    "Llama 4 Scout": {
+      "n_items": 328,
+      "n_records": 328,
+      "n_elicitations": 4192,
+      "parse_fail_rate": 0.0191,
+      "api_error_rate": 0.0,
+      "provider_pinned": "deepinfra",
+      "providers_seen": [
+        "DeepInfra"
+      ],
+      "models_returned": [
+        "meta-llama/llama-4-scout"
+      ],
+      "started_at": "2026-11-11T19:41:27.041343+00:00",
+      "finished_at": "2026-11-11T20:20:09.021551+00:00",
+      "harness_commit": "c1ef861e0711004c44b7bbfc2f8a503e783d473b"
+    },
+    "Gemini 2.5 Flash": {
+      "n_items": 270,
+      "n_records": 270,
+      "n_elicitations": 3312,
+      "parse_fail_rate": 0.0,
+      "api_error_rate": 0.0,
+      "provider_pinned": "google-ai-studio",
+      "providers_seen": [
+        "Google AI Studio"
+      ],
+      "models_returned": [
+        "google/gemini-2.5-flash"
+      ],
+      "started_at": "2026-11-11T19:41:27.041339+00:00",
+      "finished_at": "2026-11-11T20:03:24.661335+00:00",
+      "harness_commit": "c1ef861e0711004c44b7bbfc2f8a503e783d473b"
+    },
+    "DeepSeek-V3": {
+      "n_items": 223,
+      "n_records": 223,
+      "n_elicitations": 2854,
+      "parse_fail_rate": 0.0,
+      "api_error_rate": 0.0,
+      "provider_pinned": "deepinfra",
+      "providers_seen": [
+        "DeepInfra"
+      ],
+      "models_returned": [
+        "deepseek/deepseek-chat"
+      ],
+      "started_at": "2026-11-11T19:41:27.041325+00:00",
+      "finished_at": "2026-11-11T20:17:14.555302+00:00",
+      "harness_commit": "c1ef861e0711004c44b7bbfc2f8a503e783d473b"
+    },
+    "Qwen 2.5 72B": {
+      "n_items": 234,
+      "n_records": 234,
+      "n_elicitations": 3028,
+      "parse_fail_rate": 0.0,
+      "api_error_rate": 0.0,
+      "provider_pinned": "deepinfra",
+      "providers_seen": [
+        "DeepInfra"
+      ],
+      "models_returned": [
+        "qwen/qwen-2.5-72b-instruct"
+      ],
+      "started_at": "2026-11-11T19:43:35.840764+00:00",
+      "finished_at": "2026-11-11T20:09:07.108460+00:00",
+      "harness_commit": "c1ef861e0711004c44b7bbfc2f8a503e783d473b"
+    }
+  },
+  "T-E4a_distributions": {
+    "pooled": {
+      "repeat": {
+        "n": 1165,
+        "<t,f>": {
+          "count": 1155,
+          "share": 0.9914
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 5,
+          "share": 0.0043
+        },
+        "<f,f>": {
+          "count": 5,
+          "share": 0.0043
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      },
+      "paraphrase": {
+        "n": 1165,
+        "<t,f>": {
+          "count": 979,
+          "share": 0.8403
+        },
+        "<t,e>": {
+          "count": 15,
+          "share": 0.0129
+        },
+        "<f,t>": {
+          "count": 7,
+          "share": 0.006
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 46,
+          "share": 0.0395
+        },
+        "<f,f>": {
+          "count": 63,
+          "share": 0.0541
+        },
+        "<e,f>": {
+          "count": 23,
+          "share": 0.0197
+        },
+        "<f,e>": {
+          "count": 3,
+          "share": 0.0026
+        },
+        "<e,e>": {
+          "count": 29,
+          "share": 0.0249
+        }
+      }
+    },
+    "Llama 4 Maverick": {
+      "repeat": {
+        "n": 254,
+        "<t,f>": {
+          "count": 253,
+          "share": 0.9961
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 1,
+          "share": 0.0039
+        },
+        "<f,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      },
+      "paraphrase": {
+        "n": 254,
+        "<t,f>": {
+          "count": 191,
+          "share": 0.752
+        },
+        "<t,e>": {
+          "count": 4,
+          "share": 0.0157
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 5,
+          "share": 0.0197
+        },
+        "<f,f>": {
+          "count": 6,
+          "share": 0.0236
+        },
+        "<e,f>": {
+          "count": 21,
+          "share": 0.0827
+        },
+        "<f,e>": {
+          "count": 1,
+          "share": 0.0039
+        },
+        "<e,e>": {
+          "count": 26,
+          "share": 0.1024
+        }
+      }
+    },
+    "Llama 4 Scout": {
+      "repeat": {
+        "n": 259,
+        "<t,f>": {
+          "count": 259,
+          "share": 1.0
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      },
+      "paraphrase": {
+        "n": 259,
+        "<t,f>": {
+          "count": 209,
+          "share": 0.8069
+        },
+        "<t,e>": {
+          "count": 11,
+          "share": 0.0425
+        },
+        "<f,t>": {
+          "count": 2,
+          "share": 0.0077
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 11,
+          "share": 0.0425
+        },
+        "<f,f>": {
+          "count": 19,
+          "share": 0.0734
+        },
+        "<e,f>": {
+          "count": 2,
+          "share": 0.0077
+        },
+        "<f,e>": {
+          "count": 2,
+          "share": 0.0077
+        },
+        "<e,e>": {
+          "count": 3,
+          "share": 0.0116
+        }
+      }
+    },
+    "Gemini 2.5 Flash": {
+      "repeat": {
+        "n": 227,
+        "<t,f>": {
+          "count": 225,
+          "share": 0.9912
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 2,
+          "share": 0.0088
+        },
+        "<f,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      },
+      "paraphrase": {
+        "n": 227,
+        "<t,f>": {
+          "count": 197,
+          "share": 0.8678
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 2,
+          "share": 0.0088
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 18,
+          "share": 0.0793
+        },
+        "<f,f>": {
+          "count": 10,
+          "share": 0.0441
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      }
+    },
+    "DeepSeek-V3": {
+      "repeat": {
+        "n": 201,
+        "<t,f>": {
+          "count": 196,
+          "share": 0.9751
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 2,
+          "share": 0.01
+        },
+        "<f,f>": {
+          "count": 3,
+          "share": 0.0149
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      },
+      "paraphrase": {
+        "n": 201,
+        "<t,f>": {
+          "count": 181,
+          "share": 0.9005
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 2,
+          "share": 0.01
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 6,
+          "share": 0.0299
+        },
+        "<f,f>": {
+          "count": 12,
+          "share": 0.0597
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      }
+    },
+    "Qwen 2.5 72B": {
+      "repeat": {
+        "n": 224,
+        "<t,f>": {
+          "count": 222,
+          "share": 0.9911
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,f>": {
+          "count": 2,
+          "share": 0.0089
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      },
+      "paraphrase": {
+        "n": 224,
+        "<t,f>": {
+          "count": 201,
+          "share": 0.8973
+        },
+        "<t,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,t>": {
+          "count": 1,
+          "share": 0.0045
+        },
+        "<e,t>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<t,t>": {
+          "count": 6,
+          "share": 0.0268
+        },
+        "<f,f>": {
+          "count": 16,
+          "share": 0.0714
+        },
+        "<e,f>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<f,e>": {
+          "count": 0,
+          "share": 0.0
+        },
+        "<e,e>": {
+          "count": 0,
+          "share": 0.0
+        }
+      }
+    }
+  },
+  "T-E4b_rates": {
+    "pooled": {
+      "n": 1165,
+      "n_cells": 20,
+      "any_change": {
+        "repeat": 0.0086,
+        "repeat_ci95": [
+          0.004,
+          0.0144
+        ],
+        "paraphrase": 0.1597,
+        "paraphrase_ci95": [
+          0.104,
+          0.2334
+        ],
+        "difference": 0.1511,
+        "difference_ci95": [
+          0.0924,
+          0.2236
+        ]
+      },
+      "to_ff": {
+        "repeat": 0.0043,
+        "repeat_ci95": [
+          0.0014,
+          0.0081
+        ],
+        "paraphrase": 0.0541,
+        "paraphrase_ci95": [
+          0.033,
+          0.0793
+        ],
+        "difference": 0.0498,
+        "difference_ci95": [
+          0.0295,
+          0.0754
+        ]
+      },
+      "discordance_any_change": {
+        "neither": 975,
+        "paraphrase_only": 180,
+        "repeat_only": 4,
+        "both": 6
+      }
+    },
+    "Llama 4 Maverick": {
+      "n": 254,
+      "n_cells": 4,
+      "any_change": {
+        "repeat": 0.0039,
+        "repeat_ci95": [
+          0.0,
+          0.0121
+        ],
+        "paraphrase": 0.248,
+        "paraphrase_ci95": [
+          0.0622,
+          0.4359
+        ],
+        "difference": 0.2441,
+        "difference_ci95": [
+          0.0484,
+          0.4345
+        ]
+      },
+      "to_ff": {
+        "repeat": 0.0,
+        "repeat_ci95": [
+          0.0,
+          0.0
+        ],
+        "paraphrase": 0.0236,
+        "paraphrase_ci95": [
+          0.0,
+          0.0619
+        ],
+        "difference": 0.0236,
+        "difference_ci95": [
+          0.0,
+          0.0619
+        ]
+      },
+      "discordance_any_change": {
+        "neither": 190,
+        "paraphrase_only": 63,
+        "repeat_only": 1,
+        "both": 0
+      }
+    },
+    "Llama 4 Scout": {
+      "n": 259,
+      "n_cells": 4,
+      "any_change": {
+        "repeat": 0.0,
+        "repeat_ci95": [
+          0.0,
+          0.0
+        ],
+        "paraphrase": 0.1931,
+        "paraphrase_ci95": [
+          0.157,
+          0.2294
+        ],
+        "difference": 0.1931,
+        "difference_ci95": [
+          0.157,
+          0.2294
+        ]
+      },
+      "to_ff": {
+        "repeat": 0.0,
+        "repeat_ci95": [
+          0.0,
+          0.0
+        ],
+        "paraphrase": 0.0734,
+        "paraphrase_ci95": [
+          0.0211,
+          0.156
+        ],
+        "difference": 0.0734,
+        "difference_ci95": [
+          0.0211,
+          0.156
+        ]
+      },
+      "discordance_any_change": {
+        "neither": 209,
+        "paraphrase_only": 50,
+        "repeat_only": 0,
+        "both": 0
+      }
+    },
+    "Gemini 2.5 Flash": {
+      "n": 227,
+      "n_cells": 4,
+      "any_change": {
+        "repeat": 0.0088,
+        "repeat_ci95": [
+          0.0,
+          0.0326
+        ],
+        "paraphrase": 0.1322,
+        "paraphrase_ci95": [
+          0.0993,
+          0.1974
+        ],
+        "difference": 0.1233,
+        "difference_ci95": [
+          0.0927,
+          0.1842
+        ]
+      },
+      "to_ff": {
+        "repeat": 0.0,
+        "repeat_ci95": [
+          0.0,
+          0.0
+        ],
+        "paraphrase": 0.0441,
+        "paraphrase_ci95": [
+          0.0132,
+          0.0673
+        ],
+        "difference": 0.0441,
+        "difference_ci95": [
+          0.0132,
+          0.0673
+        ]
+      },
+      "discordance_any_change": {
+        "neither": 196,
+        "paraphrase_only": 29,
+        "repeat_only": 1,
+        "both": 1
+      }
+    },
+    "DeepSeek-V3": {
+      "n": 201,
+      "n_cells": 4,
+      "any_change": {
+        "repeat": 0.0249,
+        "repeat_ci95": [
+          0.0157,
+          0.0421
+        ],
+        "paraphrase": 0.0995,
+        "paraphrase_ci95": [
+          0.0496,
+          0.175
+        ],
+        "difference": 0.0746,
+        "difference_ci95": [
+          0.0248,
+          0.15
+        ]
+      },
+      "to_ff": {
+        "repeat": 0.0149,
+        "repeat_ci95": [
+          0.0038,
+          0.0408
+        ],
+        "paraphrase": 0.0597,
+        "paraphrase_ci95": [
+          0.0248,
+          0.1158
+        ],
+        "difference": 0.0448,
+        "difference_ci95": [
+          0.0083,
+          0.1
+        ]
+      },
+      "discordance_any_change": {
+        "neither": 180,
+        "paraphrase_only": 16,
+        "repeat_only": 1,
+        "both": 4
+      }
+    },
+    "Qwen 2.5 72B": {
+      "n": 224,
+      "n_cells": 4,
+      "any_change": {
+        "repeat": 0.0089,
+        "repeat_ci95": [
+          0.0,
+          0.0152
+        ],
+        "paraphrase": 0.1027,
+        "paraphrase_ci95": [
+          0.031,
+          0.1959
+        ],
+        "difference": 0.0938,
+        "difference_ci95": [
+          0.0236,
+          0.1856
+        ]
+      },
+      "to_ff": {
+        "repeat": 0.0089,
+        "repeat_ci95": [
+          0.0,
+          0.0152
+        ],
+        "paraphrase": 0.0714,
+        "paraphrase_ci95": [
+          0.031,
+          0.1237
+        ],
+        "difference": 0.0625,
+        "difference_ci95": [
+          0.0236,
+          0.1134
+        ]
+      },
+      "discordance_any_change": {
+        "neither": 200,
+        "paraphrase_only": 22,
+        "repeat_only": 1,
+        "both": 1
+      }
+    }
+  },
+  "P3": {
+    "statement": "pooled any-change rate under paraphrase exceeds that under identical repetition, and the CI of the paired difference excludes zero",
+    "difference": 0.1511,
+    "ci95": [
+      0.0924,
+      0.2236
+    ],
+    "holds": true
+  },
+  "T-E4c_per_model": {
+    "excess_any_change": {
+      "Llama 4 Maverick": {
+        "n": 254,
+        "excess": 0.2441,
+        "ci95": [
+          0.0484,
+          0.4345
+        ],
+        "note": "4 benchmark cells; CI from resampling those cells"
+      },
+      "Llama 4 Scout": {
+        "n": 259,
+        "excess": 0.1931,
+        "ci95": [
+          0.157,
+          0.2294
+        ],
+        "note": "4 benchmark cells; CI from resampling those cells"
+      },
+      "Gemini 2.5 Flash": {
+        "n": 227,
+        "excess": 0.1233,
+        "ci95": [
+          0.0927,
+          0.1842
+        ],
+        "note": "4 benchmark cells; CI from resampling those cells"
+      },
+      "DeepSeek-V3": {
+        "n": 201,
+        "excess": 0.0746,
+        "ci95": [
+          0.0248,
+          0.15
+        ],
+        "note": "4 benchmark cells; CI from resampling those cells"
+      },
+      "Qwen 2.5 72B": {
+        "n": 224,
+        "excess": 0.0938,
+        "ci95": [
+          0.0236,
+          0.1856
+        ],
+        "note": "4 benchmark cells; CI from resampling those cells"
+      }
+    },
+    "pairwise": {
+      "Llama 4 Maverick - Llama 4 Scout": {
+        "diff": 0.051,
+        "ci95": [
+          -0.1375,
+          0.2425
+        ],
+        "excludes_zero": false
+      },
+      "Llama 4 Maverick - Gemini 2.5 Flash": {
+        "diff": 0.1207,
+        "ci95": [
+          -0.0825,
+          0.3398
+        ],
+        "excludes_zero": false
+      },
+      "Llama 4 Maverick - DeepSeek-V3": {
+        "diff": 0.1695,
+        "ci95": [
+          -0.0469,
+          0.4038
+        ],
+        "excludes_zero": false
+      },
+      "Llama 4 Maverick - Qwen 2.5 72B": {
+        "diff": 0.1503,
+        "ci95": [
+          -0.0825,
+          0.4047
+        ],
+        "excludes_zero": false
+      },
+      "Llama 4 Scout - Gemini 2.5 Flash": {
+        "diff": 0.0697,
+        "ci95": [
+          0.0177,
+          0.1008
+        ],
+        "excludes_zero": true
+      },
+      "Llama 4 Scout - DeepSeek-V3": {
+        "diff": 0.1184,
+        "ci95": [
+          0.0549,
+          0.1576
+        ],
+        "excludes_zero": true
+      },
+      "Llama 4 Scout - Qwen 2.5 72B": {
+        "diff": 0.0993,
+        "ci95": [
+          0.0216,
+          0.1588
+        ],
+        "excludes_zero": true
+      },
+      "Gemini 2.5 Flash - DeepSeek-V3": {
+        "diff": 0.0487,
+        "ci95": [
+          0.0226,
+          0.0686
+        ],
+        "excludes_zero": true
+      },
+      "Gemini 2.5 Flash - Qwen 2.5 72B": {
+        "diff": 0.0296,
+        "ci95": [
+          -0.0094,
+          0.0728
+        ],
+        "excludes_zero": false
+      },
+      "DeepSeek-V3 - Qwen 2.5 72B": {
+        "diff": -0.0191,
+        "ci95": [
+          -0.0492,
+          0.0105
+        ],
+        "excludes_zero": false
+      }
+    },
+    "ranking_by_excess": [
+      "Llama 4 Maverick",
+      "Llama 4 Scout",
+      "Gemini 2.5 Flash",
+      "Qwen 2.5 72B",
+      "DeepSeek-V3"
+    ],
+    "supported_orderings": [
+      "Llama 4 Scout - Gemini 2.5 Flash",
+      "Llama 4 Scout - DeepSeek-V3",
+      "Llama 4 Scout - Qwen 2.5 72B",
+      "Gemini 2.5 Flash - DeepSeek-V3"
+    ]
+  },
+  "secondary": {
+    "n_items_no_api_error": 1322,
+    "n_excluded_api_error": 0,
+    "same_day_base": {
+      "<t,f>": 1165,
+      "<t,e>": 5,
+      "<f,t>": 17,
+      "<t,t>": 47,
+      "<f,f>": 81,
+      "<e,f>": 4,
+      "<e,e>": 3
+    },
+    "share_base_not_tf": 0.1188,
+    "march_run_same_items": {
+      "all_items": {
+        "n": 1322,
+        "any_change": 0.264,
+        "to_ff": 0.0794
+      },
+      "items_with_same_day_base_tf": {
+        "n": 1165,
+        "any_change": 0.206,
+        "to_ff": 0.0549
+      }
+    }
+  }
+}

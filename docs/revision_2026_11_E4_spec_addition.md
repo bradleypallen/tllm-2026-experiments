@@ -143,3 +143,9 @@ stop conditions fired:
 
 The failed smoke records are kept in `results/2026_11_e4/smoke/`; Maverick's re-smoke on
 Parasail is in `results/2026_11_e4/smoke_parasail/`.
+
+**2026-11-11, later the same day.** Maverick's re-smoke on Parasail passed every gate (70 calls,
+no errors, served only by Parasail). The four-model run (Maverick, Scout, DeepSeek-V3, Gemini)
+started at 19:41Z. Qwen's endpoint began answering about ten minutes after its failed smoke; its
+repeat smoke test passed every gate (`results/2026_11_e4/smoke_qwen_retry/`, 70 calls, no
+errors) and its run started at about 19:44Z, so E4 covers all five models on the same day.

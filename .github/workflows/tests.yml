@@ -12,6 +12,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  # Manual trigger (`gh workflow run tests`), so a run that GitHub leaves stuck in the
+  # queue can be restarted without pushing a commit.
+  workflow_dispatch:
 
 permissions:
   contents: read

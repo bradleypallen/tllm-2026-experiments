@@ -25,9 +25,10 @@ everywhere. Analysis commit `f079283`; figure/table artifacts from the commit th
 Manuscript repo convention (corrected 2026-11-11; an earlier version of this note pointed at
 `bbl_paper/bbl_revisions/`, which is not the live manuscript, and the copies staged there have been
 removed): the manuscript is the single file `paper.tex` in `bradleypallen/bbl-paper-lncs-v2`, with
-figures in `images/`. On its branch `revision-2026-11` the F-3′ PDF is in `images/` and the tables
-are inline in `paper.tex`, between `BEGIN GENERATED` / `END GENERATED` markers, taken from the
-tabular-only fragments in `results/derived/2026_11/tables/lncs/` and
+figures in `images/`. On its `main` branch (the working branch `revision-2026-11` was merged and
+deleted on 2026-11-11) the F-3′ PDF is in `images/` and the tables are inline in `paper.tex`,
+between `BEGIN GENERATED` / `END GENERATED` markers, copied by `analysis/sync_generated_blocks.py`
+from the tabular-only fragments in `results/derived/2026_11/tables/lncs/` and
 `results/derived/2026_11_e4/tables/lncs/`. Captions of the new floats are marked `TODO`.
 
 ## 1. E1 answers the ⟨t,t⟩ question §7.2 left open

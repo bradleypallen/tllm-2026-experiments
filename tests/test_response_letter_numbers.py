@@ -12,6 +12,7 @@ independently of analysis/. No API calls. Sections follow the reviewer points th
   R2-m4 coverage beside macro-F1 for Table 1
   R1-5  accuracy of single-prompt verdicts by the item's bilateral value (post hoc check)
   R1-5  accuracy of a verdict by whether it is stable under paraphrase (post hoc check)
+  R1-5  risk and coverage against a one-call confidence score, alone and combined (post hoc check)
 """
 from __future__ import annotations
 
@@ -389,3 +390,182 @@ def test_paraphrase_stability_replicates_in_the_same_day_run(e4) -> None:
     log.info("E4 stable minus changing: %+.2f [%.2f, %.2f] over %d cells", *got, len(cells))
     assert tuple(round(v, 1) for v in got) == pytest.approx(E4_STABILITY_GAP, abs=0.05)
     assert got[1] > 0
+
+
+# ── R1-5: risk and coverage against a one-call confidence score ─────────────────
+# Post hoc check (2026-11-11), not pre-specified. March run, six models, 6,000 items. Each item has a
+# numeric confidence score from one prompt (verdict TRUE iff score >= 0.5). Used as a selective
+# predictor it keeps the items with the largest |score - 0.5|. "Matched" comparisons take, in every
+# (model, benchmark) cell, as many items from that ranking as the other scheme commits on; ties share
+# their tie group's accuracy. Intervals: cluster bootstrap over the 24 cells, 10,000 resamples, seed 42.
+def _risk_coverage_items() -> dict:
+    cells = {}
+    for m in MODELS6:
+        for bench, stem in BENCH.items():
+            proper = json.loads((PROPER / f"{bench}_{m}_n3_proper_results.json").read_text())["detailed_results"]
+            modal = {r["assertion_id"]: r for r in
+                     json.loads((MODAL / f"{stem}_{m}_n3_modal_results.json").read_text())["detailed_results"]}
+            items = []
+            for r in proper:
+                verdict = dec(tv(r["bilateral_tv"]))
+                mr = modal[r["assertion_id"]]
+                s0 = mr["src_bilateral"]
+                one = True if s0 == "<t,f>" else False if s0 == "<f,t>" else None
+                items.append({
+                    "gold": r["ground_truth"],
+                    "forced": r["forced_unilateral_prediction"] == "TRUE",
+                    "conf": r["confidence_score"],
+                    "ternary": {"TRUE": True, "FALSE": False}.get(r["ternary_prediction"]),
+                    "bilateral": {"TRUE": True, "FALSE": False}.get(verdict),
+                    "stable": one if one is not None and all(v == s0 for v in mr["variant_bilaterals"]) else None,
+                })
+            cells[(m, bench)] = items
+    return cells
+
+
+def _conf_top(items, n: int) -> float:
+    """Expected number correct among the n items with the largest |conf - 0.5|."""
+    groups = defaultdict(lambda: [0, 0])
+    for i in items:
+        g = groups[round(abs(i["conf"] - 0.5), 6)]
+        g[0] += 1
+        g[1] += (i["conf"] >= 0.5) == i["gold"]
+    got, left = 0.0, n
+    for margin in sorted(groups, reverse=True):
+        size, ok = groups[margin]
+        take = min(size, left)
+        got += ok * take / size
+        left -= take
+        if left <= 0:
+            break
+    return got
+
+
+def _agree(item, keys):
+    """The confidence verdict, kept only where every scheme in `keys` commits to the same verdict."""
+    cv = item["conf"] >= 0.5
+    return cv if all(item[k] == cv for k in keys) else None
+
+
+def _per_cell(cells: dict, verdict_of) -> dict:
+    """cell -> (committed, correct, expected correct of the confidence ranking at the same coverage)."""
+    out = {}
+    for key, items in cells.items():
+        v = [verdict_of(i) for i in items]
+        n = sum(x is not None for x in v)
+        out[key] = (n, sum(x == i["gold"] for x, i in zip(v, items) if x is not None), _conf_top(items, n))
+    return out
+
+
+def _resamples(keys, seed: int = 42, n: int = 10_000):
+    rng = random.Random(seed)
+    return [[rng.choice(keys) for _ in keys] for _ in range(n)]
+
+
+def _ci(per_cell: dict, draws, stat):
+    xs = sorted(v for v in (stat([per_cell[k] for k in d]) for d in draws) if v is not None)
+    return xs[int(0.025 * len(xs))], xs[int(0.975 * len(xs)) - 1]
+
+
+def _scheme_minus_confidence(sample):
+    c = sum(x[0] for x in sample)
+    return None if c == 0 else 100 * (sum(x[1] for x in sample) - sum(x[2] for x in sample)) / c
+
+
+@pytest.fixture(scope="module")
+def risk_cells() -> dict:
+    return _risk_coverage_items()
+
+
+@pytest.fixture(scope="module")
+def risk_draws(risk_cells):
+    return _resamples(list(risk_cells))
+
+
+RISK_POINTS = {  # scheme -> (committed, correct) of 6,000
+    "ternary": (4344, 3387), "bilateral": (3711, 2873), "stable": (2724, 2242),
+}
+RISK_VS_CONFIDENCE = {  # scheme -> (scheme minus confidence ranking at matched coverage, CI low, CI high)
+    "ternary": (0.6, -1.1, 2.4), "bilateral": (-1.5, -3.7, 0.8), "stable": (0.9, -1.7, 3.8),
+}
+RISK_COMBINED = {  # schemes that must agree with the confidence verdict -> (committed, correct, gain, low, high)
+    ("ternary",): (3885, 3135, 2.0, 0.4, 3.6),
+    ("bilateral",): (3096, 2572, 2.4, 0.9, 4.2),
+    ("stable",): (2441, 2101, 4.3, 2.1, 6.7),
+    ("bilateral", "stable"): (2398, 2069, 4.6, 2.4, 6.8),
+    ("ternary", "bilateral", "stable"): (2261, 1975, 5.6, 3.4, 8.0),
+}
+_TOL = 0.06   # pinned to one decimal; the tolerance only absorbs rounding at a .x5 boundary
+
+
+def test_risk_coverage_stand_alone_schemes_do_not_beat_a_confidence_score(risk_cells, risk_draws) -> None:
+    items = [i for v in risk_cells.values() for i in v]
+    assert len(items) == 6000
+    assert sum(i["forced"] == i["gold"] for i in items) == 4317              # forced true/false, 72.0%
+    assert sum((i["conf"] >= 0.5) == i["gold"] for i in items) == 4275       # confidence at 0.5, 71.2%
+    for scheme, (gap, lo, hi) in RISK_VS_CONFIDENCE.items():
+        pc = _per_cell(risk_cells, lambda i, scheme=scheme: i[scheme])
+        assert (sum(x[0] for x in pc.values()), sum(x[1] for x in pc.values())) == RISK_POINTS[scheme]
+        got = (_scheme_minus_confidence(list(pc.values())), *_ci(pc, risk_draws, _scheme_minus_confidence))
+        log.info("%s minus confidence ranking at matched coverage: %+.2f [%.2f, %.2f]", scheme, *got)
+        assert got == pytest.approx((gap, lo, hi), abs=_TOL)
+        assert got[1] < 0 < got[2]          # no interval excludes zero
+
+
+def test_risk_coverage_bilateral_against_ternary_on_common_items(risk_cells, risk_draws) -> None:
+    counts = Counter()
+    pc = {}
+    for key, items in risk_cells.items():
+        both = [i for i in items if i["bilateral"] is not None and i["ternary"] is not None]
+        pc[key] = (len(both), sum(i["bilateral"] == i["gold"] for i in both), sum(i["ternary"] == i["gold"] for i in both))
+        for i in items:
+            b, t = i["bilateral"] is not None, i["ternary"] is not None
+            g = "both" if b and t else "ternary only" if t else "bilateral only" if b else "neither"
+            counts[g] += 1
+            counts[(g, "bilateral")] += b and i["bilateral"] == i["gold"]
+            counts[(g, "ternary")] += t and i["ternary"] == i["gold"]
+    assert (counts["both"], counts[("both", "bilateral")], counts[("both", "ternary")]) == (3311, 2622, 2684)
+    assert (counts["ternary only"], counts[("ternary only", "ternary")]) == (1033, 703)       # 68.1%
+    assert (counts["bilateral only"], counts[("bilateral only", "bilateral")]) == (400, 251)  # 62.8%
+    assert counts["neither"] == 1256
+    got = (_scheme_minus_confidence(list(pc.values())), *_ci(pc, risk_draws, _scheme_minus_confidence))
+    log.info("on items both commit on, bilateral minus ternary: %+.2f [%.2f, %.2f]", *got)
+    assert got == pytest.approx((-1.9, -2.8, -0.9), abs=_TOL)
+
+
+def test_risk_coverage_signals_add_to_a_confidence_score(risk_cells, risk_draws) -> None:
+    # Within high-confidence items (|score - 0.5| >= 0.4): accuracy of the confidence verdict.
+    strata = Counter()
+    for items in risk_cells.values():
+        for i in items:
+            if abs(i["conf"] - 0.5) < 0.4 - 1e-9:
+                continue
+            cv = i["conf"] >= 0.5
+            ok = cv == i["gold"]
+            b = "agrees" if i["bilateral"] == cv else "abstains" if i["bilateral"] is None else "disagrees"
+            s = "agrees" if i["stable"] == cv else "not stable" if i["stable"] is None else "disagrees"
+            for k in (("all",), ("bilateral", b), ("stable", s)):
+                strata[k + ("n",)] += 1
+                strata[k + ("ok",)] += ok
+    pair = lambda *k: (strata[k + ("n",)], strata[k + ("ok",)])
+    assert pair("all") == (3688, 2945)                            # 79.9%
+    assert pair("bilateral", "agrees") == (2554, 2191)            # 85.8%
+    assert pair("bilateral", "abstains") == (881, 601)            # 68.2%
+    assert pair("bilateral", "disagrees") == (253, 153)           # 60.5%
+    assert pair("stable", "agrees") == (2102, 1854)               # 88.2%
+    assert pair("stable", "not stable") == (1464, 1018)           # 69.5%
+    assert pair("stable", "disagrees") == (122, 73)               # 59.8%
+
+    # Requiring agreement, against the confidence ranking alone at the same per-cell coverage.
+    for keys, (committed, correct, gain, lo, hi) in RISK_COMBINED.items():
+        pc = _per_cell(risk_cells, lambda i, keys=keys: _agree(i, keys))
+        assert (sum(x[0] for x in pc.values()), sum(x[1] for x in pc.values())) == (committed, correct)
+        got = (_scheme_minus_confidence(list(pc.values())), *_ci(pc, risk_draws, _scheme_minus_confidence))
+        log.info("confidence + %s: %+.2f [%.2f, %.2f]", "+".join(keys), *got)
+        assert got == pytest.approx((gain, lo, hi), abs=_TOL)
+        assert got[1] > 0                   # every combined rule beats the confidence score alone
+
+    # The paraphrase-stability gain is positive in each of the six models.
+    for m in MODELS6:
+        pc = _per_cell({k: v for k, v in risk_cells.items() if k[0] == m}, lambda i: _agree(i, ["stable"]))
+        assert _scheme_minus_confidence(list(pc.values())) > 0, m

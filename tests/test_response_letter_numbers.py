@@ -10,12 +10,14 @@ independently of analysis/. No API calls. Sections follow the reviewer points th
   R2-M2 the worked example (Example 2) replicated in the November same-day run
   R2-M4 per-benchmark and SimpleQA per-model rates from the same-day control (E4 / E4-0)
   R2-m4 coverage beside macro-F1 for Table 1
+  R1-5  accuracy of single-prompt verdicts by the item's bilateral value (post hoc check)
 """
 from __future__ import annotations
 
 import itertools
 import json
 import logging
+import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -205,3 +207,90 @@ def test_table1_coverage_summary() -> None:
     # Pooled coverage: bilateral 3,711 of 6,000 (61.85%), ternary 4,344 of 6,000 (72.4%).
     assert (sum(bil), min(bil), max(bil)) == (3711, 77, 211)     # per-cell range 0.308 .. 0.844
     assert (sum(ter), min(ter), max(ter)) == (4344, 89, 242)     # per-cell range 0.356 .. 0.968
+
+
+# ── R1-5 / R1-2: what the bilateral value tells you about a single-prompt verdict ──
+# Post hoc check (2026-11-11), not pre-specified. March run, six models, 6,000 items. For each item
+# the March run also holds a forced true/false answer and a three-option (ternary) answer from
+# single prompts. If the bilateral value measures something useful, those single-prompt verdicts
+# should be less accurate on the items it flags (<t,t>, <f,f>) than on one-sided items.
+SINGLE_PROMPT = {  # group -> (n, ternary committed, ternary correct, forced correct)
+    "one-sided": (3475, 3190, 2601, 2796),   # <t,f> or <f,t>
+    "<t,t>": (371, 361, 261, 267),
+    "<f,f>": (1448, 511, 341, 840),
+    "e-bearing": (706, 282, 184, 414),
+}
+SINGLE_PROMPT_GAPS = {  # (verdict, flagged value) -> (gap in points, CI low, CI high), one-sided minus flagged
+    ("ternary", "<t,t>"): (9.2, 1.4, 17.0),
+    ("ternary", "<f,f>"): (14.8, 9.7, 20.3),
+    ("forced", "<t,t>"): (8.5, 3.6, 14.4),
+    ("forced", "<f,f>"): (22.4, 17.0, 29.1),
+}
+
+
+def _group(value: str) -> str:
+    return "one-sided" if value in ("<t,f>", "<f,t>") else value if value in ("<f,f>", "<t,t>") else "e-bearing"
+
+
+@pytest.fixture(scope="module")
+def single_prompt_cells() -> dict:
+    cells = {}
+    for m in MODELS6:
+        for bench in BENCH:
+            c = defaultdict(lambda: [0, 0, 0, 0])
+            for r in json.loads((PROPER / f"{bench}_{m}_n3_proper_results.json").read_text())["detailed_results"]:
+                g = c[_group(r["bilateral_tv"])]
+                committed = r["ternary_prediction"] in ("TRUE", "FALSE")
+                g[0] += 1
+                g[1] += committed
+                g[2] += bool(committed and r["ternary_correct"])
+                g[3] += bool(r["forced_unilateral_correct"])
+            cells[(m, bench)] = c
+    return cells
+
+
+def _ternary_acc(sample, g):
+    committed = sum(c[g][1] for c in sample)
+    return None if committed == 0 else 100 * sum(c[g][2] for c in sample) / committed
+
+
+def _forced_acc(sample, g):
+    n = sum(c[g][0] for c in sample)
+    return None if n == 0 else 100 * sum(c[g][3] for c in sample) / n
+
+
+def test_single_prompt_accuracy_by_bilateral_value(single_prompt_cells) -> None:
+    cells = single_prompt_cells
+    totals = {g: tuple(sum(c[g][i] for c in cells.values()) for i in range(4)) for g in SINGLE_PROMPT}
+    log.info("single-prompt verdicts by bilateral value: %s", totals)
+    assert totals == SINGLE_PROMPT
+    assert sum(t[0] for t in totals.values()) == 6000
+    # Forced accuracy is lower on <t,t> items than on one-sided items in every one of the six models.
+    for m in MODELS6:
+        s = [cells[(m, bench)] for bench in BENCH]
+        assert _forced_acc(s, "<t,t>") < _forced_acc(s, "one-sided"), m
+
+
+def test_single_prompt_accuracy_gaps_with_cluster_bootstrap(single_prompt_cells) -> None:
+    """Cluster bootstrap over the 24 cells, 10,000 resamples, seed 42, percentile 95% CI."""
+    cells = single_prompt_cells
+    keys = list(cells)
+    everything = [cells[k] for k in keys]
+    fns = {"ternary": _ternary_acc, "forced": _forced_acc}
+    rng = random.Random(42)
+    draws = defaultdict(list)
+    for _ in range(10_000):
+        s = [cells[rng.choice(keys)] for _ in keys]
+        for name, fn in fns.items():
+            a = fn(s, "one-sided")
+            for g in ("<t,t>", "<f,f>"):
+                b = fn(s, g)
+                if a is not None and b is not None:
+                    draws[(name, g)].append(a - b)
+    for (name, g), (gap, lo, hi) in SINGLE_PROMPT_GAPS.items():
+        xs = sorted(draws[(name, g)])
+        point = fns[name](everything, "one-sided") - fns[name](everything, g)
+        got = (point, xs[int(0.025 * len(xs))], xs[int(0.975 * len(xs)) - 1])
+        log.info("%s accuracy, one-sided minus %s: %+.2f [%.2f, %.2f]", name, g, *got)
+        assert tuple(round(v, 1) for v in got) == pytest.approx((gap, lo, hi), abs=0.05)
+        assert got[1] > 0          # every interval excludes zero

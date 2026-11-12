@@ -11,6 +11,7 @@ independently of analysis/. No API calls. Sections follow the reviewer points th
   R2-M4 per-benchmark and SimpleQA per-model rates from the same-day control (E4 / E4-0)
   R2-m4 coverage beside macro-F1 for Table 1
   R1-5  accuracy of single-prompt verdicts by the item's bilateral value (post hoc check)
+  R1-5  accuracy of a verdict by whether it is stable under paraphrase (post hoc check)
 """
 from __future__ import annotations
 
@@ -294,3 +295,97 @@ def test_single_prompt_accuracy_gaps_with_cluster_bootstrap(single_prompt_cells)
         log.info("%s accuracy, one-sided minus %s: %+.2f [%.2f, %.2f]", name, g, *got)
         assert tuple(round(v, 1) for v in got) == pytest.approx((gap, lo, hi), abs=0.05)
         assert got[1] > 0          # every interval excludes zero
+
+
+# ── R1-5 / R2-M4: what stability under paraphrase tells you about a verdict ──────
+# Post hoc check (2026-11-11), not pre-specified. A one-sided verdict at s0 is "stable" when every
+# paraphrase returns the same value: for <t,f> that is box p = <t,f> (prompt-agnostic, Def. 18); for
+# <f,t> it is the same condition on the negation. The verdict is correct when it agrees with gold.
+PARAPHRASE_STABILITY = {  # (value at s0, stable) -> (n, correct); March paraphrase run, six models
+    ("<t,f>", True): (1175, 952), ("<t,f>", False): (416, 294),
+    ("<f,t>", True): (1549, 1290), ("<f,t>", False): (356, 203),
+}
+PARAPHRASE_STABILITY_GAPS = {  # scope -> (gap in points, CI low, CI high), stable minus changing
+    "<t,f>": (10.3, 3.2, 16.6), "<f,t>": (26.3, 17.4, 35.3), "both": (17.9, 13.6, 22.2),
+}
+E4_STABILITY = {True: (979, 794), False: (186, 118)}   # same-day run, five models, base <t,f>
+E4_STABILITY_GAP = (17.7, 10.5, 23.5)
+
+
+def _acc(sample, keys):
+    n = sum(c[k][0] for c in sample for k in keys)
+    return None if n == 0 else 100 * sum(c[k][1] for c in sample for k in keys) / n
+
+
+def _bootstrap(cells: dict, fn, seed: int = 42, resamples: int = 10_000):
+    keys = list(cells)
+    rng = random.Random(seed)
+    xs = sorted(v for v in (fn([cells[rng.choice(keys)] for _ in keys]) for _ in range(resamples)) if v is not None)
+    return xs[int(0.025 * len(xs))], xs[int(0.975 * len(xs)) - 1]
+
+
+@pytest.fixture(scope="module")
+def stability_cells() -> dict:
+    cells = {}
+    for m in MODELS6:
+        for bench, stem in BENCH.items():
+            c = defaultdict(lambda: [0, 0])
+            for r in json.loads((MODAL / f"{stem}_{m}_n3_modal_results.json").read_text())["detailed_results"]:
+                s0 = r["src_bilateral"]
+                if s0 not in ("<t,f>", "<f,t>"):
+                    continue
+                stable = all(v == s0 for v in r["variant_bilaterals"])
+                c[(s0, stable)][0] += 1
+                c[(s0, stable)][1] += (r["expected_label"] == "correct") == (s0 == "<t,f>")
+            cells[(m, bench)] = c
+    return cells
+
+
+def test_paraphrase_stable_verdicts_are_more_accurate(stability_cells) -> None:
+    cells = stability_cells
+    totals = {k: tuple(sum(c[k][i] for c in cells.values()) for i in range(2)) for k in PARAPHRASE_STABILITY}
+    log.info("accuracy by paraphrase stability (n, correct): %s", totals)
+    assert totals == PARAPHRASE_STABILITY
+    # <t,f> stable is exactly the prompt-agnostic count of the transition table (1,175 of 1,591).
+    assert totals[("<t,f>", True)][0] + totals[("<t,f>", False)][0] == 1591
+    scopes = {"<t,f>": ["<t,f>"], "<f,t>": ["<f,t>"], "both": ["<t,f>", "<f,t>"]}
+    everything = list(cells.values())
+    for scope, values in scopes.items():
+        def gap(sample, values=values):
+            a = _acc(sample, [(v, True) for v in values])
+            b = _acc(sample, [(v, False) for v in values])
+            return None if a is None or b is None else a - b
+        got = (gap(everything), *_bootstrap(cells, gap))
+        log.info("stable minus changing, %s: %+.2f [%.2f, %.2f]", scope, *got)
+        assert tuple(round(v, 1) for v in got) == pytest.approx(PARAPHRASE_STABILITY_GAPS[scope], abs=0.05)
+        assert got[1] > 0
+    # The direction holds in every one of the six models.
+    for m in MODELS6:
+        s = [cells[(m, bench)] for bench in BENCH]
+        both = ["<t,f>", "<f,t>"]
+        assert _acc(s, [(v, True) for v in both]) > _acc(s, [(v, False) for v in both]), m
+
+
+def test_paraphrase_stability_replicates_in_the_same_day_run(e4) -> None:
+    cells = {}
+    for m in MODELS5:
+        for bench in BENCH:
+            c = defaultdict(lambda: [0, 0])
+            for r in e4[m]:
+                if r["benchmark"] != bench or r["base_tv"] != "<t,f>":
+                    continue
+                stable = r["box_par"] == "<t,f>"
+                c[stable][0] += 1
+                c[stable][1] += r["ground_truth"] is True
+            if c:
+                cells[(m, bench)] = c
+    totals = {k: tuple(sum(c[k][i] for c in cells.values()) for i in range(2)) for k in (True, False)}
+    assert totals == E4_STABILITY
+
+    def gap(sample):
+        a, b = _acc(sample, [True]), _acc(sample, [False])
+        return None if a is None or b is None else a - b
+    got = (gap(list(cells.values())), *_bootstrap(cells, gap))
+    log.info("E4 stable minus changing: %+.2f [%.2f, %.2f] over %d cells", *got, len(cells))
+    assert tuple(round(v, 1) for v in got) == pytest.approx(E4_STABILITY_GAP, abs=0.05)
+    assert got[1] > 0

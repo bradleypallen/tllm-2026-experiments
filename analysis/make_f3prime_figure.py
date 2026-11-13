@@ -16,7 +16,7 @@ against results/derived/2026_11/T-E2_four_option.json (F3prime_by_original_value
 figure cannot drift from the table.
 
 Style follows make_tv_diagnostic_figure.py (DejaVu Sans, dotted grid, the shaded
-ignorance/inconsistency band, no in-figure title) with two series hues validated for
+ignorance/double-commitment band, no in-figure title) with two series hues validated for
 colour-vision deficiency; the same-day E2-0 bar is the UNCERTAIN hue with a hatch texture
 rather than a third hue.
 
@@ -55,7 +55,7 @@ OUT = REPO / "results/derived/2026_11/f3prime_four_option"
 TV_GROUPS = ["<t,f>", "<f,t>", "<f,f>", "<t,t>", "middle"]
 TV_LABELS = {
     "<t,f>": "⟨t,f⟩\nTrue", "<f,t>": "⟨f,t⟩\nFalse", "<f,f>": "⟨f,f⟩\nIgnorance",
-    "<t,t>": "⟨t,t⟩\nInconsistency", "middle": "⟨u,e⟩ or\n⟨e,v⟩",
+    "<t,t>": "⟨t,t⟩\nDouble\ncommitment", "middle": "⟨u,e⟩ or\n⟨e,v⟩",
 }
 # Two categorical hues (validated: CVD ΔE and normal-vision floor pass); same-day = hatch texture.
 C_UNCERTAIN, C_CONFLICTING, INK = "#1565C0", "#E65100", "#333333"

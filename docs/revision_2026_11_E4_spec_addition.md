@@ -93,6 +93,9 @@ Reference values already in hand (not part of E4): same-day identical-prompt flo
 1.4% any change over two repeats (n = 439); March paraphrase run, six models, 26.2% any change
 and 7.3% →⟨f,f⟩ (n = 1,591).
 
+*Erratum, 2026-11-12, added after the run:* the March figure is 26.1%, not 26.2% (416 of 1,591).
+The text above is left as written. It is a reference value and enters no prediction.
+
 ## 7. Reporting commitment
 
 E4 is reported whichever way P3 comes out, as a same-day control beside Figure 2 in §7.1.

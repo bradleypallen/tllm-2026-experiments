@@ -128,7 +128,7 @@ tie at 0.020 is broken alphabetically in the rank list (stated in the table note
   DeepSeek-V3 11.7% [4.1, 19.3], Scout 10.1% [6.0, 15.7], Qwen 9.4% [4.7, 14.7], Gemini 5.9% [0.0, 9.4],
   Opus 4.1 4.1% [2.2, 6.4], Maverick 3.0% [0.0, 7.8]. **7 of 15** pairwise orderings have a CI excluding zero
   (listed in `summary.md`).
-- T-TM: full ⟨t,f⟩→NINE transition, pooled n = 1,591: ⟨t,f⟩ 0.739 (so 26.2% change), ⟨f,f⟩ 0.073,
+- T-TM: full ⟨t,f⟩→NINE transition, pooled n = 1,591: ⟨t,f⟩ 0.739 (so 26.1% change: 416 of 1,591), ⟨f,f⟩ 0.073,
   ⟨t,t⟩ 0.067, ⟨e,e⟩ 0.043, ⟨e,f⟩ 0.027, ⟨f,t⟩ 0.024, ⟨t,e⟩ 0.017, ⟨e,t⟩ 0.007, ⟨f,e⟩ 0.003.
   *Corrected 2026-11-11:* the tables committed on 2026-10-18/20 silently omitted MMLU-Pro (a filename
   glob for `mmlu-pro_complete_*`; the modal files are `mmlupro_complete_*`) and reported n = 1,185,

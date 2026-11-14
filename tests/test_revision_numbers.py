@@ -151,6 +151,22 @@ def test_p1_paired_pooled(e1) -> None:
     assert (n, round(diff, 3)) == P1_POOLED
 
 
+def test_p1_paired_without_gemini(e1) -> None:
+    """Added 2026-11-13: Gemini 2.5 Flash supplies 181 of the 298 paired <t,t> items; the paired
+    difference E1-0 minus E1-a on the other four models, so that the result is not read as one model's."""
+    keep0 = keepa = n = 0
+    for key, (r0, tv0, ok0) in e1["e1-0"].items():
+        if r0["condition"] != "treatment" or key not in e1["e1-a"] or "gemini" in r0["model"]:
+            continue
+        ra, tva, oka = e1["e1-a"][key]
+        if not (ok0 and oka):
+            continue
+        n += 1; keep0 += tv0 == "<t,t>"; keepa += tva == "<t,t>"
+    diff = keep0 / n - keepa / n
+    log.info("P1 without Gemini: n=%d E1-0 %d E1-a %d diff=%.4f", n, keep0, keepa, diff)
+    assert (n, keep0, keepa, round(diff, 3)) == (117, 72, 11, 0.521)
+
+
 def test_first_line_rule_recovery_count() -> None:
     rec = fail = tot = 0
     for arm in ("e1-a", "e1-b"):
